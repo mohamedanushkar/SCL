@@ -1,0 +1,17 @@
+
+
+.lbl {
+    float: left;
+    width: 100px;
+}
+
+.txt{
+    width: 300px;
+    margin: 12px;
+}
+
+.iconStyle{
+    padding: 20px;
+    background-color: red;
+    border-radius: 20px;
+}
