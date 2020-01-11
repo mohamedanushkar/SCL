@@ -10,13 +10,13 @@ $Phone = $_POST["Phone"];
 $Mail = $_POST["Email"];
 $Grade = $_POST["Grade"];
 $Date = $_POST["Date"];
-
+$Gender = $_POST["Gender"];
 $year = date("Y");
 
 
 if ($Grade != '') {
 
-    $sql = "INSERT INTO `Student`(`id`, `Student_Name`, `Student_Address`, `Student_Phone`, `Student_Email`,`Grade_ID`,`Year`,`JoinedDate`)VALUES('$ID','$Name','$Address','$Phone','$Mail','$Grade','$year','$Date')";
+    $sql = "INSERT INTO `tbl_student`(`Student_ID`, `Student_Name`, `Student_Address`, `Student_Phone`, `Student_Email`, `Present_Year`, `Gender`, `tbl_Class_ID`, `Joined_Year`, `Status`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$year','$Gender','$Grade',$year,'Active')";
 
     $conn->query($sql);
 

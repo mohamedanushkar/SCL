@@ -10,9 +10,11 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
-    <body>
+    <body style="margin: 20px">
         <form  id="insert_data" class="col-md-5" >
 
             <div class="form-group">
@@ -41,14 +43,14 @@
                 <select name="Grade" required="" id="Grade" class="form-control txt">
                     <?php
                     include '../../model/Connection.php';
-                    $sql = "SELECT * FROM Grade";
+                    $sql = "SELECT * FROM tbl_Class";
                     $res = $conn->query($sql);
                     if ($res->num_rows > 0) {
 
                         $i = 0;
                         while ($row = $res->fetch_assoc()) {
                             $i++;
-                            echo '<option value="' . $row["Grade_ID"] . '">' . $row["Grade_Name"] . '</option>';
+                            echo '<option value="' . $row["Class_ID"] . '">' . $row["Class_Name"] . '</option>';
                         }
                     }
                     ?>
@@ -57,8 +59,17 @@
             <div class="form-group">
 
                 <p class="lbl">Joined Date</p>
-                <input type="date" class="form-control txt" name="Date" id="Date">
+                <input class="form-control" name="datepicker" id="datepicker">
 
+
+            </div>
+            <div class="form-group">
+
+                <p class="lbl">Gender</p>
+                <select class="form-control" id="Gender" name="Gender">
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                </select>
 
             </div>
             <div class="form-group">
@@ -77,7 +88,7 @@
 
         </form>
 
-        <div class="form-group">
+        <div class="form-group col-md-12">
             <div id="inserted_data" >
 
             </div>
@@ -87,6 +98,13 @@
             $(document).ready(function () {
 
                 $("#inserted_data").load("../../Controller/Students/Fetch.php");
+
+
+                    $("#datepicker").datepicker({
+                        changeMonth: true,
+                        changeYear: true,
+                        dateFormat: "yy-mm-dd"
+                    });
 
 
                 $('#employee_data').DataTable();
