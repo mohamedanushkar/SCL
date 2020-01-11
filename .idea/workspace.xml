@@ -50,6 +50,7 @@
       <option name="presentableId" value="Default" />
       <updated>1578735231110</updated>
       <workItem from="1578735232751" duration="3520000" />
+      <workItem from="1578744194505" duration="297000" />
     </task>
     <servers />
   </component>
@@ -61,5 +62,9 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578735256260" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578744195028">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578744195028" />
   </component>
 </project>
