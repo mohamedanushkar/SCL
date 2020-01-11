@@ -3,11 +3,11 @@
 //insert.php
 $connect = mysqli_connect("localhost", "root", "", "finalsystemdb");
 
-$Grade_ID = $_POST["Grade_ID"];
+
 $Student_ID = $_POST["Student_ID"];
 $Status = $_POST["Status"];
 $date = date("Y-m-d");
-$time = date("h:i:sa");
+
 
 
 $query = '';
@@ -17,8 +17,8 @@ for ($count = 0; $count < count($Student_ID); $count++) {
 
     if ($Student_ID_clean != '' && $Status_clean != '') {
         $query .= '
-   INSERT INTO StuAttendence(Student_id, Grade_ID ,Date, Time, Status) 
-   VALUES("' . $Student_ID_clean . '","'.$Grade_ID.'" ,"' . $date . '", "' . $time . '", "' . $Status_clean . '"); 
+   INSERT INTO tbl_Attendence(Student_ID, Date ,Status) 
+   VALUES("' . $Student_ID_clean . '","'.$date.'" ,"' . $Status_clean . '"); 
    ';
     }
 }
