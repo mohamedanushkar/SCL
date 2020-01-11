@@ -11,7 +11,7 @@ $Mail = $_POST["Email"];
 $Grade = $_POST["Grade"];
 $Date = $_POST["Date"];
 $Gender = $_POST["Gender"];
-$year = date("Y");
+$year = date("Y-m-d");
 
 
 if ($Grade != '') {
