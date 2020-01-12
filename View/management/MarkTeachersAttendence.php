@@ -1,96 +1,111 @@
+<!DOCTYPE html>
+
+<?php
+include '../../model/Connection.php';
+
+
+
+
+function FillGrade($conn) {
+    $output = '';
+    $sql = "SELECT * FROM tbl_Class";
+    $result = mysqli_query($conn, $sql);
+
+    while ($row = mysqli_fetch_array($result)) {
+        $output .= '<option value="' . $row["Class_ID"] . '">' . $row["Class_Name"] . '</option>';
+    }
+    return $output;
+}
+
+?>
+<html>
 
 
 <head>
-    <title></title>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link href="../../Assets/CSS/Form.css" rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.css"/>
+    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./../../Assets/CSS/Main.css">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
 
 </head>
 
-<body style="margin-right: 300px">
-    <p style="background-color: red; padding: 10px; color: white">Mark Attendence</p>
+<body style="margin: 20px">
+<p class="CenterTopic">Mark Attendance</p>
 
-    <br />
+<div class="form-group">
+    <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">Mark
+    </button>
+</div>
 
+<div  class="form-group">
+    <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <form id="SearchData">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
 
-    <div class="table-responsive">
-        <form id="insert_data" style="margin: 10px">
-
-
-            <?php
-            include '../../model/Connection.php';
-
-
-
-           
-            $query2 = "SELECT * FROM teachers";
-
-            $result2 = mysqli_query($conn, $query2);
-            ?>
-            <!DOCTYPE html>  
-
-
-            <table id="employee_data" class="table table-striped table-bordered">  
-                <thead>  
-                    <tr>  
-                        <th>Student ID</th>
-
-                        <th>Name</th>
-                        <th>Status</th>
+                        <div id="table" class="form-group">
 
 
-                    </tr>  
-                </thead>  
-                <?php
-                while ($row2 = mysqli_fetch_array($result2)) {
 
-                    echo "<tr>";
+                        </div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="button" id="Save" name="Save" class="btn btn-primary">Save changes</button>
+                    </div>
+                </form>
 
-                    echo "<td><input type='text'  name='Teachers_ID[]' id='Teachers_ID' value='{$row2["Teachers_ID"]}' class = 'form-control'></td>";
-
-                    echo "<td><input type='text' value='{$row2["Name"]}' class = 'form-control'></td>";
-
-                    echo "<td><select class='form-control' name='Status[]' id='Student_ID'><option value='1'>Present</option><option value='0'>Absent</option></select></td>";
-
-                    echo "</td>";
-                }
-                ?>  
-            </table>  
-            
-            <div align="center">
-                <button type="button" name="SaveDetails" id="SaveDetails" class="btn btn-success ">Add</button>
             </div>
-
-
-
-        </form>
-        <div id="crud_table">
-            </div>
+        </div>
     </div>
-</body>
 
+    <a href=""></a>
+</div>
+
+<!-- Modal -->
+<div id="load" class="form-group">
+
+</div>
 <script>
     $(document).ready(function () {
 
+        $('#employee_data').DataTable();
+
+        $("#table").load("../../Controller/MarkTeachersAttendence/fetch.php");
+        $("#load").load("../../Controller/MarkTeachersAttendence/FetchTable.php");
 
 
-        $('#SaveDetails').click(function () {
+        $('#Save').click(function () {
 
             $.ajax({
-                url: "../../Controller/MarkTeachersAttendence/MarkTeachersAttendence.php",
+                url: "../../Controller/MarkTeachersAttendence/insert.php",
                 method: "POST",
-                data: $('#insert_data').serialize(),
+                data: $('#SearchData').serialize(),
                 success: function (data) {
-                    
-                     $('#crud_table').html(data);
-                    $('#insert_data')[0].reset();
-                    $('#insert_data').html('');
+                    $('#employee_data').html(data);
+                    $("#load").load("../../Controller/MarkTeachersAttendence/FetchTable.php");
+                    $('#Modal').modal('hide');
                 }
             });
         });
     });
 
 </script>
+</body>
+</html>
+

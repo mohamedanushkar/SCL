@@ -25,7 +25,12 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Controller/MarkTeachersAttendence" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Backup Projects\Final_Project\SCL\Controller\MarkTeachersAttendence" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -51,7 +56,8 @@
       <updated>1578735231110</updated>
       <workItem from="1578735232751" duration="3520000" />
       <workItem from="1578744194505" duration="455000" />
-      <workItem from="1578750928054" duration="4326000" />
+      <workItem from="1578750928054" duration="5392000" />
+      <workItem from="1578803009745" duration="931000" />
     </task>
     <servers />
   </component>
@@ -64,11 +70,11 @@
     </state>
     <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578754948080" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578735256260" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578750928976">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578803010834">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578750928976" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578744195028" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578803010834" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
