@@ -25,10 +25,11 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Controller/MarkTeachersAttendence" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Controller/Teachers" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Backup Projects\Final_Project\SCL\Controller\Teachers" />
       <recent name="D:\Backup Projects\Final_Project\SCL\Controller\MarkTeachersAttendence" />
     </key>
   </component>
@@ -57,7 +58,7 @@
       <workItem from="1578735232751" duration="3520000" />
       <workItem from="1578744194505" duration="455000" />
       <workItem from="1578750928054" duration="5392000" />
-      <workItem from="1578803009745" duration="931000" />
+      <workItem from="1578803009745" duration="4659000" />
     </task>
     <servers />
   </component>

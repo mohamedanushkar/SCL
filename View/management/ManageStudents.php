@@ -108,7 +108,7 @@
                     });
 
 
-                $('#employee_data').DataTable();
+
                 $('#userSubmit').click(function () {
                     var id = $("#id").val();
                     if (id == 0) {

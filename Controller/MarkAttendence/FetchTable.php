@@ -8,7 +8,8 @@
     </thead>
     <?php
     include '../../model/Connection.php';
-    $query2 = "SELECT * FROM tbl_attendence";
+    $date = date("Y-m-d");
+    $query2 = "SELECT * FROM tbl_attendence where Date = '$date'";
     $result2 = mysqli_query($conn, $query2);
     while ($row2 = mysqli_fetch_array($result2)) {
         echo "<tr>";
