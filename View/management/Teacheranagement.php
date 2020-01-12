@@ -81,7 +81,6 @@
             $sql = "SELECT * FROM tbl_Subject";
             $res = $conn->query($sql);
             if ($res->num_rows > 0) {
-
                 $i = 0;
                 while ($row = $res->fetch_assoc()) {
                     $i++;
@@ -95,24 +94,11 @@
         <input type="hidden" id="id" name="id" value="0">
         <input type="button" class="btn btn-success" name="userSubmit" id="userSubmit"  value="Save">
     </div>
-
-
-
-
-
-
-
-
-
-
 </form>
-
 <div class="form-group col-md-12">
     <div id="inserted_data" >
-
     </div>
 </div>
-
 <script>
     $(document).ready(function () {
 

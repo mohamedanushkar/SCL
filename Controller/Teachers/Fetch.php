@@ -26,6 +26,7 @@ $result = mysqli_query($conn, $query);
                             <th>Grade</th>  
                             <th>Joined Year</th>
                             <th>Class</th>
+                            <th>Class</th>
                             <th>Subject</th>
                             <th>Status</th>
                             <th>Edit</th>
