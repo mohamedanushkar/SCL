@@ -12,6 +12,9 @@
       <executable />
     </execution>
   </component>
+  <component name="FavoritesManager">
+    <favorites_list name="SCL" />
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -25,7 +28,8 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$USER_HOME$/Downloads/A" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -59,6 +63,9 @@
       <workItem from="1578744194505" duration="455000" />
       <workItem from="1578750928054" duration="5392000" />
       <workItem from="1578803009745" duration="6548000" />
+      <workItem from="1578841203861" duration="646000" />
+      <workItem from="1578913040766" duration="779000" />
+      <workItem from="1578913833547" duration="393000" />
     </task>
     <servers />
   </component>
@@ -66,18 +73,24 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1578824342337">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1180" y="276" key="FileChooserDialogImpl" timestamp="1578914105623">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1180" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578914105623" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578824342337" />
     <state x="-1126" y="444" key="NewPhpFileDialog" timestamp="1578754948080">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578754948080" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578735256260" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578803010834">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="-1459" y="163" key="SettingsEditor" timestamp="1578913819449">
+      <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
+    <state x="-1459" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578913819449" />
+    <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1578913837500">
+      <screen x="-1920" y="0" width="1920" height="1040" />
+    </state>
+    <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578913837500" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578750928976" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578803010834" />
   </component>

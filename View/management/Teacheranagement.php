@@ -55,27 +55,10 @@
         </select>
 
     </div>
-    <div class="form-group">
-        <p class="lbl">Grade</p>
-        <select name="Grade" required="" id="Grade" class="form-control txt">
-            <?php
-            include '../../model/Connection.php';
-            $sql = "SELECT * FROM tbl_Class";
-            $res = $conn->query($sql);
-            if ($res->num_rows > 0) {
 
-                $i = 0;
-                while ($row = $res->fetch_assoc()) {
-                    $i++;
-                    echo '<option value="' . $row["Class_ID"] . '">' . $row["Class_Name"] . '</option>';
-                }
-            }
-            ?>
-        </select>
-    </div>
     <div class="form-group">
         <p class="lbl">Subject</p>
-        <select name="Grade" required="" id="Grade" class="form-control txt">
+        <select name="Subject" required="" id="Subject" class="form-control txt">
             <?php
             include '../../model/Connection.php';
             $sql = "SELECT * FROM tbl_Subject";
