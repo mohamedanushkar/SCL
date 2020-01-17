@@ -5,7 +5,7 @@ include '../../model/Connection.php';
 
 $Grade_ID = $_POST["Grade_ID"];
 $Year = $_POST["Year"];
-$query = "SELECT student.id, student.Student_Name FROM student WHERE student.Grade_ID = '$Grade_ID' AND student.Year = '$Year'";
+$query = "SELECT * FROM tbl_Student WHERE tbl_Student.tbl_Class_ID = '$Grade_ID' AND YEAR(Present_Year) = '$Year'";
 $result = mysqli_query($conn, $query);
 ?>  
 <!DOCTYPE html>  
@@ -26,9 +26,9 @@ $result = mysqli_query($conn, $query);
             <?php
             while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
-                echo "<td>{$row["id"]}</td>";
+                echo "<td>{$row["Student_ID"]}</td>";
                 echo "<td>{$row["Student_Name"]}</td>";
-                echo " <td> <a  class='select' data-id='{$row["id"]}'><i class='fa fa-check'></i></a></td>";
+                echo " <td> <a  class='select' data-id='{$row["Student_ID"]}'><i class='fa fa-check'></i></a></td>";
                 echo "</tr>";
             }
             ?>  

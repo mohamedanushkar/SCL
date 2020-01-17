@@ -3,43 +3,55 @@ include '../../model/Connection.php';
 
 function FillGrade($conn) {
     $output = '';
-    $sql = "SELECT * FROM Grade";
+    $sql = "SELECT * FROM tbl_Class";
     $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        $output .= '<option value="' . $row["Grade_ID"] . '">' . $row["Grade_Name"] . '</option>';
+        $output .= '<option value="' . $row["Class_ID"] . '">' . $row["Class_Name"] . '</option>';
     }
     return $output;
 }
 
 function FillYear($conn) {
     $output = '';
-    $sql = "select distinct student.Year from student";
+    $sql = "select distinct YEAR(Present_Year) from tbl_Student";
     $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        $output .= '<option value="' . $row["Year"] . '">' . $row["Year"] . '</option>';
+        $output .= '<option value="' . $row["YEAR(Present_Year)"] . '">' . $row["YEAR(Present_Year)"] . '</option>';
     }
     return $output;
 }
 ?>
 <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>  
-        <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>            
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" /> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="../../Assets/CSS/Form.css" rel="stylesheet" type="text/css"/>
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./../../Assets/CSS/Main.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 
     </head>
-    <body style="margin-right: 300px;">
-        <p style="background-color: red; padding: 10px; color: white">Student Notice</p>
-        <br>
-        <!-- Trigger the modal with a button -->
-        <button type="button" class="btn btn-info btn-sm" id="SelectStu" name="SelectStu">Select Student</button>
+    <body style="margin: 20px">
+    <div class="form-group">
+        <p class="CenterTopic">Send Notice</p>
+    </div>
+<div class="form-group">
+    <button type="button" class="btn btn-info btn-sm" id="SelectStu" name="SelectStu">Select Student</button>
+
+</div>
+<div class="form-group">
+    <div id="message">
+    </div>
+
+    <span id="Notice_Table">
+        </span>
+</div>
 
 
         <!-- Modal -->
@@ -76,8 +88,7 @@ function FillYear($conn) {
                 </div>
             </div>
         </div>
-        <div id="inserted_data_Notice">
-        </div>
+
         <div class="modal fade" id="myModal2" role="dialog" style="margin-right: 300px;">
             <div class="modal-dialog">
                 <!-- Modal content-->
@@ -99,18 +110,15 @@ function FillYear($conn) {
                     <div class="modal-footer">
                         <input type="button" id="SaveNotice"  name="SaveNotice" class="btn btn-success" value="Send">
                         <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                        <input type="hidden" id="HiddenID" name="HiddenID">
                     </div>
                 </div>
             </div>
         </div>
-        <hr>
+
       
-        <div id="message">
-        </div>  
-        
-        <span id="Notice_Table">
-        </span>
-        <input type="hidden" id="HiddenID" name="HiddenID">
+
+
     </body>
 </html>
 
@@ -196,7 +204,7 @@ function FillYear($conn) {
                 data: {id: id},
                 success: function (data) {
                     del.closest("tr").hide();
-                  $("<p></p>").html(data).appendTo("#message");
+                  $("<p></p>").html(data).appendTo("#Notice_Table");
                 }
             });
         });

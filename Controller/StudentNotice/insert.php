@@ -5,7 +5,6 @@ $id = $_POST["StuID"];
 $Title = $_POST["NoticeTitle"];
 $Dis= $_POST["Description"];
 $date = date("Y-m-d");
-$time = date("h:i:sa");
 
 
 
@@ -14,7 +13,7 @@ $time = date("h:i:sa");
 
 if ($id != '') {
 
-    $sql = "INSERT INTO `Notice`( Student_id, Heading, Discription, Time, Date)VALUES('$id','$Title','$Dis','$time','$date')";
+    $sql = "INSERT INTO `tbl_notice`(`Notice_Title`, `Description`, `Date`, `Student_ID`) VALUES ('$Title','$Dis','$date','$id')";
 
     $conn->query($sql);
 

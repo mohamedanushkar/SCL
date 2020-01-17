@@ -14,9 +14,10 @@
 
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
-    <body style="margin: 20px">
+    <body style="margin: 20px;">
     <p class="CenterTopic">Student Management</p>
-        <form  id="insert_data" class="col-md-5" >
+    <div >
+        <form id="insert_data" class="col-md-5" >
 
             <div class="form-group">
                 <p class="lbl">ID</p>
@@ -94,6 +95,8 @@
 
             </div>
         </div>
+
+    </div>
 
         <script>
             $(document).ready(function () {

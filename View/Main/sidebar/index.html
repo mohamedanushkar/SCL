@@ -1,27 +1,21 @@
 <!doctype html>
 <html lang="en">
   <head>
-  	<title>Sidebar 01</title>
-    <meta charset="utf-8">
+  	<title>School Management System</title>
+      <link rel = "icon" href ="./../../../Assets/Images/Icon.ico" type = "image/x-icon">
+      <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
     <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
-		
-		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-		<link rel="stylesheet" href="css/style.css">
+      <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+      <link rel="stylesheet" href="css/style.css">
   </head>
   <body >
   <button type="button" id="sidebarCollapse" style="position: fixed; margin: 10px" class="btn btn-primary">
       <i class="fa fa-bars"></i>
       <span class="sr-only">Toggle Menu</span>
   </button>
-		
 		<div class="wrapper d-flex align-items-stretch">
-
 			<nav id="sidebar">
-			
-			
-			
 				<div class="p-4 pt-5">
 		  		<a href="#" class="img logo rounded-circle mb-5" style="background-image: url(images/logo.jpg);"></a>
 	        <ul class="list-unstyled components mb-5">
@@ -34,12 +28,7 @@
                 <li>
                     <a href="../../management/Teacheranagement.php" target="iframe_a">Teachers</a>
                 </li>
-
 	            </ul>
-	          </li>
-	          <li>
-
-	              <a href="./../../../View/management/StudentNotice.php" target="iframe_a">Notice</a>
 	          </li>
 	          <li>
               <a href="#pageSubmenu" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">Attendence</a>
@@ -50,8 +39,16 @@
                 <li>
                     <a href="./../../management/MarkTeachersAttendence.php" target="iframe_a">Teachers</a>
                 </li>
-                
               </ul>
+                  <a href="#inform" data-toggle="collapse" aria-expanded="false" class="dropdown-toggle">inform</a>
+                  <ul class="collapse list-unstyled" id="inform">
+                      <li>
+                          <a href="./../../management/StudentNotice.php" target="iframe_a">Notice</a>
+                      </li>
+                      <li>
+                          <a href="../../management/mail.php" target="iframe_a">Mail</a>
+                      </li>
+                  </ul>
 	          </li>
 	          <li>
               <a href="#">Portfolio</a>
@@ -60,23 +57,14 @@
               <a href="#">Contact</a>
 	          </li>
 	        </ul>
-
 	        <div class="footer" style="margin: 50px">
-	        	 </div>
-
+            </div>
 	      </div>
     	</nav>
-
-        <!-- Page Content  -->
       <div id="content" >
-
-              <iframe style="border:none" height="100%" width="100%" name="iframe_a"></iframe>
-
-
-
-		</div>
-		</div>
-
+              <iframe style="border:none; background-image: url(./sea.jpg);  background-position: center; background-repeat: no-repeat; background-size: cover;" height="100%" width="100%" name="iframe_a" ></iframe>
+      </div>
+    </div>
     <script src="js/jquery.min.js"></script>
     <script src="js/popper.js"></script>
     <script src="js/bootstrap.min.js"></script>
