@@ -23,9 +23,8 @@ $result = mysqli_query($conn, $query);
                             <th>Address</th>
                             <th>Phone</th>
                             <th>Email</th>
-                            <th>Grade</th>  
                             <th>Year</th>
-                            <th>Class</th>
+                            <th>Gender</th>
                             <th>Joined Year</th>
                             <th>Edit</th>
                             <th>Delete</th>
@@ -42,9 +41,8 @@ $result = mysqli_query($conn, $query);
                         echo "<td>{$row["Student_Email"]}</td>";
                         echo "<td>{$row["Present_Year"]}</td>";
                         echo "<td>{$row["Gender"]}</td>";
-                        echo "<td>{$row["tbl_Class_ID"]}</td>";
                         echo "<td>{$row["Joined_Year"]}</td>";
-                        echo " <td> <a  class='edit' data-grade= '{$row["tbl_Class_ID"]}'  data-id='{$row["Student_ID"]}'> <i  class='fa fa-edit'></i></a></td>";
+                        echo " <td> <a  class='edit' data-id='{$row["Student_ID"]}'> <i  class='fa fa-edit'></i></a></td>";
                         echo "<td>  <a  class='del' data-id='{$row["Student_ID"]}'> <i  class='fa fa-trash'></i></a></td>";
 
                         echo "           </tr>";

@@ -5,7 +5,7 @@ include '../../model/Connection.php';
 
 $Grade_ID = $_POST["Grade_ID"];
 $Year = $_POST["Year"];
-$query = "SELECT * FROM tbl_Student WHERE tbl_Student.tbl_Class_ID = '$Grade_ID' AND YEAR(Present_Year) = '$Year'";
+$query = "SELECT * FROM `tbl_batch_students` INNER JOIN tbl_batch on tbl_batch.Batch_ID = tbl_batch_students.Batch_ID INNER JOIN tbl_student on tbl_batch_students.Student_ID = tbl_student.Student_ID WHERE Class_ID = '$Grade_ID' AND Batch_Number = '$Year'";
 $result = mysqli_query($conn, $query);
 ?>  
 <!DOCTYPE html>  

@@ -7,12 +7,13 @@ include '../../model/Connection.php';
 
 
 function FillGrade($conn) {
+
+    $sql = "SELECT * FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
     $output = '';
-    $sql = "SELECT * FROM tbl_Class";
     $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        $output .= '<option value="' . $row["Class_ID"] . '">' . $row["Class_Name"] . '</option>';
+        $output .= '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] .'</option>';
     }
     return $output;
 }

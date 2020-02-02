@@ -7,7 +7,7 @@ include '../../model/Connection.php';
 
 $ID = $_POST["SelectClass"];
 
-$query = "SELECT * FROM tbl_Student where tbl_Class_ID = '$ID'";
+$query = "SELECT * FROM `tbl_batch_students` INNER JOIN tbl_student ON tbl_batch_students.Student_ID = tbl_student.Student_ID where Batch_ID = '$ID'";
 
 $result = mysqli_query($conn, $query);
 ?>

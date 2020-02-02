@@ -1,20 +1,20 @@
 
 <html>
     <head>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>  
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" />  
-        <script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>  
-        <script src="https://cdn.datatables.net/1.10.12/js/dataTables.bootstrap.min.js"></script>            
-        <link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/dataTables.bootstrap.min.css" /> 
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-        <link href="../../Assets/CSS/Form.css" rel="stylesheet" type="text/css"/>
-      
+        <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
+        <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.css"/>
+        <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="./../../Assets/CSS/Main.css">
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+
+        <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
-    <body style="margin-right: 300px;">
-        <p style="background-color: red; padding: 10px; color: white">Student Notice</p>
-        <br>
-        <!-- Trigger the modal with a button -->
+    <body style="margin:20px">
+    <p class="CenterTopic">Driver Management</p>
         <button type="button" class="btn btn-success btn-sm" id="AddDriver" name="AddDriver" >Add</button>
 
 
@@ -29,17 +29,31 @@
                     </div>
                     <div class="modal-body">
                         <form id="DriverData">
-                            <p class="lbl">Grade</p>
-                            <input type="text" id="Driver_ID" name="Driver_ID" class="form-control txt">
-                            <p class="lbl">Name</p>
-                            <input type="text" id="Name" name="Name" class="form-control txt">
-                            <p class="lbl">Address</p>
-                            <input type="text" id="Address" name="Address" class="form-control txt">
-                            <p class="lbl">B.O.D</p>
-                            <input type="date" id="Birth_Of_Date" name="Birth_Of_Date" class="form-control txt">
-                            <p class="lbl">Phone</p>
-                            <input type="number" max="3" id="Phone" name="Phone" class="form-control txt">
-                            <p id="demo"></p>
+                            <div class="form-group">
+                                <p class="lbl">Driver ID</p>
+                                <input type="text" id="Driver_ID" name="Driver_ID" class="form-control txt">
+                            </div>
+                            <div class="form-group">
+                                <p class="lbl">Name</p>
+                                <input type="text" id="Name" name="Name" class="form-control txt">
+                            </div>
+                            <div class="form-group">
+                                <p class="lbl">Address</p>
+                                <input type="text" id="Address" name="Address" class="form-control txt">
+                            </div>
+                            <div class="form-group">
+                                <p class="lbl">Phone</p>
+                                <input type="number" id="Phone" name="Phone" class="form-control txt">
+                            </div>
+                            <div class="form-group">
+                                <p class="lbl">E-Mail</p>
+                                <input type="email" max="3" id="Phone" name="Phone" class="form-control txt">
+
+                            </div>
+                            <div class="form-group">
+                                <p class="lbl">Joined Date</p>
+                                <input class="form-control" name="datepicker" id="datepicker">
+                            </div>
                         </form>
                         <div id="inserted_data">
                         </div>
@@ -51,10 +65,7 @@
                 </div>
             </div>
         </div>
-
         <hr>
-
-
         <span id="Notice_Table">
         </span>
         <input type="hidden" id="HiddenID" name="HiddenID">
@@ -65,6 +76,11 @@
 
     $(document).ready(function () {
         $("#Notice_Table").load("../../Controller/DriverManagement/Fetch.php");
+        $("#datepicker").datepicker({
+            changeMonth: true,
+            changeYear: true,
+            dateFormat: "yy-mm-dd"
+        });
 
 
         $(document).on("click", "#AddDriver", function () {

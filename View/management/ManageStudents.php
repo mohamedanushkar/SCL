@@ -45,14 +45,14 @@
                 <select name="Grade" required="" id="Grade" class="form-control txt">
                     <?php
                     include '../../model/Connection.php';
-                    $sql = "SELECT * FROM tbl_Class";
+                    $sql = "SELECT * FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
                     $res = $conn->query($sql);
                     if ($res->num_rows > 0) {
 
                         $i = 0;
                         while ($row = $res->fetch_assoc()) {
                             $i++;
-                            echo '<option value="' . $row["Class_ID"] . '">' . $row["Class_Name"] . '</option>';
+                            echo '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] .'</option>';
                         }
                     }
                     ?>

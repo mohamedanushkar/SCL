@@ -2,86 +2,19 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba83b51-420b-4e6e-9407-eecd2e0e9e91" name="Default Changelist" comment="Mail Function Working. want to clear logs">
-      <change afterPath="$PROJECT_DIR$/.idea/dictionaries/Anush.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Assets/Images/Icon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/composer.lock" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/index.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/autoload.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/ClassLoader.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_classmap.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_namespaces.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_psr4.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_real.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_static.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/installed.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/LICENSE" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/SECURITY.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/VERSION" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/get_oauth_token.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-am.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ar.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-az.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ba.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-be.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-bg.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ca.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-cs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-da.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-de.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-el.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-eo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-es.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-et.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-fa.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-fi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-fo.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-fr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-gl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-he.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-hr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-hu.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-id.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-it.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ka.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ko.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ms.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-nb.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-nl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-pl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-pt_br.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ro.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-rs.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-ru.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-sk.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-sl.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-uk.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/Exception.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/OAuth.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/PHPMailer.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/POP3.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/SMTP.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/Main/sidebar/sea.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/management/mail.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/management/Dashboard.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/DriverManagement/Fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/DriverManagement/Fetch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/MarkAttendence/fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/MarkAttendence/fetch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Controller/StudentNotice/Fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/StudentNotice/Fetch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/StudentNotice/fetchTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/StudentNotice/fetchTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/StudentNotice/insert.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/StudentNotice/insert.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Students/Fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Students/Fetch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Students/insertStu.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Students/insertStu.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/sidebar/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/sidebar/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/management/DriverManagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/DriverManagement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/ManageStudents.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/ManageStudents.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/management/MarkAttendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/MarkAttendence.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/StudentNotice.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/StudentNotice.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/model/Connection.php" beforeDir="false" afterPath="$PROJECT_DIR$/model/Connection.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -170,6 +103,13 @@
       <workItem from="1579086436731" duration="2545000" />
       <workItem from="1579241575467" duration="3146000" />
       <workItem from="1579254033631" duration="5855000" />
+      <workItem from="1579261975183" duration="2907000" />
+      <workItem from="1579510644418" duration="162000" />
+      <workItem from="1579519061100" duration="191000" />
+      <workItem from="1579529462575" duration="183000" />
+      <workItem from="1579923912982" duration="4118000" />
+      <workItem from="1580369126541" duration="58000" />
+      <workItem from="1580574625820" duration="3474000" />
     </task>
     <task id="LOCAL-00001" summary="Added Notice tab">
       <created>1578916600283</created>
@@ -217,26 +157,31 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1335" y="115" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579261373705" />
-    <state x="-1180" y="276" key="FileChooserDialogImpl" timestamp="1579090827877">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1579529644456">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1180" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579090827877" />
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1578824342337" />
-    <state x="-1126" y="444" key="NewPhpFileDialog" timestamp="1579255003527">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="-1180" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579265894765" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1579529644456" />
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1579923963953">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579255003527" />
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578735256260" />
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1579923963953" />
     <state x="-1459" y="163" key="SettingsEditor" timestamp="1578913819449">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1459" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578913819449" />
-    <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1579254034037">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1580574912784">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579254034037" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578750928976" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1578803010834" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580574912784" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1580369127350" />
+    <state x="616" y="240" key="run.anything.popup" timestamp="1579924098762">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579924098762" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

@@ -16,10 +16,12 @@ $year = date("Y-m-d");
 
 if ($Grade != '') {
 
-    $sql = "INSERT INTO `tbl_student`(`Student_ID`, `Student_Name`, `Student_Address`, `Student_Phone`, `Student_Email`, `Present_Year`, `Gender`, `tbl_Class_ID`, `Joined_Year`, `Status`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$year','$Gender','$Grade',$year,'Active')";
+    $sql = "INSERT INTO `tbl_student`(`Student_ID`, `Student_Name`, `Student_Address`, `Student_Phone`, `Student_Email`, `Present_Year`, `Gender`,`Joined_Year`, `Status`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$year','$Gender','$year','Active')";
 
     $conn->query($sql);
 
+    $query = "INSERT INTO `tbl_batch_students`(`Batch_ID`, `Student_ID`) VALUES('$Grade','$ID')";
+    $conn->query($query);
     
     echo "<script language='javascript' type='text/javascript'>";
     echo "alert('Date Entered Successfully');";

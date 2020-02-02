@@ -14,11 +14,11 @@ function FillGrade($conn) {
 
 function FillYear($conn) {
     $output = '';
-    $sql = "select distinct YEAR(Present_Year) from tbl_Student";
+    $sql = "select distinct Batch_Number from tbl_batch";
     $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        $output .= '<option value="' . $row["YEAR(Present_Year)"] . '">' . $row["YEAR(Present_Year)"] . '</option>';
+        $output .= '<option value="' . $row["Batch_Number"] . '">' . $row["Batch_Number"] . '</option>';
     }
     return $output;
 }
@@ -71,7 +71,7 @@ function FillYear($conn) {
                                 echo FillGrade($conn);
                                 ?>
                             </select>
-                            <p class="lbl">Year</p>
+                            <p class="lbl">Batch Number</p>
                             <select name="Year" id="Year" class="form-control txt">
                                 <?php
                                 echo FillYear($conn);

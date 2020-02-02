@@ -1,7 +1,7 @@
 <?php
 include '../../model/Connection.php';
 
-$query = "SELECT * FROM driver";
+$query = "SELECT * FROM tbl_driver";
 $result = mysqli_query($conn, $query);
 ?>
 <head>
@@ -11,29 +11,30 @@ $result = mysqli_query($conn, $query);
     
 <table id="employee_data2" class="table table-striped table-bordered">  
     <thead>  
-        <tr>  
+        <tr>
+            <th>ID</th>
             <th>Name</th>
             <th>Address</th>
             <th>Phone</th>
             <th>Email</th>
-            <th>Grade</th>  
-            
-            <th>Grade</th>  
+            <th>Gender</th>
             <th>Year</th>
-
+            <th>Edit</th>
+            <th>Delete</th>
         </tr>  
     </thead>  
     <?php
     while ($row = mysqli_fetch_array($result)) {
         echo "<tr>";
         echo "<td>{$row["Driver_ID"]}</td>";
-        echo "<td>{$row["Name"]}</td>";
-        echo "<td>{$row["Address"]}</td>";
-        echo "<td>{$row["Birth_Of_Date"]}</td>";
-        echo "<td>{$row["Phone"]}</td>";
-        
-        echo "<td><a style='padding: 8px;    background-color: #449D44; color: White;    border-radius: 5px;' class='edit iconStyle'  data-id='{$row["Driver_ID"]}'><i class='fa fa-edit'></i></a></td>";
-        echo "<td><a style='padding: 8px;    background-color: #337AB7; color: White;    border-radius: 5px;' class='del' data-id='{$row["Driver_ID"]}'><i class='fa fa-trash'></i></a></td>";
+        echo "<td>{$row["Driver_Name"]}</td>";
+        echo "<td>{$row["Driver_Address"]}</td>";
+        echo "<td>{$row["Driver_Phone"]}</td>";
+        echo "<td>{$row["Driver_Email"]}</td>";
+        echo "<td>{$row["Gender"]}</td>";
+        echo "<td>{$row["Joined_Year"]}</td>";
+        echo "<td><a class='edit'  data-id='{$row["Driver_ID"]}'><i class='fa fa-edit'></i></a></td>";
+        echo "<td><a class='del' data-id='{$row["Driver_ID"]}'><i class='fa fa-trash'></i></a></td>";
         echo "</tr>";
     }
     ?>  
