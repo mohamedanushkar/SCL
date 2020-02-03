@@ -26,8 +26,7 @@ $result = mysqli_query($conn, $query);
                             <th>Year</th>
                             <th>Gender</th>
                             <th>Joined Year</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
+                            <th>Options</th>
                         </tr>  
                     </thead>  
                     <?php
@@ -42,8 +41,7 @@ $result = mysqli_query($conn, $query);
                         echo "<td>{$row["Present_Year"]}</td>";
                         echo "<td>{$row["Gender"]}</td>";
                         echo "<td>{$row["Joined_Year"]}</td>";
-                        echo " <td> <a  class='edit' data-id='{$row["Student_ID"]}'> <i  class='fa fa-edit'></i></a></td>";
-                        echo "<td>  <a  class='del' data-id='{$row["Student_ID"]}'> <i  class='fa fa-trash'></i></a></td>";
+                        echo " <td> <a  class='edit' data-id='{$row["Student_ID"]}'> <i  class='fa fa-edit'></i></a> <a  class='del' data-id='{$row["Student_ID"]}'> <i  class='fa fa-trash'></i></a> <a  class='View' data-id='{$row["Student_ID"]}'><i class='fa fa-eye' aria-hidden='true'></i></a></td>";
 
                         echo "           </tr>";
                     }

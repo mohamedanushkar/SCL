@@ -11,7 +11,9 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="./../../Assets/CSS/Main.css">
         <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-
+        <script type="text/javascript" src="./../../Assets/JS/qrcode.min.js"></script>
+        <script type="text/javascript" src="./../../Assets/JS/canvas2image.js"></script>
+        <script type="text/javascript" src="./../../Assets/JS/html2canvas.min.js"></script>
         <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
     </head>
     <body style="margin: 20px;">
@@ -48,7 +50,6 @@
                     $sql = "SELECT * FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
                     $res = $conn->query($sql);
                     if ($res->num_rows > 0) {
-
                         $i = 0;
                         while ($row = $res->fetch_assoc()) {
                             $i++;
@@ -98,19 +99,73 @@
 
     </div>
 
+    <div class="modal fade" id="myModal2" role="dialog">
+        <div class="modal-dialog">
+            <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                <p><span id="SpanID"></span>'s ID</p>
+                </div>
+                <div  id="Details" class="modal-body">
+                    <div class="print_div">
+                        <div class="row" style="background-color: rgba(255,255,0,0.08); padding: 20px">
+                            <div class="col-md-6">
+                                <b> <p>MNS Student ID</p></b>
+                                <hr>
+                                <p>ID: <span id="PID"></span></p>
+                                <hr>
+                                <p>Name: <span id="PName"></span></p>
+                                <hr>
+                                <p>Address: <span id="PAddress"></span></p>
+                                <hr>
+                                <p>Joined Year: <span id="PJoinedYear"></span></p>
+                                <span id="prevew"></span>
+                            </div>
+                            <div class="col-md-6">
+                                <div id="qrcode" style="width:200px; height:200px; margin-top:15px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="button" class="btn btn-warning" id="Print" value="Download ID">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <input type="hidden" id="HiddenID" name="HiddenID">
+                </div>
+            </div>
+        </div>
+    </div>
+
         <script>
             $(document).ready(function () {
 
                 $("#inserted_data").load("../../Controller/Students/Fetch.php");
-
-
-                    $("#datepicker").datepicker({
+                $("#datepicker").datepicker({
                         changeMonth: true,
                         changeYear: true,
                         dateFormat: "yy-mm-dd"
-                    });
+                });
 
+                $(document).on("click", ".View", function () {
+                    var ID = $(this).closest('tr').find('td:eq(0)').text();
+                    var name = $(this).closest('tr').find('td:eq(1)').text();
+                    var Address = $(this).closest('tr').find('td:eq(2)').text();
+                    var Phone = $(this).closest('tr').find('td:eq(3)').text();
+                    var JoinedYear = $(this).closest('tr').find('td:eq(7)').text();
+                    var all = 'ID \t: ' +ID +'\n' + 'Name \t: ' + name + '\n' + 'Address\t: '+ Address + '\n' +'Phone\t: '+ Phone;
+                    qrcode.makeCode(all);
+                    $("#PID").html(ID);
+                    $("#SpanID").html(name);
+                    $("#PName").html(name);
+                    $("#PAddress").html(Address);
+                    $("#PJoinedYear").html(JoinedYear);
+                    $('#myModal2').modal('show');
+                });
 
+                var qrcode = new QRCode(document.getElementById("qrcode"), {
+                    width : 200,
+                    height : 200,
+                });
 
                 $('#userSubmit').click(function () {
                     var id = $("#id").val();
@@ -145,6 +200,16 @@
                     }
                 });
 
+                $('#Print').on('click', function() {
+                    var elm = $('.print_div').get(0);
+                    var lebar = "600";
+                    var tinggi = "450";
+                    var type = "png";
+                    var filename =  "imgxfd";
+                    html2canvas(elm).then(function (canvas) {
+                        Canvas2Image.saveAsImage(canvas, lebar, tinggi, type,filename);
+                    });
+                });
 
                 $(document).on("click", ".del", function () {
                     var del = $(this);
@@ -163,17 +228,10 @@
                 });
 
                 $(document).on("click", ".edit", function () {
-
                     var id = $(this).attr("data-id");
-
                     var grade = $(this).attr("data-grade");
-
-
                     $("#id").val(id);
-
                     $("#ID").val(id);
-
-
                     var name = $(this).closest('tr').find('td:eq(1)').text();
                     $("#Name").val(name);
                     var name = $(this).closest('tr').find('td:eq(2)').text();
@@ -182,22 +240,12 @@
                     $("#Phone").val(name);
                     var name = $(this).closest('tr').find('td:eq(4)').text();
                     $("#Email").val(name);
-
-
-
                     $("#Grade").val(grade);
-
-
                     var name = $(this).closest('tr').find('td:eq(7)').text();
                     $("#Date").val(name);
                     $('#ID').attr('readonly', true);
-
                 });
-
             });
         </script>
-
     </body>
-
-
 </html>
