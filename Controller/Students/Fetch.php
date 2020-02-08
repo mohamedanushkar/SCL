@@ -2,22 +2,10 @@
 include '../../model/Connection.php';
 $query = "SELECT * FROM tbl_Student";
 $result = mysqli_query($conn, $query);
-?>  
-<!DOCTYPE html>  
-<html>  
-    <head>  
-
-
-    </head>  
-    <body>  
-        <br /><br />  
-        
-
-            <br />  
-            
-                <table id="employee_data" class="table table-striped table-bordered">  
-                    <thead>  
-                        <tr>
+?>
+<table id="employee_data" class="table table-striped table-bordered">
+    <thead>
+    <tr>
                             <th>ID</th>
                             <th>Name</th>
                             <th>Address</th>
@@ -28,9 +16,9 @@ $result = mysqli_query($conn, $query);
                             <th>Joined Year</th>
                             <th>Options</th>
                         </tr>  
-                    </thead>  
-                    <?php
-                    while ($row = mysqli_fetch_array($result)) {
+    </thead>
+    <?php
+    while ($row = mysqli_fetch_array($result)) {
 
                         echo "        <tr> ";
                         echo "<td>{$row["Student_ID"]}</td>";
@@ -45,14 +33,17 @@ $result = mysqli_query($conn, $query);
 
                         echo "           </tr>";
                     }
-                    ?>  
-                </table>  
-            
-     
-    </body>  
-</html>  
+    ?>  
+</table>
 <script>
     $(document).ready(function () {
-        $('#employee_data').DataTable();
+        $('#employee_data').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+        });
     });
 </script>  
