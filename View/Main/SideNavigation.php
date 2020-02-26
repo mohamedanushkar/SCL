@@ -251,9 +251,9 @@
                         </li>
                     </ul>
                 </li>
-                <li class="nav-header">EXAMPLES</li>
+                <li class="nav-header">Schedule</li>
                 <li class="nav-item">
-                    <a href="../calendar.html" class="nav-link">
+                    <a href="./../management/Calender.php" class="nav-link">
                         <i class="nav-icon far fa-calendar-alt"></i>
                         <p>
                             Calendar

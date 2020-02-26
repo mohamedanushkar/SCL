@@ -2,27 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba83b51-420b-4e6e-9407-eecd2e0e9e91" name="Default Changelist" comment="Mail Function Working. want to clear logs">
-      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Results/LoadNameList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Results/LoadSubjects.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/Calender/delete.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/Calender/insert.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/Calender/load.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/Calender/update.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/management/Calender.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/MarkAttendence/FetchTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/MarkAttendence/FetchTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/MarkAttendence/fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/MarkAttendence/fetch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/MarkTeachersAttendence/FetchTable.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/MarkTeachersAttendence/FetchTable.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/MarkTeachersAttendence/fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/MarkTeachersAttendence/fetch.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/Results/Results.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Results/Results.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/StudentNotice/Fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/StudentNotice/Fetch.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/SideNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/SideNavigation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/links.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/links.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/AddExamResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/AddExamResults.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/DriverManagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/DriverManagement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/ExamSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/ExamSchedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/ManageStudents.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/ManageStudents.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/MarkAttendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/MarkAttendence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/MarkTeachersAttendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/MarkTeachersAttendence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/StudentNotice.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/StudentNotice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/Teacheranagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/Teacheranagement.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/mail.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -147,6 +134,8 @@
       <workItem from="1582131286324" duration="4400000" />
       <workItem from="1582214305854" duration="2460000" />
       <workItem from="1582627027971" duration="6167000" />
+      <workItem from="1582725911540" duration="903000" />
+      <workItem from="1582729216780" duration="3439000" />
     </task>
     <task id="LOCAL-00001" summary="Added Notice tab">
       <created>1578916600283</created>
@@ -211,22 +200,22 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582215293894" />
-    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1582215337901">
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1582729517044">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579255003527" />
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582133776622" />
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582729517044" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582215337901" />
     <state x="-1459" y="163" key="SettingsEditor" timestamp="1578913819449">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1459" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578913819449" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582627029369">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582729298095">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579254034037" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578750928976" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582627029369" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582729298095" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582214330333" />
     <state x="604" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580630205881">
       <screen x="0" y="0" width="1920" height="1040" />
