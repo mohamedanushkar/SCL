@@ -35,8 +35,3 @@ $result = mysqli_query($conn, $query);
         </table> 
     </body>  
 </html>  
-<script>
-    $(document).ready(function () {
-        $('#employee_data').DataTable();
-    });
-</script>  

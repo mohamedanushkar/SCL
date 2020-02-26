@@ -1,85 +1,136 @@
+<?php
+include './../Main/head.php';
+include './../Main/TopNavigation.php';
+include "./../Main/SideNavigation.php";
+?>
 
-<!DOCTYPE html>
-<html>
-<head>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./../../Assets/CSS/Main.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-</head>
-<body style="margin: 20px;">
-<p class="CenterTopic">Send Mail</p>
-            <form id="Mail" >
-                <div class="form-row">
-                    <div class="form-group col-md-4" >
-                        <label>Receivers Name</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                            </div>
-                            <input type="text" id="name" name="name" placeholder="Sender Name" class="form-control"  />
-                        </div>
+
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+            <div class="container-fluid">
+                <div class="row mb-2">
+                    <div class="col-sm-6">
+                        <h1>Welcome Admin</h1>
                     </div>
-                    <div class="form-group col-md-4">
-                        <label>Enter Email</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                            </div>
-                            <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email"/>
-                        </div>
-                    </div>
-                    <div class="form-group col-md-4">
-                        <label>Enter Subject</label>
-                        <div class="input-group">
-                            <div class="input-group-prepend">
-                                <span class="input-group-text" id="inputGroupPrepend2">@</span>
-                            </div>
-                            <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter Subject"  />
-                        </div>
+                    <div class="col-sm-6">
+                        <ol class="breadcrumb float-sm-right">
+                            <li class="breadcrumb-item"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                            <li class="breadcrumb-item active">Student Management</li>
+                        </ol>
                     </div>
                 </div>
+            </div><!-- /.container-fluid -->
+        </section>
 
-                <div class="form-group">
-                    <label>Enter Message</label>
-                    <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter Message"></textarea>
+        <!-- Main content -->
+        <section class="content">
+
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-12">
+                        <!-- Default box -->
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title">Send Mail</h3>
+
+                                <div class="card-tools">
+                                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                                        <i class="fas fa-minus"></i></button>
+                                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                                        <i class="fas fa-times"></i></button>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <form id="Mail" >
+                                    <div class="form-row">
+                                        <div class="form-group col-md-4" >
+                                            <label>Receivers Name</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                </div>
+                                                <input type="text" id="name" name="name" placeholder="Sender Name" class="form-control"  />
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Enter Email</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                </div>
+                                                <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email"/>
+                                            </div>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            <label>Enter Subject</label>
+                                            <div class="input-group">
+                                                <div class="input-group-prepend">
+                                                    <span class="input-group-text" id="inputGroupPrepend2">@</span>
+                                                </div>
+                                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter Subject"  />
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>Enter Message</label>
+                                        <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter Message"></textarea>
+                                    </div>
+                                    <div class="form-group">
+                                        <input type="button" id="send" name="send" value="Send" class="btn btn-warning btn-sm btn-block" />
+                                    </div>
+                                    <div id="message">
+
+                                    </div>
+                                </form>
+
+                                <script>
+                                    $(document).ready(function () {
+                                        $('#send').click(function () {
+                                            $.ajax({
+                                                url: "./../../Controller/SendMail/index.php",
+                                                method: "post",
+                                                data: $('#Mail').serialize(),
+                                                beforeSend: function() {
+                                                    $('#send').val('Sending...');
+                                                    $('#send').attr('disabled','disabled');
+                                                },
+                                                success: function (data) {
+                                                    $('#Mail')[0].reset();
+                                                    $('#send').val('Send');
+                                                    $('#send').attr('disabled', false);
+                                                    $("<p></p>").html(data).appendTo("#message");
+
+                                                }
+                                            });
+                                        });
+                                    });
+                                </script>
+
+
+                            </div>
+
+                            <!-- /.card-body -->
+                            <div class="card-footer">
+                                Thank You
+                            </div>
+                            <!-- /.card-footer-->
+                        </div>
+                        <!-- /.card -->
+                    </div>
                 </div>
-                <div class="form-group">
-                    <input type="button" id="send" name="send" value="Send" class="btn btn-warning btn-sm btn-block" />
-                </div>
-                <div id="message">
+            </div>
+        </section>
+        <!-- /.content -->
+    </div>
+    <!-- /.content-wrapp
+<?php
+include './../Main/insideFooter.php';
+include './../Main/footer.php';
 
-                </div>
-            </form>
-
-            <script>
-                $(document).ready(function () {
-                    $('#send').click(function () {
-                        $.ajax({
-                            url: "./../../Controller/SendMail/index.php",
-                            method: "post",
-                            data: $('#Mail').serialize(),
-                            beforeSend: function() {
-                                $('#send').val('Sending...');
-                                $('#send').attr('disabled','disabled');
-                            },
-                            success: function (data) {
-                                $('#Mail')[0].reset();
-                                $('#send').val('Send');
-                                $('#send').attr('disabled', false);
-                                $("<p></p>").html(data).appendTo("#message");
-
-                            }
-                        });
-                    });
-                });
-            </script>
-</body>
-</html>
+?>

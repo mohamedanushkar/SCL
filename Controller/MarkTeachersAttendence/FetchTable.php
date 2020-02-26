@@ -27,3 +27,15 @@
     }
     ?>
 </table>
+<script>
+    $(document).ready(function () {
+        $('#employee_data').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+        });
+    });
+</script>

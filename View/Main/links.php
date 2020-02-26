@@ -31,8 +31,6 @@
 
 
 
-
-
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
 <script type="text/javascript" src="./../../Assets/JS/qrcode.min.js"></script>
 <script type="text/javascript" src="./../../Assets/JS/canvas2image.js"></script>

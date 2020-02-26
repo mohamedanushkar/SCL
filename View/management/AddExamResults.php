@@ -1,25 +1,20 @@
 <?php
 include '../../model/Connection.php';
-function FillBatch($conn) {
+function FillBatch($conn)
+{
     $output = '';
     $sql = "SELECT * FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
     $result = mysqli_query($conn, $sql);
     while ($row = mysqli_fetch_array($result)) {
-        $output .= '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' '. $row["Batch_Number"]. '</option>';
-    }
-    return $output;
-}
-function Teacher($conn) {
-    $output = '';
-    $sql = "SELECT * FROM `tbl_teachers`";
-    $result = mysqli_query($conn, $sql);
-    while ($row = mysqli_fetch_array($result)) {
-        $output .= '<option value="' . $row["Teacher_ID"] . '">' . $row["Teacher_Name"] . '</option>';
+        $output .= '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] . '</option>';
     }
     return $output;
 }
 
-function Subjects($conn) {
+
+
+function Subjects($conn)
+{
     $output = '';
     $sql = "SELECT * FROM `tbl_subject`";
     $result = mysqli_query($conn, $sql);
@@ -31,84 +26,193 @@ function Subjects($conn) {
 
 ?>
 
-<html>
+<?php
+include './../Main/head.php';
+include './../Main/TopNavigation.php';
+include "./../Main/SideNavigation.php";
+?>
+
+<!-- Content Wrapper. Contains page content -->
+<div class="content-wrapper">
+    <!-- Content Header (Page header) -->
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Welcome Admin</h1>
+                </div>
+                <div class="col-sm-6">
+                    <ol class="breadcrumb float-sm-right">
+                        <li class="breadcrumb-item"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item"><a href="#">Admin</a></li>
+                        <li class="breadcrumb-item active">Student Management</li>
+                    </ol>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+
+    <!-- Main content -->
+    <section class="content">
+
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-12">
+                    <!-- Default box -->
+                    <div class="card">
+                        <div class="card-header">
+                            <h3 class="card-title">Exam Results</h3>
+
+                            <div class="card-tools">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
+                                        data-toggle="tooltip" title="Collapse">
+                                    <i class="fas fa-minus"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"
+                                        data-toggle="tooltip" title="Remove">
+                                    <i class="fas fa-times"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-body">
+
+                            <form method="post" id="insert_form">
+                                <div class="row">
+                                    <div class="col-md-12">
+                                        <label>Select Batch</label>
+                                        <select id="Batch" name="Batch" class="form-control">
+                                            <option>-- Select Batch --</option>
+                                            <?php
+                                            echo FillBatch($conn);
+                                            ?>
+                                        </select>
+                                    </div>
+
+                                </div>
 
 
-<head>
-    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.1.min.js"></script>
-    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.css"/>
-    <script type="text/javascript" src="https://cdn.datatables.net/v/bs4-4.1.1/dt-1.10.20/r-2.2.3/datatables.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="./../../Assets/CSS/Main.css">
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <script type="text/javascript" src="./../../Assets/JS/qrcode.min.js"></script>
-    <script type="text/javascript" src="./../../Assets/JS/canvas2image.js"></script>
-    <script type="text/javascript" src="./../../Assets/JS/html2canvas.min.js"></script>
-    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-</head>
-<body style="margin: 20px;">
-<p class="CenterTopic">Schedule Exam</p>
+                                <div class="modal fade" id="AddResultsMOdal" tabindex="-1" role="dialog"
+                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
+                                        <div class="modal-content">
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                                <button type="button" class="close" data-dismiss="modal"
+                                                        aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                </button>
+                                            </div>
+                                            <div class="modal-body">
 
-<div >
-</div>
+                                                    <div class="form-row">
+                                                        <div class="col">
+                                                            <input type="text" id="BatchNumber" class="form-control"
+                                                                   readonly placeholder="First name">
+                                                        </div>
+                                                        <div class="col">
+                                                            <select id="StudentList" class="form-control">
 
-<form method="post" id="insert_form">
-    <div class="row">
-        <div class="col-md-12">
-            <label>Select Batch</label>
-            <select id="Batch" name="Batch" class="form-control">
-                <option>-- Select Batch --</option>
-                <?php
-                echo FillBatch($conn);
-                ?>
-            </select>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                <hr>
+                                                <div id="loadSubjects">
+
+                                                </div>
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                                    Close
+                                                </button>
+                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <hr>
+
+                                <div id="Load_Exam_Main">
+
+                                </div>
+
+                            </form>
+
+                            <script>
+                                $(document).ready(function () {
+                                    $(".datepicker").datepicker({
+                                        changeMonth: true,
+                                        changeYear: true,
+                                        dateFormat: "yy-mm-dd"
+                                    });
+
+
+                                    $("#Batch").change(function () {
+
+                                        $.ajax({
+                                            url: "./../../Controller/Results/Results.php",
+                                            method: "post",
+                                            data: $('#insert_form').serialize(),
+                                            success: function (data) {
+                                                $("#Load_Exam_Main").html(data);
+                                            }
+                                        });
+                                    });
+
+
+                                    $(document).on("click", ".select", function () {
+                                        var id = $(this).attr("data-id");
+                                        var id22 = $(this).attr("data-id");
+
+                                        var load = $(this).attr("data-load");
+                                        $('#BatchNumber').val(load);
+                                        $.ajax({
+                                            url: "./../../Controller/Results/LoadSubjects.php",
+                                            method: "POST",
+                                            data:{id: id},
+                                            success: function (data) {
+                                                $('#loadSubjects').html(data);
+
+                                            }
+                                        });
+
+
+
+                                        $.ajax({
+                                            url: "./../../Controller/Results/LoadNameList.php",
+                                            method: "POST",
+                                            data:{id22: id22},
+
+                                            success: function (data) {
+                                                $('#StudentList').html(data);
+
+                                            }
+                                        });
+
+                                        $('#AddResultsMOdal').modal('show');
+                                    });
+
+
+
+                                });
+                            </script>
+                        </div>
+
+                        <div class="card-footer">
+                            Thank You
+                        </div>
+                        <!-- /.card-footer-->
+                    </div>
+                    <!-- /.card -->
+                </div>
+            </div>
         </div>
+    </section>
+    <!-- /.content -->
+</div>
+<!-- /.content-wrapper --
+<?php
+include './../Main/insideFooter.php';
+include './../Main/footer.php';
 
-    </div>
-    <hr>
-    <span id="error"></span>
-    <table class="table table-bordered table-striped" id="item_table">
-        <tr>
-            <th>Select Subject</th>
-            <th>Date</th>
-            <th>Start Time</th>
-            <th>End Time</th>
-
-        </tr>
-    </table>
-
-    </form>
-
-<script>
-    $(document).ready(function(){
-        $(".datepicker").datepicker({
-            changeMonth: true,
-            changeYear: true,
-            dateFormat: "yy-mm-dd"
-        });
-
-
-        $("#Batch").change(function(){
-            $.ajax({
-                url: "./../../Controller/Results/Results.php",
-                method: "post",
-                data: $('#DriverData').serialize(),
-                success: function (data) {
-                    $("<tr></tr>").html(data).appendTo("#Notice_Table");
-                }
-            });
-        });
+?>
 
 
 
-
-
-
-    });
-</script>
-</body>
-
-</html>
