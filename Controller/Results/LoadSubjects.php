@@ -7,7 +7,7 @@ include '../../model/Connection.php';
 
 $ID = $_POST["id"];
 
-$query = "SELECT * FROM `tbl_batch_students` INNER JOIN tbl_student ON tbl_batch_students.Student_ID = tbl_student.Student_ID where Batch_ID = '$ID'";
+$query = "SELECT * FROM `tbl_subject` INNER JOIN exam_subjects ON tbl_subject.Subject_ID = exam_subjects.Subject_ID where Exam_ID = '$ID'";
 
 $result = mysqli_query($conn, $query);
 ?>
@@ -17,10 +17,10 @@ $result = mysqli_query($conn, $query);
 <table id="data" class="table table-striped table-bordered">
     <thead>
     <tr>
-        <th>Student ID</th>
+        <th>Subject ID</th>
 
-        <th>Name</th>
-        <th>Status</th>
+        <th>Subject Name</th>
+        <th>Marks</th>
 
 
     </tr>
@@ -30,11 +30,11 @@ $result = mysqli_query($conn, $query);
 
         echo "<tr>";
 
-        echo "<td><input type='hidden'  name='Student_ID[]' id='Student_ID' value='{$row["Student_ID"]}' class = 'form-control'>{$row["Student_ID"]}</td>";
+        echo "<td><input type='hidden'  name='Subject_ID[]' id='Subject_ID' value='{$row["Subject_ID"]}' class = 'form-control'>{$row["Subject_ID"]}</td>";
 
-        echo "<td>{$row["Student_Name"]}</td>";
+        echo "<td>{$row["Name"]}</td>";
 
-        echo "<td><select class='form-control' name='Status[]' id='Status'><option value='1'>Present</option><option value='0'>Absent</option></select></td>";
+        echo "<td><input type='number'  name='Marks[]' max='100' min='0' id='Marks' class = 'form-control'></td>";
 
         echo "</td>";
     }

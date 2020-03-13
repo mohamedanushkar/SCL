@@ -2,14 +2,16 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba83b51-420b-4e6e-9407-eecd2e0e9e91" name="Default Changelist" comment="Mail Function Working. want to clear logs">
-      <change afterPath="$PROJECT_DIR$/Controller/Calender/delete.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Calender/insert.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Calender/load.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Calender/update.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/management/Calender.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/BatchMnagement/LoadBatchNoList.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/Results/insertData.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/Main/Anush.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/Main/icons8_purchase_order_100px_1.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/management/BatchManagement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Results/LoadSubjects.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Results/LoadSubjects.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/SideNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/SideNavigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Main/links.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/links.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Main/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/management/AddExamResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/AddExamResults.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,20 +65,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/View/Main" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="D:\Backup Projects\SCL\View\Main" />
+      <recent name="D:\Backup Projects\SCL\View\Main\sidebar" />
+      <recent name="D:\Backup Projects\SCL\Controller\ExamSchedule" />
+      <recent name="D:\Backup Projects\SCL_System\Controller\Mail\vendor" />
+      <recent name="D:\Backup Projects\SCL_System\Controller" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="D:\Backup Projects\SCL\View\Main" />
       <recent name="D:\Backup Projects\Final_Project\SCL\Controller\Teachers" />
       <recent name="D:\Backup Projects\Final_Project\SCL\Controller\MarkTeachersAttendence" />
-    </key>
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="D:\Backup Projects\SCL\Controller\ExamSchedule" />
-      <recent name="D:\Backup Projects\SCL_System\Controller\Mail\vendor" />
-      <recent name="D:\Backup Projects\SCL_System\Controller" />
-      <recent name="D:\Backup Projects\SCL_System\View\management" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -136,6 +139,18 @@
       <workItem from="1582627027971" duration="6167000" />
       <workItem from="1582725911540" duration="903000" />
       <workItem from="1582729216780" duration="3439000" />
+      <workItem from="1582735960414" duration="713000" />
+      <workItem from="1582803227990" duration="1058000" />
+      <workItem from="1582949915137" duration="142000" />
+      <workItem from="1582950642578" duration="5960000" />
+      <workItem from="1583327080844" duration="100000" />
+      <workItem from="1583327182025" duration="3045000" />
+      <workItem from="1583347099290" duration="1903000" />
+      <workItem from="1583413414704" duration="14000" />
+      <workItem from="1583574995203" duration="85000" />
+      <workItem from="1583605187682" duration="22000" />
+      <workItem from="1583902152864" duration="2424000" />
+      <workItem from="1584130862699" duration="3456000" />
     </task>
     <task id="LOCAL-00001" summary="Added Notice tab">
       <created>1578916600283</created>
@@ -191,32 +206,34 @@
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1335" y="115" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579261373705" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1581135614044">
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1583605207283">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1180" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579265894765" />
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1581135614044" />
+    <state x="2258" y="290" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583413424360" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583605207283" />
     <state x="748" y="335" key="NewPhpClassDialog" timestamp="1582215293894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582215293894" />
-    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1582729517044">
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1583904159152">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579255003527" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582729517044" />
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582215337901" />
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583904159152" />
     <state x="-1459" y="163" key="SettingsEditor" timestamp="1578913819449">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1459" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578913819449" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1582729298095">
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1584131051021">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579254034037" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578750928976" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582729298095" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582214330333" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584131051021" />
+    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583347099871" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583605189316" />
     <state x="604" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580630205881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -225,10 +242,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579924098762" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1582638946933">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584133081679">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582638946933" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584133081679" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580705621824" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580714877972" />
   </component>

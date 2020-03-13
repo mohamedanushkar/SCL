@@ -104,25 +104,27 @@ include "./../Main/SideNavigation.php";
 
                                                     <div class="form-row">
                                                         <div class="col">
-                                                            <input type="text" id="BatchNumber" class="form-control"
+                                                            <input type="text" name="BatchNumber" id="BatchNumber" class="form-control"
                                                                    readonly placeholder="First name">
                                                         </div>
                                                         <div class="col">
-                                                            <select id="StudentList" class="form-control">
+                                                            <select name="StudentList" id="StudentList" class="form-control">
 
                                                             </select>
                                                         </div>
                                                     </div>
-                                                <hr>
-                                                <div id="loadSubjects">
+                                                    <hr>
+                                                    <div id="loadSubjects">
 
-                                                </div>
+                                                    </div>
+
+
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary" data-dismiss="modal">
                                                     Close
                                                 </button>
-                                                <button type="button" class="btn btn-primary">Save changes</button>
+                                                <button id="SaveResults" type="button" class="btn btn-primary">Add Results</button>
                                             </div>
                                         </div>
                                     </div>
@@ -156,7 +158,11 @@ include "./../Main/SideNavigation.php";
                                         });
                                     });
 
+                                    $("#StudentList").change(function () {
+                                        var id = $(this).val();
+                                        alert(id);
 
+                                    });
                                     $(document).on("click", ".select", function () {
                                         var id = $(this).attr("data-id");
                                         var id22 = $(this).attr("data-id");
@@ -189,6 +195,20 @@ include "./../Main/SideNavigation.php";
                                         $('#AddResultsMOdal').modal('show');
                                     });
 
+                                    $('#SaveResults').click(function () {
+
+                                        $.ajax({
+                                            url:"./../../Controller/Results/insertData.php",
+                                            method:"POST",
+                                            data:$('#insert_form').serialize(),
+                                            success:function(data)
+                                            {       $("<span></span>").html(data).appendTo("#Load_Exam_Main");
+
+                                            }
+                                        });
+
+
+                                    });
 
 
                                 });
