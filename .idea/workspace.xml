@@ -2,16 +2,18 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba83b51-420b-4e6e-9407-eecd2e0e9e91" name="Default Changelist" comment="Mail Function Working. want to clear logs">
-      <change afterPath="$PROJECT_DIR$/Controller/BatchMnagement/LoadBatchNoList.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/Results/insertData.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/Main/Anush.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/Main/icons8_purchase_order_100px_1.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/management/BatchManagement.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/BatchMnagement/Fetch.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Controller/BatchMnagement/LoadBatchStudents.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/View/management/ViewExamResults.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/Results/LoadSubjects.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Results/LoadSubjects.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Main/Anush.jpg" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/SideNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/SideNavigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Main/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/head.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Main/icons8_purchase_order_100px_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Main/links.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/links.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/AddExamResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/AddExamResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/management/BatchManagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/BatchManagement.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/management/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/Dashboard.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,17 +71,17 @@
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="D:\Backup Projects\SCL\View\Main" />
+      <recent name="D:\Backup Projects\Final_Project\SCL\Controller\Teachers" />
+      <recent name="D:\Backup Projects\Final_Project\SCL\Controller\MarkTeachersAttendence" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="D:\Backup Projects\SCL\View\Main" />
       <recent name="D:\Backup Projects\SCL\View\Main\sidebar" />
       <recent name="D:\Backup Projects\SCL\Controller\ExamSchedule" />
       <recent name="D:\Backup Projects\SCL_System\Controller\Mail\vendor" />
       <recent name="D:\Backup Projects\SCL_System\Controller" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="D:\Backup Projects\SCL\View\Main" />
-      <recent name="D:\Backup Projects\Final_Project\SCL\Controller\Teachers" />
-      <recent name="D:\Backup Projects\Final_Project\SCL\Controller\MarkTeachersAttendence" />
     </key>
   </component>
   <component name="ServiceViewManager">
@@ -150,7 +152,19 @@
       <workItem from="1583574995203" duration="85000" />
       <workItem from="1583605187682" duration="22000" />
       <workItem from="1583902152864" duration="2424000" />
-      <workItem from="1584130862699" duration="3456000" />
+      <workItem from="1584130862699" duration="6300000" />
+      <workItem from="1584179097704" duration="8000" />
+      <workItem from="1584557890682" duration="1833000" />
+      <workItem from="1584562719614" duration="1983000" />
+      <workItem from="1584566180082" duration="699000" />
+      <workItem from="1585725577786" duration="5064000" />
+      <workItem from="1585819653990" duration="2616000" />
+      <workItem from="1586049895035" duration="84000" />
+      <workItem from="1586077253989" duration="1180000" />
+      <workItem from="1586091370435" duration="3846000" />
+      <workItem from="1586121107305" duration="1657000" />
+      <workItem from="1586196798317" duration="6249000" />
+      <workItem from="1586260630288" duration="1133000" />
     </task>
     <task id="LOCAL-00001" summary="Added Notice tab">
       <created>1578916600283</created>
@@ -198,10 +212,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="552" y="179" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582627065241" />
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1580659920688">
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog" timestamp="1585725778372">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1580659920688" />
+    <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585725778372" />
     <state x="-1335" y="115" key="CommitChangelistDialog2" timestamp="1579261373705">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
@@ -216,36 +230,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582215293894" />
-    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1583904159152">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2714" y="444" key="NewPhpFileDialog" timestamp="1586261889017">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579255003527" />
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1582729517044" />
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584137473542" />
+    <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586261889017" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583904159152" />
     <state x="-1459" y="163" key="SettingsEditor" timestamp="1578913819449">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1459" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578913819449" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1584131051021">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586260630598">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579254034037" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578750928976" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584131051021" />
-    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1583347099871" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583605189316" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586196798493" />
+    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586260630598" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586121124720" />
     <state x="604" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580630205881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="604" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1580630205881" />
-    <state x="616" y="240" key="run.anything.popup" timestamp="1579924098762">
+    <state x="616" y="240" key="run.anything.popup" timestamp="1586199346867">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
+    <state x="616" y="240" key="run.anything.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586199346867" />
     <state x="616" y="240" key="run.anything.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1579924098762" />
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1584133081679">
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup" timestamp="1586197245905">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584133081679" />
+    <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586197245905" />
     <state x="2543" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1580705621824" />
     <state x="623" y="225" width="672" height="678" key="search.everywhere.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1580714877972" />
   </component>

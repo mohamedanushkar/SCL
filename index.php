@@ -14,7 +14,7 @@
                 
             }
         </style>
-        <meta http-equiv="Refresh" content="0;url=View/main">
+        <meta http-equiv="Refresh" content="0;url=View/management/Dashboard.php">
     </head>
     
     <body>

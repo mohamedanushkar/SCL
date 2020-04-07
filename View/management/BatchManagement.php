@@ -12,13 +12,24 @@ function FillBatch($conn)
     $output = '';
     $sql = "SELECT DISTINCT tbl_batch.Class_ID, tbl_class.Class_Name FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
     $result = mysqli_query($conn, $sql);
+    $output .= ' <option value="0">-- PLease Select a value</option>';
     while ($row = mysqli_fetch_array($result)) {
-        $output .= ' <option value="0">-- PLease Select a value</option>';
+
         $output .= '<option value="' . $row["Class_ID"] . '">' . $row["Class_Name"] . '</option>';
     }
     return $output;
 }
-
+function FillTeacher($conn)
+{
+    $output = '';
+    $sql = "SELECT * FROM `tbl_teachers`";
+    $result = mysqli_query($conn, $sql);
+    $output .= ' <option value="0">-- PLease Select a value</option>';
+    while ($row = mysqli_fetch_array($result)) {
+        $output .= '<option value="' . $row["Teacher_ID"] . '">' . $row["Teacher_Name"] . '</option>';
+    }
+    return $output;
+}
 
 ?>
 <div class="content-wrapper">
@@ -75,8 +86,9 @@ function FillBatch($conn)
                                         <div class="modal-body">
 
                                             <form id="Batch">
-                                                <label>Select Class</label>
+
                                                 <div class="form-group">
+                                                    <label>Select Class</label>
                                                     <select id="SelectClass" name="SelectClass" class="form-control">
 
                                                         <?php
@@ -88,28 +100,65 @@ function FillBatch($conn)
                                                     <label>Batch No</label>
                                                   <input type="text" name="SelectBatch" id="SelectBatch" class="form-control">
                                                 </div>
+                                                <div class="form-group">
+                                                    <label>Select Teacher</label>
+                                                    <select id="SelectTeacher" name="SelectTeacher" class="form-control">
 
+                                                        <?php
+                                                        echo FillTeacher($conn);
+                                                        ?>
+                                                    </select>
+                                                </div>
                                             </form>
                                             <div id="inserted_data">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
-                                            <input type="button" id="Save" name="Save" class="btn btn-success" value="Save">
+                                            <input type="button" id="SaveBatch" name="Save" class="btn btn-success" value="Save">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                             <input type="hidden" id="HiddenID" name="HiddenID">
                                         </div>
                                     </div>
                                 </div>
                             </div>
+<hr>
+                            <div class="modal fade bd-example-modal-lg" id="DataLoadBatchStu" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
+                                <div class="modal-dialog modal-lg">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">New message</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
 
+                                                <div class="form-group">
+                                                    <form id="LoadBatchStudentsFRM">
+                                                        <div id="LoadBatchStudents">
 
+                                                        </div>
+                                                    </form>
+                                                </div>
+
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Send message</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="DataLoad">
+
+                            </div>
 
 
                             <script>
 
                                 $(document).ready(function () {
 
-
+                                    $("#DataLoad").load("../../Controller/BatchMnagement/Fetch.php");
 
                                     $("#SelectClass").change(function () {
                                         $.ajax({
@@ -121,14 +170,6 @@ function FillBatch($conn)
                                                 document.getElementById("SelectBatch").readOnly = true;
                                             }
                                         });
-                                    });
-
-
-                                    $("#Notice_Table").load("../../Controller/DriverManagement/Fetch.php");
-                                    $("#datepicker").datepicker({
-                                        changeMonth: true,
-                                        changeYear: true,
-                                        dateFormat: "yy-mm-dd"
                                     });
 
 
@@ -178,16 +219,6 @@ function FillBatch($conn)
 
                                     });
 
-
-
-
-
-
-
-
-
-
-
                                     $(document).on("click", ".del", function () {
                                         var del = $(this);
                                         var id = $(this).attr("data-id");
@@ -202,21 +233,21 @@ function FillBatch($conn)
                                         });
                                     });
 
-                                    $(document).on("click", ".edit", function () {
-                                        var id = $(this).attr("data-id");
-                                        $("#HiddenID").val(id);
-                                        $("#Driver_ID").val(id);
-                                        var name = $(this).closest('tr').find('td:eq(1)').text();
-                                        $("#Name").val(name);
-                                        var name = $(this).closest('tr').find('td:eq(2)').text();
-                                        $("#Address").val(name);
-                                        var name = $(this).closest('tr').find('td:eq(3)').text();
-                                        $("#Birth_Of_Date").val(name);
-                                        var name = $(this).closest('tr').find('td:eq(4)').text();
-                                        $("#Phone").val(name);
-                                        $('#Driver_ID').attr('readonly', true);
+                                    $(document).on("click", ".view", function () {
 
-                                        $('#myModal').modal('show');
+                                        var id = $(this).attr("data-id");
+                                        $.ajax({
+                                            url: "../../Controller/BatchMnagement/LoadBatchStudents.php",
+                                            method: "post",
+                                            data: {id:id},
+                                            success: function (data) {
+
+
+                                                $("#LoadBatchStudents").html(data);
+
+                                                $('#DataLoadBatchStu').modal('show');
+                                            }
+                                        });
 
                                     });
 
