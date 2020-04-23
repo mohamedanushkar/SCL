@@ -1,38 +1,84 @@
-    
-<html>
-    <head>
-        <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
-        <style>
-            .label 
-            {
-                width: 70px;
-                background-color: #46a546;
-                float:  left;
-                font-family: sans-serif ;
-            }
-            #Submit{
-                
-            }
-        </style>
-        <meta http-equiv="Refresh" content="0;url=View/management/Dashboard.php">
-    </head>
-    
-    <body>
-    <center >
-        <div style="width: 100%; background-color: #eee;">
-        <div style="width: 300px;background-color: #46a546; margin-top: 400px; padding-top: 60px; opacity: 100">
-            <label for="" class="label" style="">User Name</label>
-            <input type="text"><br>
-            <br>
-            <label for="" class="label">Password</label>
-            <input type="text" ><br>
-            <input id="Submit" type="submit" value="Log in" style="background-color: red; border: 0px; display: inline-block; width: 300px; font-family: sans-serif; color: white; padding: 20px">             
-        </div>    
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Login V15</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--===============================================================================================-->
+    <link rel="icon" type="image/png" href="./includes/images/icons/favicon.ico"/>
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/vendor/bootstrap/css/bootstrap.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/fonts/Linearicons-Free-v1.0.0/icon-font.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/vendor/animate/animate.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/vendor/css-hamburgers/hamburgers.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/vendor/animsition/css/animsition.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/vendor/select2/select2.min.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/vendor/daterangepicker/daterangepicker.css">
+    <!--===============================================================================================-->
+    <link rel="stylesheet" type="text/css" href="./includes/css/util.css">
+    <link rel="stylesheet" type="text/css" href="./includes/css/main.css">
+    <!--===============================================================================================-->
+</head>
+<body>
+
+<div class="limiter">
+    <div class="container-login100">
+        <div class="wrap-login100">
+            <div class="login100-form-title" style="background-image: url(./includes/images/bg-01.jpg);">
+					<span class="login100-form-title-1">
+						Sign In
+					</span>
+            </div>
+
+            <form action="./Controller/LoginVerify/VerifyLogin.php" method="post" class="login100-form validate-form">
+                <div class="wrap-input100 validate-input m-b-26" data-validate="Username is required">
+                    <span class="label-input100">Username</span>
+                    <input class="input100" type="text" name="UserName" placeholder="Enter username">
+                    <span class="focus-input100"></span>
+                </div>
+
+                <div class="wrap-input100 validate-input m-b-18" data-validate = "Password is required">
+                    <span class="label-input100">Password</span>
+                    <input class="input100" type="password" name="Password" placeholder="Enter password">
+                    <span class="focus-input100"></span>
+                </div>
+
+
+
+                <div class="container-login100-form-btn">
+                    <button type="submit" class="login100-form-btn">
+                        Login
+                    </button>
+                </div>
+            </form>
         </div>
-        
-    </center>
+    </div>
+</div>
 
-
+<!--===============================================================================================-->
+<script src="./includes/vendor/jquery/jquery-3.2.1.min.js"></script>
+<!--===============================================================================================-->
+<script src="./includes/vendor/animsition/js/animsition.min.js"></script>
+<!--===============================================================================================-->
+<script src="./includes/vendor/bootstrap/js/popper.js"></script>
+<script src="./includes/vendor/bootstrap/js/bootstrap.min.js"></script>
+<!--===============================================================================================-->
+<script src="./includes/vendor/select2/select2.min.js"></script>
+<!--===============================================================================================-->
+<script src="./includes/vendor/daterangepicker/moment.min.js"></script>
+<script src="./includes/vendor/daterangepicker/daterangepicker.js"></script>
+<!--===============================================================================================-->
+<script src="./includes/vendor/countdowntime/countdowntime.js"></script>
+<!--===============================================================================================-->
+<script src="./includes/js/main.js"></script>
 
 </body>
 </html>

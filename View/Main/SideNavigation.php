@@ -4,7 +4,7 @@
     <!-- Brand Logo -->
     <a href="" class="brand-link">
 
-        <span class="brand-text font-weight-light">Admin Panel</span>
+        <span class="brand-text font-weight-light"> <b>MNS</b>  <br> School Management System</span>
     </a>
 
     <!-- Sidebar -->
@@ -24,12 +24,7 @@
                         </p>
                     </a>
                     <ul class="nav nav-treeview">
-                        <li class="nav-item">
-                            <a href="./../management/Dashboard.php" class="nav-link active">
-                                <i class="far fa-circle nav-icon"></i>
-                                <p>Dashboard</p>
-                            </a>
-                        </li>
+
                         <li class="nav-item">
                             <a href="./../management/ManageStudents.php" class="nav-link">
                                 <i class="far fa-circle nav-icon"></i>
