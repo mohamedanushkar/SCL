@@ -23,7 +23,7 @@ $result = mysqli_query($conn, $Query);
                     <ol class="breadcrumb float-sm-right">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>
                         <li class="breadcrumb-item"><a href="#">Admin</a></li>
-                        <li class="breadcrumb-item active">Student Management</li>
+                        <li class="breadcrumb-item active">Dashboard</li>
                     </ol>
                 </div>
             </div>
@@ -187,7 +187,7 @@ $result = mysqli_query($conn, $Query);
                     <!-- AREA CHART -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Area Chart</h3>
+                            <h3 class="card-title">Annual Attendance Teachers</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -210,7 +210,7 @@ $result = mysqli_query($conn, $Query);
                     <!-- DONUT CHART -->
                     <div class="card card-danger">
                         <div class="card-header">
-                            <h3 class="card-title">Donut Chart</h3>
+                            <h3 class="card-title">Active Staff</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -228,26 +228,6 @@ $result = mysqli_query($conn, $Query);
                     </div>
                     <!-- /.card -->
 
-                    <!-- PIE CHART -->
-                    <div class="card card-danger">
-                        <div class="card-header">
-                            <h3 class="card-title">Pie Chart</h3>
-
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                            class="fas fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <canvas id="pieChart"
-                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
 
                 </div>
                 <!-- /.col (LEFT) -->
@@ -255,7 +235,7 @@ $result = mysqli_query($conn, $Query);
                     <!-- LINE CHART -->
                     <div class="card card-info">
                         <div class="card-header">
-                            <h3 class="card-title">Line Chart</h3>
+                            <h3 class="card-title">Annual Attendance Students</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -278,7 +258,7 @@ $result = mysqli_query($conn, $Query);
                     <!-- BAR CHART -->
                     <div class="card card-success">
                         <div class="card-header">
-                            <h3 class="card-title">Bar Chart</h3>
+                            <h3 class="card-title">Anual Registration Rate</h3>
 
                             <div class="card-tools">
                                 <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
@@ -290,7 +270,7 @@ $result = mysqli_query($conn, $Query);
                         </div>
                         <div class="card-body">
                             <div class="chart">
-                                <canvas id="barChart"
+                                <canvas id="stackedBarChart2"
                                         style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                         </div>
@@ -298,28 +278,8 @@ $result = mysqli_query($conn, $Query);
                     </div>
                     <!-- /.card -->
 
-                    <!-- STACKED BAR CHART -->
-                    <div class="card card-success">
-                        <div class="card-header">
-                            <h3 class="card-title">Stacked Bar Chart</h3>
 
-                            <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i>
-                                </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                            class="fas fa-times"></i></button>
-                            </div>
-                        </div>
-                        <div class="card-body">
-                            <div class="chart">
-                                <canvas id="stackedBarChart"
-                                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
-                            </div>
-                        </div>
-                        <!-- /.card-body -->
-                    </div>
-                    <!-- /.card -->
+
 
                 </div>
                 <!-- /.col (RIGHT) -->
@@ -327,6 +287,123 @@ $result = mysqli_query($conn, $Query);
 
             </div>
             <!-- /.row -->
+            <div class="row">
+                <div class="col-lg-6">
+
+
+                    <div class="card">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">Up-Coming BirthDays</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-tool btn-sm">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <a href="#" class="btn btn-tool btn-sm">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body table-responsive p-0">
+                            <table id="Birthdays" class="table table-striped table-valign-middle">
+                                <thead>
+                                <tr>
+                                    <th>Birthdays</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr>
+                                    <td>
+                                        <img src="./../../includes/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                        Some Product
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./../../includes/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                        Another Product
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./../../includes/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                        Amazing Product
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td>
+                                        <img src="./../../includes/dist/img/default-150x150.png" alt="Product 1" class="img-circle img-size-32 mr-2">
+                                        Perfect Item
+                                        <span class="badge bg-danger">NEW</span>
+                                    </td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <!-- /.card -->
+                </div>
+                <!-- /.col-md-6 -->
+                <div class="col-lg-6">
+
+                    <div class="card">
+                        <div class="card-header border-0">
+                            <h3 class="card-title">Online Store Overview</h3>
+                            <div class="card-tools">
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-download"></i>
+                                </a>
+                                <a href="#" class="btn btn-sm btn-tool">
+                                    <i class="fas fa-bars"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                                <p class="text-success text-xl">
+                                    <i class="ion ion-ios-refresh-empty"></i>
+                                </p>
+                                <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-up text-success"></i> 12%
+                    </span>
+                                    <span class="text-muted">CONVERSION RATE</span>
+                                </p>
+                            </div>
+                            <!-- /.d-flex -->
+                            <div class="d-flex justify-content-between align-items-center border-bottom mb-3">
+                                <p class="text-warning text-xl">
+                                    <i class="ion ion-ios-cart-outline"></i>
+                                </p>
+                                <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-up text-warning"></i> 0.8%
+                    </span>
+                                    <span class="text-muted">SALES RATE</span>
+                                </p>
+                            </div>
+                            <!-- /.d-flex -->
+                            <div class="d-flex justify-content-between align-items-center mb-0">
+                                <p class="text-danger text-xl">
+                                    <i class="ion ion-ios-people-outline"></i>
+                                </p>
+                                <p class="d-flex flex-column text-right">
+                    <span class="font-weight-bold">
+                      <i class="ion ion-android-arrow-down text-danger"></i> 1%
+                    </span>
+                                    <span class="text-muted">REGISTRATION RATE</span>
+                                </p>
+                            </div>
+                            <!-- /.d-flex -->
+                        </div>
+                    </div>
+                </div>
+                <!-- /.col-md-6 -->
+            </div>
+
         </div><!-- /.container-fluid -->
     </section>
 
@@ -334,6 +411,19 @@ $result = mysqli_query($conn, $Query);
 
 <script>
     $(function () {
+
+        $.ajax({
+            url: "./../../Controller/ViewExamResult/ViewResults.php",
+            method: "post",
+            success: function (data) {
+                $("#Birthdays").html(data);
+            }
+        });
+
+
+
+
+
         /* ChartJS
          * -------
          * Here we will create a few charts using ChartJS
@@ -344,10 +434,21 @@ $result = mysqli_query($conn, $Query);
         //--------------
 
         // Get context with jQuery - using jQuery's .get() method.
-        var areaChartCanvas = $('#areaChart').get(0).getContext('2d')
+        var areaChartCanvas = $('#areaChart').get(0).getContext('2d');
 
         var areaChartData = {
-            labels: ['January', 'February', 'March', 'April', 'May', 'June', 'July'],
+            labels: [
+
+
+                <?php
+                $date = date("Y-m-d");
+                $queryForTeacherAttendence = "SELECT  MonthName( Date) AS Monthname FROM `tbl_attendence_teachers` WHERE tbl_attendence_teachers.Status = 1 AND year( Date) = '$date' GROUP BY month(Date)";
+                $resultForTeacherAttendence = mysqli_query($conn, $queryForTeacherAttendence);
+                while ($row3 = mysqli_fetch_array($resultForTeacherAttendence)) {
+                    echo "'" . $row3["Monthname"] . "',";
+                }
+                ?>
+            ],
             datasets: [
                 {
                     label: 'Digital Goods',
@@ -358,22 +459,104 @@ $result = mysqli_query($conn, $Query);
                     pointStrokeColor: 'rgba(60,141,188,1)',
                     pointHighlightFill: '#fff',
                     pointHighlightStroke: 'rgba(60,141,188,1)',
-                    data: [28, 48, 40, 19, 86, 27, 90]
-                },
-                {
-                    label: 'Electronics',
-                    backgroundColor: 'rgba(210, 214, 222, 1)',
-                    borderColor: 'rgba(210, 214, 222, 1)',
-                    pointRadius: false,
-                    pointColor: 'rgba(210, 214, 222, 1)',
-                    pointStrokeColor: '#c1c7d1',
-                    pointHighlightFill: '#fff',
-                    pointHighlightStroke: 'rgba(220,220,220,1)',
-                    data: [65, 59, 80, 81, 56, 55, 40]
-                },
-            ]
-        }
+                    data: [
 
+                        <?php
+                        $queryForTeacherAttendenceres = "SELECT  COUNT(Date) AS NumOfOccurance FROM `tbl_attendence_teachers` WHERE tbl_attendence_teachers.Status = 1 AND year( Date) = '$date'GROUP BY month(Date)";
+                        $resultForTeacherAttendenceres = mysqli_query($conn, $queryForTeacherAttendenceres);
+                        while ($row3 = mysqli_fetch_array($resultForTeacherAttendenceres)) {
+                            echo $row3["NumOfOccurance"] . ',';
+                        }
+                        ?>
+
+                    ]
+                },
+
+                {},
+
+            ]
+        };
+
+        var BRCHRT = {
+            labels: [
+
+
+                <?php
+                $queryForTeacherAttendence = "SELECT  monthname(Joined_Year) as Monthname FROM `tbl_student` WHERE year( Joined_Year) = '$date' GROUP BY month(Joined_Year)";
+                $resultForTeacherAttendence = mysqli_query($conn, $queryForTeacherAttendence);
+                while ($row3 = mysqli_fetch_array($resultForTeacherAttendence)) {
+                    echo "'" . $row3["Monthname"] . "',";
+                }
+                ?>
+            ],
+            datasets: [
+                {
+                    label: 'Registration Rate',
+                    backgroundColor: 'rgba(175,96,188,0.9)',
+                    borderColor: 'rgba(60,141,188,0.8)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [
+
+                        <?php
+                        $queryForTeacherAttendenceres = "SELECT COUNT(Joined_Year) as  NumOfOccurance FROM `tbl_student` WHERE year( Joined_Year) = '$date' GROUP BY month(Joined_Year)";
+                        $resultForTeacherAttendenceres = mysqli_query($conn, $queryForTeacherAttendenceres);
+                        while ($row3 = mysqli_fetch_array($resultForTeacherAttendenceres)) {
+                            echo $row3["NumOfOccurance"] . ',';
+                        }
+                        ?>
+
+                    ]
+                },
+
+
+
+            ]
+        };
+
+
+        var AttendanceStudents = {
+            labels: [
+
+
+                <?php
+                $queryForTeacherAttendence = "SELECT  MonthName( Date) AS Monthname FROM `tbl_attendence` WHERE tbl_attendence.Status = 1 AND year( Date) = '$date'GROUP BY month(Date)";
+                $resultForTeacherAttendence = mysqli_query($conn, $queryForTeacherAttendence);
+                while ($row3 = mysqli_fetch_array($resultForTeacherAttendence)) {
+                    echo "'" . $row3["Monthname"] . "',";
+                }
+                ?>
+            ],
+            datasets: [
+                {
+                    label: 'Digital Goods',
+                    backgroundColor: 'rgba(175,96,188,0.9)',
+                    borderColor: 'rgba(60,141,188,0.8)',
+                    pointRadius: false,
+                    pointColor: '#3b8bba',
+                    pointStrokeColor: 'rgba(60,141,188,1)',
+                    pointHighlightFill: '#fff',
+                    pointHighlightStroke: 'rgba(60,141,188,1)',
+                    data: [
+
+                        <?php
+                        $queryForTeacherAttendenceres = "SELECT  COUNT(Date) AS NumOfOccurance FROM `tbl_attendence` WHERE tbl_attendence.Status = 1 AND year( Date) = '$date'GROUP BY month(Date)";
+                        $resultForTeacherAttendenceres = mysqli_query($conn, $queryForTeacherAttendenceres);
+                        while ($row3 = mysqli_fetch_array($resultForTeacherAttendenceres)) {
+                            echo $row3["NumOfOccurance"] . ',';
+                        }
+                        ?>
+
+                    ]
+                },
+                {},
+
+
+            ]
+        };
         var areaChartOptions = {
             maintainAspectRatio: false,
             responsive: true,
@@ -392,36 +575,36 @@ $result = mysqli_query($conn, $Query);
                     }
                 }]
             }
-        }
+        };
 
         // This will get the first returned node in the jQuery collection.
         var areaChart = new Chart(areaChartCanvas, {
             type: 'line',
             data: areaChartData,
             options: areaChartOptions
-        })
+        });
 
         //-------------
         //- LINE CHART -
         //--------------
-        var lineChartCanvas = $('#lineChart').get(0).getContext('2d')
-        var lineChartOptions = jQuery.extend(true, {}, areaChartOptions)
-        var lineChartData = jQuery.extend(true, {}, areaChartData)
+        var lineChartCanvas = $('#lineChart').get(0).getContext('2d');
+        var lineChartOptions = jQuery.extend(true, {}, areaChartOptions);
+        var lineChartData = jQuery.extend(true,{}, AttendanceStudents);
         lineChartData.datasets[0].fill = false;
         lineChartData.datasets[1].fill = false;
-        lineChartOptions.datasetFill = false
+        lineChartOptions.datasetFill = false;
 
         var lineChart = new Chart(lineChartCanvas, {
             type: 'line',
             data: lineChartData,
             options: lineChartOptions
-        })
+        });
 
         //-------------
         //- DONUT CHART -
         //-------------
         // Get context with jQuery - using jQuery's .get() method.
-        var donutChartCanvas = $('#donutChart').get(0).getContext('2d')
+        var donutChartCanvas = $('#donutChart').get(0).getContext('2d');
         var donutData = {
             labels: [
                 <?php
@@ -448,64 +631,36 @@ $result = mysqli_query($conn, $Query);
                     backgroundColor: ['#f56954', '#00a65a'],
                 }
             ]
-        }
+        };
         var donutOptions = {
             maintainAspectRatio: false,
             responsive: true,
-        }
+        };
         //Create pie or douhnut chart
         // You can switch between pie and douhnut using the method below.
         var donutChart = new Chart(donutChartCanvas, {
             type: 'doughnut',
             data: donutData,
             options: donutOptions
-        })
+        });
 
         //-------------
         //- PIE CHART -
         //-------------
         // Get context with jQuery - using jQuery's .get() method.
-        var pieChartCanvas = $('#pieChart').get(0).getContext('2d')
-        var pieData = donutData;
-        var pieOptions = {
-            maintainAspectRatio: false,
-            responsive: true,
-        }
+
         //Create pie or douhnut chart
         // You can switch between pie and douhnut using the method below.
-        var pieChart = new Chart(pieChartCanvas, {
-            type: 'pie',
-            data: pieData,
-            options: pieOptions
-        })
 
-        //-------------
-        //- BAR CHART -
-        //-------------
-        var barChartCanvas = $('#barChart').get(0).getContext('2d')
-        var barChartData = jQuery.extend(true, {}, areaChartData)
-        var temp0 = areaChartData.datasets[0]
-        var temp1 = areaChartData.datasets[1]
-        barChartData.datasets[0] = temp1
-        barChartData.datasets[1] = temp0
 
-        var barChartOptions = {
-            responsive: true,
-            maintainAspectRatio: false,
-            datasetFill: false
-        }
-
-        var barChart = new Chart(barChartCanvas, {
-            type: 'bar',
-            data: barChartData,
-            options: barChartOptions
-        })
 
         //---------------------
         //- STACKED BAR CHART -
         //---------------------
-        var stackedBarChartCanvas = $('#stackedBarChart').get(0).getContext('2d')
-        var stackedBarChartData = jQuery.extend(true, {}, barChartData)
+        var stackedBarChartCanvas = $('#stackedBarChart2').get(0).getContext('2d');
+
+
+        var stackedBarChartData = jQuery.extend(true, {}, BRCHRT);
 
         var stackedBarChartOptions = {
             responsive: true,
@@ -518,13 +673,15 @@ $result = mysqli_query($conn, $Query);
                     stacked: true
                 }]
             }
-        }
+        };
 
         var stackedBarChart = new Chart(stackedBarChartCanvas, {
             type: 'bar',
             data: stackedBarChartData,
             options: stackedBarChartOptions
         })
+
+
     })
 </script>
 <<?php

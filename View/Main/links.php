@@ -57,3 +57,6 @@
 <script src="./../../includes/dist/js/adminlte.min.js"></script>
 <!-- AdminLTE for demo purposes -->
 <script src="./../../includes/dist/js/demo.js"></script>
+
+
+<script src="./../../includes/dist/js/pages/dashboard3.js"></script>

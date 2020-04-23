@@ -12,6 +12,7 @@ $result = $conn-> query( $query);
 
 if ($result -> num_rows > 0)
 {
+    $output .= '<option value="0">-- Select Value--</option>';
     while ($row = $result -> fetch_assoc()){
         $output .= '<option value="'.$row["Student_ID"].'">'.$row["Student_Name"].'</option>';
     }

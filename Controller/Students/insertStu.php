@@ -16,7 +16,7 @@ $year = date("Y-m-d");
 
 if ($Grade != '') {
 
-    $sql = "INSERT INTO `tbl_student`(`Student_ID`, `Student_Name`, `Student_Address`, `Student_Phone`, `Student_Email`, `Present_Year`, `Gender`,`Joined_Year`, `Status`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$year','$Gender','$year','Active')";
+    $sql = "INSERT INTO `tbl_student`(`Student_ID`, `Student_Name`, `Student_Address`, `Student_Phone`, `Student_Email`,  `Gender`,`Joined_Year`, `Status`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$Gender','$year','Active')";
 
     $conn->query($sql);
 

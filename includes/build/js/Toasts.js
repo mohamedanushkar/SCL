@@ -11,16 +11,16 @@ const Toasts = (($) => {
    * ====================================================
    */
 
-  const NAME               = 'Toasts'
-  const DATA_KEY           = 'lte.toasts'
-  const EVENT_KEY          = `.${DATA_KEY}`
-  const JQUERY_NO_CONFLICT = $.fn[NAME]
+  const NAME               = 'Toasts';
+  const DATA_KEY           = 'lte.toasts';
+  const EVENT_KEY          = `.${DATA_KEY}`;
+  const JQUERY_NO_CONFLICT = $.fn[NAME];
 
   const Event = {
     INIT: `init${EVENT_KEY}`,
     CREATED: `created${EVENT_KEY}`,
     REMOVED: `removed${EVENT_KEY}`,
-  }
+  };
 
   const Selector = {
     BODY: 'toast-body',
@@ -28,7 +28,7 @@ const Toasts = (($) => {
     CONTAINER_TOP_LEFT: '#toastsContainerTopLeft',
     CONTAINER_BOTTOM_RIGHT: '#toastsContainerBottomRight',
     CONTAINER_BOTTOM_LEFT: '#toastsContainerBottomLeft',
-  }
+  };
 
   const ClassName = {
     TOP_RIGHT: 'toasts-top-right',
@@ -36,21 +36,21 @@ const Toasts = (($) => {
     BOTTOM_RIGHT: 'toasts-bottom-right',
     BOTTOM_LEFT: 'toasts-bottom-left',
     FADE: 'fade',
-  }
+  };
 
   const Position = {
     TOP_RIGHT: 'topRight',
     TOP_LEFT: 'topLeft',
     BOTTOM_RIGHT: 'bottomRight',
     BOTTOM_LEFT: 'bottomLeft',
-  }
+  };
 
   const Id = {
     CONTAINER_TOP_RIGHT: 'toastsContainerTopRight',
     CONTAINER_TOP_LEFT: 'toastsContainerTopLeft',
     CONTAINER_BOTTOM_RIGHT: 'toastsContainerBottomRight',
     CONTAINER_BOTTOM_LEFT: 'toastsContainerBottomLeft',
-  }
+  };
 
   const Default = {
     position: Position.TOP_RIGHT,
@@ -68,7 +68,7 @@ const Toasts = (($) => {
     close: true,
     body: null,
     class: null,
-  }
+  };
 
   /**
    * Class Definition
@@ -76,21 +76,21 @@ const Toasts = (($) => {
    */
   class Toasts {
     constructor(element, config) {
-      this._config  = config
+      this._config  = config;
 
       this._prepareContainer();
 
-      const initEvent = $.Event(Event.INIT)
+      const initEvent = $.Event(Event.INIT);
       $('body').trigger(initEvent)
     }
 
     // Public
 
     create() {
-      var toast = $('<div class="toast" role="alert" aria-live="assertive" aria-atomic="true"/>')
+      var toast = $('<div class="toast" role="alert" aria-live="assertive" aria-atomic="true"/>');
 
-      toast.data('autohide', this._config.autohide)
-      toast.data('animation', this._config.fade)
+      toast.data('autohide', this._config.autohide);
+      toast.data('animation', this._config.fade);
       
       if (this._config.class) {
         toast.addClass(this._config.class)
@@ -100,10 +100,10 @@ const Toasts = (($) => {
         toast.data('delay', this._config.delay)
       }
 
-      var toast_header = $('<div class="toast-header">')
+      var toast_header = $('<div class="toast-header">');
 
       if (this._config.image != null) {
-        var toast_image = $('<img />').addClass('rounded mr-2').attr('src', this._config.image).attr('alt', this._config.imageAlt)
+        var toast_image = $('<img />').addClass('rounded mr-2').attr('src', this._config.image).attr('alt', this._config.imageAlt);
         
         if (this._config.imageHeight != null) {
           toast_image.height(this._config.imageHeight).width('auto')
@@ -125,7 +125,7 @@ const Toasts = (($) => {
       }
 
       if (this._config.close == true) {
-        var toast_close = $('<button data-dismiss="toast" />').attr('type', 'button').addClass('ml-2 mb-1 close').attr('aria-label', 'Close').append('<span aria-hidden="true">&times;</span>')
+        var toast_close = $('<button data-dismiss="toast" />').attr('type', 'button').addClass('ml-2 mb-1 close').attr('aria-label', 'Close').append('<span aria-hidden="true">&times;</span>');
         
         if (this._config.title == null) {
           toast_close.toggleClass('ml-2 ml-auto')
@@ -134,25 +134,25 @@ const Toasts = (($) => {
         toast_header.append(toast_close)
       }
 
-      toast.append(toast_header)
+      toast.append(toast_header);
 
       if (this._config.body != null) {
         toast.append($('<div class="toast-body" />').html(this._config.body))
       }
 
-      $(this._getContainerId()).prepend(toast)
+      $(this._getContainerId()).prepend(toast);
 
-      const createdEvent = $.Event(Event.CREATED)
-      $('body').trigger(createdEvent)
+      const createdEvent = $.Event(Event.CREATED);
+      $('body').trigger(createdEvent);
 
-      toast.toast('show')
+      toast.toast('show');
 
 
       if (this._config.autoremove) {
         toast.on('hidden.bs.toast', function () {
           $(this).delay(200).remove();
 
-          const removedEvent = $.Event(Event.REMOVED)
+          const removedEvent = $.Event(Event.REMOVED);
           $('body').trigger(removedEvent)
         })
       }
@@ -176,7 +176,7 @@ const Toasts = (($) => {
 
     _prepareContainer() {
       if ($(this._getContainerId()).length === 0) {
-        var container = $('<div />').attr('id', this._getContainerId().replace('#', ''))
+        var container = $('<div />').attr('id', this._getContainerId().replace('#', ''));
         if (this._config.position == Position.TOP_RIGHT) {
           container.addClass(ClassName.TOP_RIGHT)
         } else if (this._config.position == Position.TOP_LEFT) {
@@ -201,8 +201,8 @@ const Toasts = (($) => {
 
     static _jQueryInterface(option, config) {
       return this.each(function () {
-        const _options = $.extend({}, Default, config)
-        var toast = new Toasts($(this), _options)
+        const _options = $.extend({}, Default, config);
+        var toast = new Toasts($(this), _options);
 
         if (option === 'create') {
           toast[option]()
@@ -216,14 +216,14 @@ const Toasts = (($) => {
    * ====================================================
    */
 
-  $.fn[NAME] = Toasts._jQueryInterface
-  $.fn[NAME].Constructor = Toasts
+  $.fn[NAME] = Toasts._jQueryInterface;
+  $.fn[NAME].Constructor = Toasts;
   $.fn[NAME].noConflict  = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Toasts._jQueryInterface
-  }
+  };
 
   return Toasts
-})(jQuery)
+})(jQuery);
 
 export default Toasts

@@ -11,17 +11,17 @@ const Treeview = (($) => {
    * ====================================================
    */
 
-  const NAME               = 'Treeview'
-  const DATA_KEY           = 'lte.treeview'
-  const EVENT_KEY          = `.${DATA_KEY}`
-  const JQUERY_NO_CONFLICT = $.fn[NAME]
+  const NAME               = 'Treeview';
+  const DATA_KEY           = 'lte.treeview';
+  const EVENT_KEY          = `.${DATA_KEY}`;
+  const JQUERY_NO_CONFLICT = $.fn[NAME];
 
   const Event = {
     SELECTED     : `selected${EVENT_KEY}`,
     EXPANDED     : `expanded${EVENT_KEY}`,
     COLLAPSED    : `collapsed${EVENT_KEY}`,
     LOAD_DATA_API: `load${EVENT_KEY}`
-  }
+  };
 
   const Selector = {
     LI           : '.nav-item',
@@ -29,7 +29,7 @@ const Treeview = (($) => {
     TREEVIEW_MENU: '.nav-treeview',
     OPEN         : '.menu-open',
     DATA_WIDGET  : '[data-widget="treeview"]'
-  }
+  };
 
   const ClassName = {
     LI               : 'nav-item',
@@ -37,7 +37,7 @@ const Treeview = (($) => {
     TREEVIEW_MENU    : 'nav-treeview',
     OPEN             : 'menu-open',
     SIDEBAR_COLLAPSED: 'sidebar-collapse'
-  }
+  };
 
   const Default = {
     trigger              : `${Selector.DATA_WIDGET} ${Selector.LINK}`,
@@ -45,7 +45,7 @@ const Treeview = (($) => {
     accordion            : true,
     expandSidebar        : false,
     sidebarButtonSelector: '[data-widget="pushmenu"]'
-  }
+  };
 
   /**
    * Class Definition
@@ -53,7 +53,7 @@ const Treeview = (($) => {
    */
   class Treeview {
     constructor(element, config) {
-      this._config  = config
+      this._config  = config;
       this._element = element
     }
 
@@ -64,18 +64,18 @@ const Treeview = (($) => {
     }
 
     expand(treeviewMenu, parentLi) {
-      const expandedEvent = $.Event(Event.EXPANDED)
+      const expandedEvent = $.Event(Event.EXPANDED);
 
       if (this._config.accordion) {
-        const openMenuLi   = parentLi.siblings(Selector.OPEN).first()
-        const openTreeview = openMenuLi.find(Selector.TREEVIEW_MENU).first()
+        const openMenuLi   = parentLi.siblings(Selector.OPEN).first();
+        const openTreeview = openMenuLi.find(Selector.TREEVIEW_MENU).first();
         this.collapse(openTreeview, openMenuLi)
       }
 
       treeviewMenu.stop().slideDown(this._config.animationSpeed, () => {
-        parentLi.addClass(ClassName.OPEN)
+        parentLi.addClass(ClassName.OPEN);
         $(this._element).trigger(expandedEvent)
-      })
+      });
 
       if (this._config.expandSidebar) {
         this._expandSidebar()
@@ -83,22 +83,22 @@ const Treeview = (($) => {
     }
 
     collapse(treeviewMenu, parentLi) {
-      const collapsedEvent = $.Event(Event.COLLAPSED)
+      const collapsedEvent = $.Event(Event.COLLAPSED);
 
       treeviewMenu.stop().slideUp(this._config.animationSpeed, () => {
-        parentLi.removeClass(ClassName.OPEN)
-        $(this._element).trigger(collapsedEvent)
-        treeviewMenu.find(`${Selector.OPEN} > ${Selector.TREEVIEW_MENU}`).slideUp()
+        parentLi.removeClass(ClassName.OPEN);
+        $(this._element).trigger(collapsedEvent);
+        treeviewMenu.find(`${Selector.OPEN} > ${Selector.TREEVIEW_MENU}`).slideUp();
         treeviewMenu.find(Selector.OPEN).removeClass(ClassName.OPEN)
       })
     }
 
     toggle(event) {
 
-      const $relativeTarget = $(event.currentTarget)
-      const $parent = $relativeTarget.parent()
+      const $relativeTarget = $(event.currentTarget);
+      const $parent = $relativeTarget.parent();
 
-      let treeviewMenu = $parent.find('> ' + Selector.TREEVIEW_MENU)
+      let treeviewMenu = $parent.find('> ' + Selector.TREEVIEW_MENU);
 
       if (!treeviewMenu.is(Selector.TREEVIEW_MENU)) {
 
@@ -111,10 +111,10 @@ const Treeview = (($) => {
         }
       }
       
-      event.preventDefault()
+      event.preventDefault();
 
-      const parentLi = $relativeTarget.parents(Selector.LI).first()
-      const isOpen   = parentLi.hasClass(ClassName.OPEN)
+      const parentLi = $relativeTarget.parents(Selector.LI).first();
+      const isOpen   = parentLi.hasClass(ClassName.OPEN);
 
       if (isOpen) {
         this.collapse($(treeviewMenu), parentLi)
@@ -141,11 +141,11 @@ const Treeview = (($) => {
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data = $(this).data(DATA_KEY)
-        const _options = $.extend({}, Default, $(this).data())
+        let data = $(this).data(DATA_KEY);
+        const _options = $.extend({}, Default, $(this).data());
 
         if (!data) {
-          data = new Treeview($(this), _options)
+          data = new Treeview($(this), _options);
           $(this).data(DATA_KEY, data)
         }
 
@@ -165,21 +165,21 @@ const Treeview = (($) => {
     $(Selector.DATA_WIDGET).each(function () {
       Treeview._jQueryInterface.call($(this), 'init')
     })
-  })
+  });
 
   /**
    * jQuery API
    * ====================================================
    */
 
-  $.fn[NAME] = Treeview._jQueryInterface
-  $.fn[NAME].Constructor = Treeview
+  $.fn[NAME] = Treeview._jQueryInterface;
+  $.fn[NAME].Constructor = Treeview;
   $.fn[NAME].noConflict  = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT
+    $.fn[NAME] = JQUERY_NO_CONFLICT;
     return Treeview._jQueryInterface
-  }
+  };
 
   return Treeview
-})(jQuery)
+})(jQuery);
 
 export default Treeview

@@ -11,7 +11,6 @@ $result = mysqli_query($conn, $query);
                             <th>Address</th>
                             <th>Phone</th>
                             <th>Email</th>
-                            <th>Year</th>
                             <th>Gender</th>
                             <th>Joined Year</th>
                             <th>Options</th>
@@ -26,7 +25,6 @@ $result = mysqli_query($conn, $query);
                         echo "<td>{$row["Student_Address"]}</td>";
                         echo "<td>{$row["Student_Phone"]}</td>";
                         echo "<td>{$row["Student_Email"]}</td>";
-                        echo "<td>{$row["Present_Year"]}</td>";
                         echo "<td>{$row["Gender"]}</td>";
                         echo "<td>{$row["Joined_Year"]}</td>";
                         echo " <td> <a  class='edit' data-id='{$row["Student_ID"]}'> <i  class='fa fa-edit'></i></a> <a  class='del' data-id='{$row["Student_ID"]}'> <i  class='fa fa-trash'></i></a> <a  class='View' data-id='{$row["Student_ID"]}'><i class='fa fa-eye' aria-hidden='true'></i></a></td>";

@@ -111,6 +111,7 @@ include "./../Main/SideNavigation.php";
                                                         <select name="StudentList" id="StudentList"
                                                                 class="form-control">
 
+
                                                         </select>
                                                     </div>
                                                 </div>
@@ -375,7 +376,14 @@ include "./../Main/SideNavigation.php";
 
                                     $("#StudentList").change(function () {
 
-
+                                        $.ajax({
+                                            url: "./../../Controller/ViewExamResult/ViewResults.php",
+                                            method: "post",
+                                            data: $('#insert_form').serialize(),
+                                            success: function (data) {
+                                                $("#loadSubjects").html(data);
+                                            }
+                                        });
                                     });
                                     $(document).on("click", ".select", function () {
 

@@ -2,18 +2,81 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba83b51-420b-4e6e-9407-eecd2e0e9e91" name="Default Changelist" comment="Mail Function Working. want to clear logs">
-      <change afterPath="$PROJECT_DIR$/Controller/BatchMnagement/Fetch.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/BatchMnagement/LoadBatchStudents.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/View/management/ViewExamResults.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Main/Anush.jpg" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JS/canvas2image.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JS/canvas2image.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/JS/qrcode.js" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/JS/qrcode.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Results/LoadNameList.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Results/LoadNameList.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/ClassLoader.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/ClassLoader.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_real.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_real.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_static.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/composer/autoload_static.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/PHPMailer.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/PHPMailer.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/SMTP.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/SendMail/vendor/phpmailer/phpmailer/src/SMTP.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Students/Fetch.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Students/Fetch.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/Students/insertStu.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Students/insertStu.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ViewExamResult/ViewResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/ViewExamResult/ViewResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ViewExamResult/fetch.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/ViewExamResults/LoadStudentDetails.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Dashboard/LoadBirthdays.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/SideNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/SideNavigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Main/icons8_purchase_order_100px_1.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/Main/TopNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/TopNavigation.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/links.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/links.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/AddExamResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/AddExamResults.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/BatchManagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/BatchManagement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/management/ViewExamResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/ViewExamResults.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/config/postcss.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/config/postcss.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/config/rollup.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/config/rollup.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/CardRefresh.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/CardRefresh.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/CardWidget.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/CardWidget.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/ControlSidebar.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/ControlSidebar.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/DirectChat.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/DirectChat.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/Dropdown.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/Dropdown.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/Layout.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/Layout.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/PushMenu.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/PushMenu.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/SiteSearch.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/SiteSearch.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/Toasts.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/Toasts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/TodoList.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/TodoList.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/js/Treeview.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/js/Treeview.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/npm/DocsPlugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/npm/DocsPlugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/npm/DocsPublish.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/npm/DocsPublish.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/npm/Plugins.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/npm/Plugins.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/build/npm/Publish.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/build/npm/Publish.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/dist/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dist/js/demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/dist/js/pages/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dist/js/pages/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/dist/js/pages/dashboard2.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dist/js/pages/dashboard2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/dist/js/pages/dashboard3.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dist/js/pages/dashboard3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/js/demo.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/js/demo.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/js/pages/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/js/pages/dashboard.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/js/pages/dashboard2.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/js/pages/dashboard2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/js/pages/dashboard3.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/js/pages/dashboard3.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/plugins/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/plugins/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/plugins/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/docs/assets/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/bootstrap/js/bootstrap.bundle.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/bootstrap/js/bootstrap.bundle.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/bootstrap/js/bootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/bootstrap/js/bootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/datatables-autofill/js/dataTables.autoFill.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/datatables-autofill/js/dataTables.autoFill.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/datatables-buttons/js/buttons.html5.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/datatables-buttons/js/buttons.html5.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/datatables-buttons/js/dataTables.buttons.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/datatables-buttons/js/dataTables.buttons.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/datatables-responsive/js/dataTables.responsive.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/datatables-responsive/js/dataTables.responsive.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/datatables/jquery.dataTables.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/datatables/jquery.dataTables.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/daterangepicker/daterangepicker.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/daterangepicker/daterangepicker.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/jquery-ui/jquery-ui.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/jquery-ui/jquery-ui.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/jquery-validation/jquery.validate.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/jquery-validation/jquery.validate.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/jquery/jquery.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/jquery/jquery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/jquery/jquery.slim.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/jquery/jquery.slim.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/jqvmap/maps/jquery.vmap.usa.counties.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/jqvmap/maps/jquery.vmap.usa.counties.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/jqvmap/maps/jquery.vmap.usa.districts.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/jqvmap/maps/jquery.vmap.usa.districts.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/jszip/jszip.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/jszip/jszip.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/overlayScrollbars/js/OverlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/overlayScrollbars/js/OverlayScrollbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/overlayScrollbars/js/jquery.overlayScrollbars.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/pdfmake/pdfmake.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/pdfmake/pdfmake.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/select2/js/select2.full.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/select2/js/select2.full.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/select2/js/select2.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/select2/js/select2.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/sparklines/sparkline.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/sparklines/sparkline.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/summernote/summernote-bs4.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/summernote/summernote-bs4.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/summernote/summernote-lite.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/summernote/summernote-lite.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/summernote/summernote.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/summernote/summernote.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/includes/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.js" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,6 +131,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
     <property name="settings.editor.selected.configurable" value="settings.github" />
   </component>
   <component name="RecentsManager">
@@ -164,7 +228,22 @@
       <workItem from="1586091370435" duration="3846000" />
       <workItem from="1586121107305" duration="1657000" />
       <workItem from="1586196798317" duration="6249000" />
-      <workItem from="1586260630288" duration="1133000" />
+      <workItem from="1586260630288" duration="1616000" />
+      <workItem from="1586332401285" duration="656000" />
+      <workItem from="1586372216286" duration="669000" />
+      <workItem from="1586461814444" duration="861000" />
+      <workItem from="1586541197228" duration="1772000" />
+      <workItem from="1587052678909" duration="37000" />
+      <workItem from="1587334786623" duration="1354000" />
+      <workItem from="1587366320039" duration="1275000" />
+      <workItem from="1587372462156" duration="3634000" />
+      <workItem from="1587473558843" duration="463000" />
+      <workItem from="1587474143679" duration="884000" />
+      <workItem from="1587505262096" duration="1014000" />
+      <workItem from="1587550987916" duration="5717000" />
+      <workItem from="1587571752747" duration="888000" />
+      <workItem from="1587572886563" duration="112000" />
+      <workItem from="1587619412796" duration="3153000" />
     </task>
     <task id="LOCAL-00001" summary="Added Notice tab">
       <created>1578916600283</created>
@@ -216,38 +295,38 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="690" y="268" key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1585725778372" />
+    <state x="707" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1" timestamp="1587366812316">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="707" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587366812316" />
     <state x="-1335" y="115" key="CommitChangelistDialog2" timestamp="1579261373705">
       <screen x="-1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1335" y="115" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579261373705" />
-    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1583605207283">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1587052714119">
+      <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1180" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579265894765" />
     <state x="2258" y="290" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583413424360" />
+    <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587052714119" />
     <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583605207283" />
     <state x="748" y="335" key="NewPhpClassDialog" timestamp="1582215293894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="748" y="335" key="NewPhpClassDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1582215293894" />
-    <state x="2714" y="444" key="NewPhpFileDialog" timestamp="1586261889017">
-      <screen x="1920" y="0" width="1920" height="1040" />
+    <state x="794" y="444" key="NewPhpFileDialog" timestamp="1587626354797">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579255003527" />
-    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1584137473542" />
+    <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587626354797" />
     <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586261889017" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1583904159152" />
-    <state x="-1459" y="163" key="SettingsEditor" timestamp="1578913819449">
-      <screen x="-1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1459" y="163" key="SettingsEditor/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1578913819449" />
-    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1586260630598">
+    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1587619413432">
       <screen x="1920" y="0" width="1920" height="1040" />
     </state>
     <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579254034037" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@0.0.1920.1040" timestamp="1578750928976" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1586196798493" />
-    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1586260630598" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587550992280" />
+    <state x="2576" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587619413432" />
     <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1586121124720" />
     <state x="604" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580630205881">
       <screen x="0" y="0" width="1920" height="1040" />

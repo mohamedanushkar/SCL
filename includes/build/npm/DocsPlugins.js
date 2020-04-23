@@ -41,6 +41,6 @@ const Plugins = [
     from: 'node_modules/overlayscrollbars/css/',
     to  : 'docs/assets/plugins/overlayScrollbars/css/'
   }
-]
+];
 
-module.exports = Plugins
+module.exports = Plugins;
