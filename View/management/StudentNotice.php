@@ -85,7 +85,7 @@ include "./../Main/SideNavigation.php";
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Modal Header</h4>
+                                            <h4 class="modal-title"></h4>
                                         </div>
                                         <div class="modal-body">
                                             <form id="insert_data">
@@ -119,7 +119,7 @@ include "./../Main/SideNavigation.php";
                                     <div class="modal-content">
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                            <h4 class="modal-title">Modal Header</h4>
+                                            <h4 class="modal-title"></h4>
                                         </div>
                                         <div class="modal-body">
                                             <form id="NoticeDate" >
@@ -230,9 +230,9 @@ include "./../Main/SideNavigation.php";
                                         var id = $(this).attr("data-id");
                                         $("#HiddenID").val(id);
                                         $("#StuID").val(id);
-                                        var name = $(this).closest('tr').find('td:eq(2)').text();
+                                        var name = $(this).closest('tr').find('td:eq(1)').text();
                                         $("#NoticeTitle").val(name);
-                                        var name = $(this).closest('tr').find('td:eq(3)').text();
+                                        var name = $(this).closest('tr').find('td:eq(2)').text();
                                         $("#Description").val(name);
                                         $('#myModal2').modal('show');
                                         $('#SaveNotice').val("Update");

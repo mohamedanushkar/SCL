@@ -2,130 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="bba83b51-420b-4e6e-9407-eecd2e0e9e91" name="Default Changelist" comment="Mail Function Working. want to clear logs">
-      <change afterPath="$PROJECT_DIR$/Controller/LoginVerify/LogOut.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Controller/LoginVerify/VerifyLogin.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/css/main.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/css/util.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/dist/img/pancakes_96px.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/Linearicons-Free-v1.0.0/WebFont/Linearicons-Free.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/Linearicons-Free-v1.0.0/icon-font.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/HELP-US-OUT.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/css/font-awesome.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/css/font-awesome.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/fonts/FontAwesome.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/fonts/fontawesome-webfont.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/animated.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/bordered-pulled.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/core.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/fixed-width.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/font-awesome.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/icons.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/larger.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/list.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/mixins.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/path.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/rotated-flipped.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/screen-reader.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/stacked.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/less/variables.less" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_animated.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_bordered-pulled.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_core.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_fixed-width.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_icons.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_larger.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_list.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_mixins.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_path.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_rotated-flipped.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_screen-reader.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_stacked.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/_variables.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/font-awesome-4.7.0/scss/font-awesome.scss" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-ExtraBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-ExtraBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-ExtraLight.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-ExtraLightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-SemiBold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-SemiBoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/fonts/poppins/Poppins-ThinItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/images/bg-01.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/images/icons/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/images/icons/map-marker.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/js/main.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/js/map-custom.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/animate/animate.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/animsition/css/animsition.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/animsition/css/animsition.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/animsition/js/animsition.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/animsition/js/animsition.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-grid.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-grid.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-grid.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-grid.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-reboot.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-reboot.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-reboot.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap-reboot.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/css/bootstrap.min.css.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/js/bootstrap.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/js/bootstrap.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/js/popper.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/js/popper.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/bootstrap/js/tooltip.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/countdowntime/countdowntime.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/css-hamburgers/hamburgers.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/css-hamburgers/hamburgers.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/daterangepicker/daterangepicker.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/daterangepicker/daterangepicker.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/daterangepicker/moment.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/daterangepicker/moment.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/jquery/jquery-3.2.1.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/perfect-scrollbar/perfect-scrollbar.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/perfect-scrollbar/perfect-scrollbar.min.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/select2/select2.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/select2/select2.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/select2/select2.min.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/includes/vendor/select2/select2.min.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Controller/Dashboard/LoadBirthdays.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/Dashboard/LoadBirthdays.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Main/SideNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/SideNavigation.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Controller/BatchMnagement/LoadBatchStudents.php" beforeDir="false" afterPath="$PROJECT_DIR$/Controller/BatchMnagement/LoadBatchStudents.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/Main/TopNavigation.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/TopNavigation.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Main/head.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/head.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/Main/links.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/Main/links.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/AddExamResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/AddExamResults.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/BatchManagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/BatchManagement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/Dashboard.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/Dashboard.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/ExamSchedule.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/ExamSchedule.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/MarkAttendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/MarkAttendence.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/MarkTeachersAttendence.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/MarkTeachersAttendence.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/View/management/DriverManagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/DriverManagement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/StudentNotice.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/StudentNotice.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/Teacheranagement.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/Teacheranagement.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/View/management/ViewExamResults.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/ViewExamResults.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/View/management/mail.php" beforeDir="false" afterPath="$PROJECT_DIR$/View/management/mail.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/includes/dist/js/pages/dashboard.js" beforeDir="false" afterPath="$PROJECT_DIR$/includes/dist/js/pages/dashboard.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -300,6 +185,10 @@
       <workItem from="1587659227122" duration="2498000" />
       <workItem from="1587671856891" duration="4474000" />
       <workItem from="1587680580603" duration="1152000" />
+      <workItem from="1587701420387" duration="737000" />
+      <workItem from="1587820087748" duration="21000" />
+      <workItem from="1587907611518" duration="5917000" />
+      <workItem from="1588285197201" duration="208000" />
     </task>
     <task id="LOCAL-00001" summary="Added Notice tab">
       <created>1578916600283</created>
@@ -355,17 +244,12 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="707" y="377" key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587366812316" />
-    <state x="-1335" y="115" key="CommitChangelistDialog2" timestamp="1579261373705">
-      <screen x="-1920" y="0" width="1920" height="1040" />
+    <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1587820106046">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1335" y="115" key="CommitChangelistDialog2/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579261373705" />
-    <state x="2660" y="276" key="FileChooserDialogImpl" timestamp="1587632184749">
-      <screen x="1920" y="0" width="1920" height="1040" />
-    </state>
-    <state x="-1180" y="276" key="FileChooserDialogImpl/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579265894765" />
     <state x="2258" y="290" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1583413424360" />
     <state x="2660" y="276" key="FileChooserDialogImpl/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587632184749" />
-    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1583605207283" />
+    <state x="740" y="276" key="FileChooserDialogImpl/0.0.1920.1040@0.0.1920.1040" timestamp="1587820106046" />
     <state x="748" y="335" key="NewPhpClassDialog" timestamp="1582215293894">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -373,17 +257,16 @@
     <state x="794" y="444" key="NewPhpFileDialog" timestamp="1587681328949">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="-1126" y="444" key="NewPhpFileDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579255003527" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587654574661" />
     <state x="2714" y="444" key="NewPhpFileDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587659697266" />
     <state x="794" y="444" key="NewPhpFileDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587681328949" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog" timestamp="1587680581233">
-      <screen x="0" y="0" width="1920" height="1040" />
+    <state x="656" y="358" key="com.intellij.ide.util.TipDialog" timestamp="1588285197957">
+      <screen x="0" y="0" width="1920" height="1080" />
     </state>
-    <state x="-1264" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/-1920.0.1920.1040@-1920.0.1920.1040" timestamp="1579254034037" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587656774592" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@0.0.1920.1040" timestamp="1587701422132" />
     <state x="2576" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040/1920.0.1920.1040@1920.0.1920.1040" timestamp="1587671859562" />
-    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587680581233" />
+    <state x="656" y="345" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1587820089128" />
+    <state x="656" y="358" key="com.intellij.ide.util.TipDialog/0.0.1920.1080@0.0.1920.1080" timestamp="1588285197957" />
     <state x="604" y="136" key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser" timestamp="1580630205881">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

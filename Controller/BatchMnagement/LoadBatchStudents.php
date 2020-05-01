@@ -10,7 +10,7 @@ $result = mysqli_query($conn, $query);
     while ($row = mysqli_fetch_array($result)) {
 
         echo "        <p> ";
-        echo $row["Batch_Number"];
+        echo $row["Student_Name"];
         echo "           </p>";
     }
     ?>

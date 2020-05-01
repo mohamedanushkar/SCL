@@ -46,15 +46,15 @@ $result = mysqli_query($conn, $Query);
                             $date = date("Y-m-d");
                             
                             // the table geek
-                            $queryevents = "SELECT start_event FROM `tbl_events` WHERE tbl_events.start_event = '$date'";
+                            $query = "SELECT start_event FROM `tbl_events` WHERE tbl_events.start_event = '$date'";
 
                             // Execute the query and store the result set
-                            $resultevents = mysqli_query($conn, $queryevents);
+                            $results = mysqli_query($conn, $query);
 
-                            if ($resultevents)
+                            if ($results)
                             {
                                 // it return number of rows in the table.
-                                $rowevents = mysqli_num_rows($resultevents);
+                                $rowevents = mysqli_num_rows($results);
 
 
                                     echo $rowevents;
@@ -85,20 +85,20 @@ $result = mysqli_query($conn, $Query);
 
 
                                 // the table geek
-                                $queryevents = "SELECT * FROM `tbl_batch`";
+                                $query = "SELECT * FROM `tbl_batch`";
 
                                 // Execute the query and store the result set
-                                $resultevents = mysqli_query($conn, $queryevents);
+                                $results = mysqli_query($conn, $query);
 
-                                if ($resultevents)
+                                if ($results)
                                 {
                                     // it return number of rows in the table.
-                                    $rowevents = mysqli_num_rows($resultevents);
+                                    $rowevents = mysqli_num_rows($results);
 
                                     echo $rowevents;
 
                                     // close the result.
-                                    mysqli_free_result($resultevents);
+                                    mysqli_free_result($results);
                                 }
                                 ?>
                             </h3>
@@ -120,20 +120,20 @@ $result = mysqli_query($conn, $Query);
 
 
                                 // the table geek
-                                $queryevents = "SELECT * FROM `tbl_student`";
+                                $query = "SELECT * FROM `tbl_student`";
 
                                 // Execute the query and store the result set
-                                $resultevents = mysqli_query($conn, $queryevents);
+                                $results = mysqli_query($conn, $query);
 
-                                if ($resultevents)
+                                if ($results)
                                 {
                                     // it return number of rows in the table.
-                                    $rowevents = mysqli_num_rows($resultevents);
+                                    $rowevents = mysqli_num_rows($results);
 
                                     echo $rowevents;
 
                                     // close the result.
-                                    mysqli_free_result($resultevents);
+                                    mysqli_free_result($results);
                                 }
                                 ?>
                             </h3>
@@ -155,20 +155,20 @@ $result = mysqli_query($conn, $Query);
 
 
                                 // the table geek
-                                $queryevents = "SELECT * FROM `tbl_teachers` WHERE tbl_teachers.Status = 'Active';";
+                                $query = "SELECT * FROM `tbl_teachers` WHERE tbl_teachers.Status = 'Active';";
 
                                 // Execute the query and store the result set
-                                $resultevents = mysqli_query($conn, $queryevents);
+                                $results = mysqli_query($conn, $query);
 
-                                if ($resultevents)
+                                if ($results)
                                 {
                                     // it return number of rows in the table.
-                                    $rowevents = mysqli_num_rows($resultevents);
+                                    $rowevents = mysqli_num_rows($results);
 
                                     echo $rowevents;
 
                                     // close the result.
-                                    mysqli_free_result($resultevents);
+                                    mysqli_free_result($results);
                                 }
                                 ?></h3>
 
@@ -405,9 +405,9 @@ $result = mysqli_query($conn, $Query);
 
                 <?php
                 $date = date("Y-m-d");
-                $queryForTeacherAttendence = "SELECT  MonthName( Date) AS Monthname FROM `tbl_attendence_teachers` WHERE tbl_attendence_teachers.Status = 1 AND year( Date) = '$date' GROUP BY month(Date)";
-                $resultForTeacherAttendence = mysqli_query($conn, $queryForTeacherAttendence);
-                while ($row3 = mysqli_fetch_array($resultForTeacherAttendence)) {
+                $query = "SELECT  MonthName( Date) AS Monthname FROM `tbl_attendence_teachers` WHERE tbl_attendence_teachers.Status = 1 AND year( Date) = '$date' GROUP BY month(Date)";
+                $results = mysqli_query($conn, $query);
+                while ($row3 = mysqli_fetch_array($results)) {
                     echo "'" . $row3["Monthname"] . "',";
                 }
                 ?>
@@ -445,9 +445,9 @@ $result = mysqli_query($conn, $Query);
 
 
                 <?php
-                $queryForTeacherAttendence = "SELECT  monthname(Joined_Year) as Monthname FROM `tbl_student` WHERE year( Joined_Year) = '$date' GROUP BY month(Joined_Year)";
-                $resultForTeacherAttendence = mysqli_query($conn, $queryForTeacherAttendence);
-                while ($row3 = mysqli_fetch_array($resultForTeacherAttendence)) {
+                $query = "SELECT  monthname(Joined_Year) as Monthname FROM `tbl_student` WHERE year( Joined_Year) = '$date' GROUP BY month(Joined_Year)";
+                $results = mysqli_query($conn, $query);
+                while ($row3 = mysqli_fetch_array($results)) {
                     echo "'" . $row3["Monthname"] . "',";
                 }
                 ?>
@@ -486,9 +486,9 @@ $result = mysqli_query($conn, $Query);
 
 
                 <?php
-                $queryForTeacherAttendence = "SELECT  MonthName( Date) AS Monthname FROM `tbl_attendence` WHERE tbl_attendence.Status = 1 AND year( Date) = '$date'GROUP BY month(Date)";
-                $resultForTeacherAttendence = mysqli_query($conn, $queryForTeacherAttendence);
-                while ($row3 = mysqli_fetch_array($resultForTeacherAttendence)) {
+                $query = "SELECT  MonthName( Date) AS Monthname FROM `tbl_attendence` WHERE tbl_attendence.Status = 1 AND year( Date) = '$date'GROUP BY month(Date)";
+                $results = mysqli_query($conn, $query);
+                while ($row3 = mysqli_fetch_array($results)) {
                     echo "'" . $row3["Monthname"] . "',";
                 }
                 ?>
