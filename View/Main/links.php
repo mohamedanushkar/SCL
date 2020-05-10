@@ -18,7 +18,9 @@
 <!-- AdminLTE for demo purposes -->
 <script src="./../../includes/dist/js/demo.js"></script>
 
-
+<script src="https://apps.elfsight.com/p/platform.js" defer></script>
+<div class="elfsight-app-ba9af397-0e9d-4b29-ae36-4b3634a57cde"></div>
+       
 <!-- DataTables -->
 <link rel="stylesheet" href="./../../includes/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
 

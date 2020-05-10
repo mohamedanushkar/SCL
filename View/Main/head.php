@@ -3,20 +3,20 @@
 session_start();
 
 
-if(isset($_SESSION['User']) && !empty($_SESSION['User'])) {
-    if((time() - $_SESSION['last_login_timestamp']) > 60) // 900 = 15 * 60
-    {
-        header('location:./../../index.php');
-    }
-    else
-    {
-        $_SESSION['last_login_timestamp'] = time();
+// if(isset($_SESSION['User']) && !empty($_SESSION['User'])) {
+//     if((time() - $_SESSION['last_login_timestamp']) > 60) // 900 = 15 * 60
+//     {
+//         header('location:./../../index.php');
+//     }
+//     else
+//     {
+//         $_SESSION['last_login_timestamp'] = time();
 
-    }
-}
-else{
-    header('location:./../../index.php');
-}
+//     }
+// }
+// else{
+//     header('location:./../../index.php');
+// }
 
 ?>
 <!DOCTYPE html>
