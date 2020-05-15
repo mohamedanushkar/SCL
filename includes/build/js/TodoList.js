@@ -11,18 +11,18 @@ const TodoList = (($) => {
    * ====================================================
    */
 
-  const NAME               = 'TodoList';
-  const DATA_KEY           = 'lte.todolist';
-  const EVENT_KEY          = `.${DATA_KEY}`;
-  const JQUERY_NO_CONFLICT = $.fn[NAME];
+  const NAME               = 'TodoList'
+  const DATA_KEY           = 'lte.todolist'
+  const EVENT_KEY          = `.${DATA_KEY}`
+  const JQUERY_NO_CONFLICT = $.fn[NAME]
 
   const Selector = {
     DATA_TOGGLE: '[data-widget="todo-list"]'
-  };
+  }
 
   const ClassName = {
     TODO_LIST_DONE: 'done'
-  };
+  }
 
   const Default = {
     onCheck: function (item) {
@@ -31,7 +31,7 @@ const TodoList = (($) => {
     onUnCheck: function (item) {
       return item;
     }
-  };
+  }
 
   /**
    * Class Definition
@@ -40,8 +40,8 @@ const TodoList = (($) => {
 
   class TodoList {
     constructor(element, config) {
-      this._config  = config;
-      this._element = element;
+      this._config  = config
+      this._element = element
 
       this._init()
     }
@@ -69,8 +69,8 @@ const TodoList = (($) => {
     // Private
 
     _init() {
-      var that = this;
-      $(Selector.DATA_TOGGLE).find('input:checkbox:checked').parents('li').toggleClass(ClassName.TODO_LIST_DONE);
+      var that = this
+      $(Selector.DATA_TOGGLE).find('input:checkbox:checked').parents('li').toggleClass(ClassName.TODO_LIST_DONE)
       $(Selector.DATA_TOGGLE).on('change', 'input:checkbox', (event) => {
         that.toggle($(event.target))
       })
@@ -80,11 +80,11 @@ const TodoList = (($) => {
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data = $(this).data(DATA_KEY);
-        const _options = $.extend({}, Default, $(this).data());
+        let data = $(this).data(DATA_KEY)
+        const _options = $.extend({}, Default, $(this).data())
 
         if (!data) {
-          data = new TodoList($(this), _options);
+          data = new TodoList($(this), _options)
           $(this).data(DATA_KEY, data)
         }
 
@@ -102,21 +102,21 @@ const TodoList = (($) => {
 
   $(window).on('load', () => {
     TodoList._jQueryInterface.call($(Selector.DATA_TOGGLE))
-  });
+  })
 
   /**
    * jQuery API
    * ====================================================
    */
 
-  $.fn[NAME] = TodoList._jQueryInterface;
-  $.fn[NAME].Constructor = TodoList;
+  $.fn[NAME] = TodoList._jQueryInterface
+  $.fn[NAME].Constructor = TodoList
   $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    $.fn[NAME] = JQUERY_NO_CONFLICT
     return TodoList._jQueryInterface
-  };
+  }
 
   return TodoList
-})(jQuery);
+})(jQuery)
 
 export default TodoList

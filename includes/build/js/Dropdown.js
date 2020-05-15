@@ -11,22 +11,22 @@ const Dropdown = (($) => {
    * ====================================================
    */
 
-  const NAME               = 'Dropdown';
-  const DATA_KEY           = 'lte.dropdown';
-  const EVENT_KEY          = `.${DATA_KEY}`;
-  const JQUERY_NO_CONFLICT = $.fn[NAME];
+  const NAME               = 'Dropdown'
+  const DATA_KEY           = 'lte.dropdown'
+  const EVENT_KEY          = `.${DATA_KEY}`
+  const JQUERY_NO_CONFLICT = $.fn[NAME]
 
   const Selector = {
     DROPDOWN_MENU: 'ul.dropdown-menu',
     DROPDOWN_TOGGLE: '[data-toggle="dropdown"]',
-  };
+  }
 
   const ClassName = {
     DROPDOWN_HOVER: '.dropdown-hover'
-  };
+  }
 
   const Default = {
-  };
+  }
 
 
   /**
@@ -36,7 +36,7 @@ const Dropdown = (($) => {
 
   class Dropdown {
     constructor(element, config) {
-      this._config  = config;
+      this._config  = config
       this._element = element
     }
 
@@ -59,11 +59,11 @@ const Dropdown = (($) => {
 
     static _jQueryInterface(config) {
       return this.each(function () {
-        let data      = $(this).data(DATA_KEY);
-        const _config = $.extend({}, Default, $(this).data());
+        let data      = $(this).data(DATA_KEY)
+        const _config = $.extend({}, Default, $(this).data())
 
         if (!data) {
-          data = new Dropdown($(this), _config);
+          data = new Dropdown($(this), _config)
           $(this).data(DATA_KEY, data)
         }
 
@@ -99,14 +99,14 @@ const Dropdown = (($) => {
    * ====================================================
    */
 
-  $.fn[NAME] = Dropdown._jQueryInterface;
-  $.fn[NAME].Constructor = Dropdown;
+  $.fn[NAME] = Dropdown._jQueryInterface
+  $.fn[NAME].Constructor = Dropdown
   $.fn[NAME].noConflict = function () {
-    $.fn[NAME] = JQUERY_NO_CONFLICT;
+    $.fn[NAME] = JQUERY_NO_CONFLICT
     return Dropdown._jQueryInterface
-  };
+  }
 
   return Dropdown
-})(jQuery);
+})(jQuery)
 
 export default Dropdown

@@ -1,5 +1,6 @@
 <?php
 include './../Main/head.php';
+include './../Main/links.php';
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
 ?>

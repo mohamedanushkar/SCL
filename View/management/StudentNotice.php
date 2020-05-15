@@ -25,6 +25,7 @@ function FillYear($conn) {
 ?>
 <?php
 include './../Main/head.php';
+include './../Main/links.php';
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
 ?>
@@ -117,25 +118,27 @@ include "./../Main/SideNavigation.php";
                                 <div class="modal-dialog">
                                     <!-- Modal content-->
                                     <div class="modal-content">
+                                    <form id="NoticeDate" >
                                         <div class="modal-header">
                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
                                             <h4 class="modal-title"></h4>
                                         </div>
                                         <div class="modal-body">
-                                            <form id="NoticeDate" >
+                                            
                                                 <p class="txt">Student ID</p>
                                                 <input type="text" id="StuID" name="StuID" class="form-control txt" >
                                                 <p class="txt">Notice Title</p>
-                                                <input type="text" id="NoticeTitle" name="NoticeTitle" class="form-control txt">
+                                                <input type="text" id="NoticeTitle" required name="NoticeTitle" class="form-control txt">
                                                 <p class="txt">Description</p>
-                                                <textarea class="form-control" id="Description" name="Description" rows="10" cols="10" ></textarea>
-                                            </form>
+                                                <textarea class="form-control" id="Description" required name="Description" rows="10" cols="10" ></textarea>
+                                            
                                         </div>
                                         <div class="modal-footer">
-                                            <input type="button" id="SaveNotice"  name="SaveNotice" class="btn btn-success" value="Send">
+                                            <input type="submit" id="SaveNotice"  name="SaveNotice" class="btn btn-success" value="Send">
                                             <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
                                             <input type="hidden" id="HiddenID" name="HiddenID">
                                         </div>
+                                        </form>
                                     </div>
                                 </div>
                             </div>
@@ -176,7 +179,8 @@ include "./../Main/SideNavigation.php";
                                     });
 
 
-                                    $(document).on("click", "#SaveNotice", function () {
+                                    $('#NoticeDate').on('submit', function(event){
+                                        event.preventDefault();
                                         var id = $("#HiddenID").val();
                                         if (id == 0) {
                                             $.ajax({

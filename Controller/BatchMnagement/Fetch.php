@@ -3,7 +3,7 @@ include '../../model/Connection.php';
 $query = "SELECT * FROM `tbl_batch` INNER JOIN tbl_teachers ON tbl_teachers.Teacher_ID = tbl_batch.Teacher_ID INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
 $result = mysqli_query($conn, $query);
 ?>
-<table id="employee_data" class="table table-striped table-bordered">
+<table id="data" class="table table-striped table-bordered">
     <thead>
     <tr>
         <th>Batch_Number</th>
@@ -30,7 +30,7 @@ $result = mysqli_query($conn, $query);
 </table>
 <script>
     $(document).ready(function () {
-        $('#employee_data').DataTable({
+        $('#data').DataTable({
             "paging": true,
             "lengthChange": true,
             "searching": true,

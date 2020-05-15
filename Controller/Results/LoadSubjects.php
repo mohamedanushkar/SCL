@@ -34,7 +34,7 @@ $result = mysqli_query($conn, $query);
 
         echo "<td>{$row["Name"]}</td>";
 
-        echo "<td><input type='number'  name='Marks[]' max='100' min='0' id='Marks' class = 'form-control'></td>";
+        echo "<td><input type='number'  name='Marks[]' max='100' min='0' id='Marks' class = 'form-control Marks'></td>";
 
         echo "</td>";
     }

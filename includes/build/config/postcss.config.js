@@ -1,4 +1,4 @@
-'use strict';
+'use strict'
 
 module.exports = (ctx) => ({
   map: ctx.file.dirname.includes('examples') ? false : {
@@ -11,4 +11,4 @@ module.exports = (ctx) => ({
       cascade: false
     }
   }
-});
+})

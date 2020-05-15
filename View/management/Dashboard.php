@@ -1,9 +1,16 @@
 <?php
 include './../Main/head.php';
+
+include './../Main/links.php';
+?>
+
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="./../../includes/plugins/chart.js/Chart.min.js"></script>
+<script src="./../../includes/plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
+
+<?php
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
-
-
 include '../../model/Connection.php';
 
 $Query = "SELECT COUNT(Gender) as gen , Gender FROM tbl_teachers GROUP BY Gender";
@@ -41,28 +48,24 @@ $result = mysqli_query($conn, $Query);
                         <div class="inner">
                             <h3>
 
-                            <?php
-                            date_default_timezone_set('Asia/Colombo');
-                            $date = date("Y-m-d");
-                            
-                            // the table geek
-                            $query = "SELECT start_event FROM `tbl_events` WHERE tbl_events.start_event = '$date'";
+                                <?php
+                                date_default_timezone_set('Asia/Colombo');
+                                $date = date("Y-m-d");
 
-                            // Execute the query and store the result set
-                            $results = mysqli_query($conn, $query);
+                                // the table geek
+                                $query = "SELECT start_event FROM `tbl_events` WHERE tbl_events.start_event = '$date'";
 
-                            if ($results)
-                            {
-                                // it return number of rows in the table.
-                                $rowevents = mysqli_num_rows($results);
+                                // Execute the query and store the result set
+                                $results = mysqli_query($conn, $query);
+
+                                if ($results) {
+                                    // it return number of rows in the table.
+                                    $rowevents = mysqli_num_rows($results);
 
 
                                     echo $rowevents;
-
-
-
-                            }
-                            ?>
+                                }
+                                ?>
                             </h3>
 
                             <p>Events Today</p>
@@ -90,8 +93,7 @@ $result = mysqli_query($conn, $Query);
                                 // Execute the query and store the result set
                                 $results = mysqli_query($conn, $query);
 
-                                if ($results)
-                                {
+                                if ($results) {
                                     // it return number of rows in the table.
                                     $rowevents = mysqli_num_rows($results);
 
@@ -119,23 +121,22 @@ $result = mysqli_query($conn, $Query);
                             <h3> <?php
 
 
-                                // the table geek
-                                $query = "SELECT * FROM `tbl_student`";
+                                    // the table geek
+                                    $query = "SELECT * FROM `tbl_student`";
 
-                                // Execute the query and store the result set
-                                $results = mysqli_query($conn, $query);
+                                    // Execute the query and store the result set
+                                    $results = mysqli_query($conn, $query);
 
-                                if ($results)
-                                {
-                                    // it return number of rows in the table.
-                                    $rowevents = mysqli_num_rows($results);
+                                    if ($results) {
+                                        // it return number of rows in the table.
+                                        $rowevents = mysqli_num_rows($results);
 
-                                    echo $rowevents;
+                                        echo $rowevents;
 
-                                    // close the result.
-                                    mysqli_free_result($results);
-                                }
-                                ?>
+                                        // close the result.
+                                        mysqli_free_result($results);
+                                    }
+                                    ?>
                             </h3>
 
                             <p>Student Registrations</p>
@@ -154,23 +155,22 @@ $result = mysqli_query($conn, $Query);
                             <h3> <?php
 
 
-                                // the table geek
-                                $query = "SELECT * FROM `tbl_teachers` WHERE tbl_teachers.Status = 'Active';";
+                                    // the table geek
+                                    $query = "SELECT * FROM `tbl_teachers` WHERE tbl_teachers.Status = 'Active';";
 
-                                // Execute the query and store the result set
-                                $results = mysqli_query($conn, $query);
+                                    // Execute the query and store the result set
+                                    $results = mysqli_query($conn, $query);
 
-                                if ($results)
-                                {
-                                    // it return number of rows in the table.
-                                    $rowevents = mysqli_num_rows($results);
+                                    if ($results) {
+                                        // it return number of rows in the table.
+                                        $rowevents = mysqli_num_rows($results);
 
-                                    echo $rowevents;
+                                        echo $rowevents;
 
-                                    // close the result.
-                                    mysqli_free_result($results);
-                                }
-                                ?></h3>
+                                        // close the result.
+                                        mysqli_free_result($results);
+                                    }
+                                    ?></h3>
 
                             <p>Active Staffs</p>
                         </div>
@@ -190,17 +190,14 @@ $result = mysqli_query($conn, $Query);
                             <h3 class="card-title">Annual Attendance Teachers</h3>
 
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                            class="fas fa-times"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="chart">
-                                <canvas id="areaChart"
-                                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                <canvas id="areaChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -213,16 +210,13 @@ $result = mysqli_query($conn, $Query);
                             <h3 class="card-title">Active Staff</h3>
 
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                            class="fas fa-times"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
-                            <canvas id="donutChart"
-                                    style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                            <canvas id="donutChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                         </div>
                         <!-- /.card-body -->
                     </div>
@@ -238,17 +232,14 @@ $result = mysqli_query($conn, $Query);
                             <h3 class="card-title">Annual Attendance Students</h3>
 
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                            class="fas fa-times"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="chart">
-                                <canvas id="lineChart"
-                                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                <canvas id="lineChart" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -261,17 +252,14 @@ $result = mysqli_query($conn, $Query);
                             <h3 class="card-title">Anual Registration Rate</h3>
 
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i
-                                            class="fas fa-minus"></i>
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse"><i class="fas fa-minus"></i>
                                 </button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i
-                                            class="fas fa-times"></i></button>
+                                <button type="button" class="btn btn-tool" data-card-widget="remove"><i class="fas fa-times"></i></button>
                             </div>
                         </div>
                         <div class="card-body">
                             <div class="chart">
-                                <canvas id="stackedBarChart2"
-                                        style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
+                                <canvas id="stackedBarChart2" style="min-height: 250px; height: 250px; max-height: 250px; max-width: 100%;"></canvas>
                             </div>
                         </div>
                         <!-- /.card-body -->
@@ -304,7 +292,7 @@ $result = mysqli_query($conn, $Query);
                             </div>
                         </div>
                         <div class="card-body table-responsive p-0">
-                            <div  id="Birthdays" >
+                            <div id="Birthdays">
 
                             </div>
 
@@ -365,9 +353,7 @@ $result = mysqli_query($conn, $Query);
 </div>
 
 <script>
-
-   
-    $(function () {
+    $(function() {
 
         // The Calender
         $('#calendar').datetimepicker({
@@ -377,7 +363,7 @@ $result = mysqli_query($conn, $Query);
         $.ajax({
             url: "./../../Controller/Dashboard/LoadBirthdays.php",
             method: "post",
-            success: function (data) {
+            success: function(data) {
                 $("#Birthdays").html(data);
 
             }
@@ -412,8 +398,7 @@ $result = mysqli_query($conn, $Query);
                 }
                 ?>
             ],
-            datasets: [
-                {
+            datasets: [{
                     label: 'Digital Goods',
                     backgroundColor: 'rgba(60,141,188,0.9)',
                     borderColor: 'rgba(60,141,188,0.8)',
@@ -452,8 +437,7 @@ $result = mysqli_query($conn, $Query);
                 }
                 ?>
             ],
-            datasets: [
-                {
+            datasets: [{
                     label: 'Registration Rate',
                     backgroundColor: 'rgba(175,96,188,0.9)',
                     borderColor: 'rgba(60,141,188,0.8)',
@@ -493,8 +477,7 @@ $result = mysqli_query($conn, $Query);
                 }
                 ?>
             ],
-            datasets: [
-                {
+            datasets: [{
                     label: 'Digital Goods',
                     backgroundColor: 'rgba(175,96,188,0.9)',
                     borderColor: 'rgba(60,141,188,0.8)',
@@ -552,7 +535,7 @@ $result = mysqli_query($conn, $Query);
         //--------------
         var lineChartCanvas = $('#lineChart').get(0).getContext('2d');
         var lineChartOptions = jQuery.extend(true, {}, areaChartOptions);
-        var lineChartData = jQuery.extend(true,{}, AttendanceStudents);
+        var lineChartData = jQuery.extend(true, {}, AttendanceStudents);
         lineChartData.datasets[0].fill = false;
         lineChartData.datasets[1].fill = false;
         lineChartOptions.datasetFill = false;
@@ -578,22 +561,18 @@ $result = mysqli_query($conn, $Query);
                 }
                 ?>
             ],
-            datasets: [
-                {
-                    data:
-                    <?php
-                    $Query2 = "SELECT COUNT(Gender) as gen , Gender FROM tbl_teachers GROUP BY Gender";
-                    $result2 = mysqli_query($conn, $Query2);
-                    echo '[';
-                    while ($row2 = mysqli_fetch_array($result2)) {
-                        echo $row2["gen"] . ',';
-                    }
-                    echo ']';
-                    ?>
-                    ,
-                    backgroundColor: ['#f56954', '#00a65a'],
-                }
-            ]
+            datasets: [{
+                data: <?php
+                        $Query2 = "SELECT COUNT(Gender) as gen , Gender FROM tbl_teachers GROUP BY Gender";
+                        $result2 = mysqli_query($conn, $Query2);
+                        echo '[';
+                        while ($row2 = mysqli_fetch_array($result2)) {
+                            echo $row2["gen"] . ',';
+                        }
+                        echo ']';
+                        ?>,
+                backgroundColor: ['#f56954', '#00a65a'],
+            }]
         };
         var donutOptions = {
             maintainAspectRatio: false,
@@ -648,8 +627,7 @@ $result = mysqli_query($conn, $Query);
     })
 </script>
 <<?php
-include './../Main/insideFooter.php';
-include './../Main/footer.php';
+    include './../Main/insideFooter.php';
+    include './../Main/footer.php';
 
-?>
-
+    ?>

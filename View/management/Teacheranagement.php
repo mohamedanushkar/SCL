@@ -1,5 +1,6 @@
 <?php
 include './../Main/head.php';
+include './../Main/links.php';
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
 ?>
@@ -48,7 +49,7 @@ include "./../Main/SideNavigation.php";
 
                                 <div class="form-group">
                                     <p class="lbl">ID</p>
-                                    <input type="text" required="" class="form-control txt" name="ID" id="ID">
+                                    <input type="number" required="" class="form-control txt" name="ID" id="ID">
                                 </div>
                                 <div class="form-group">
                                     <p class="lbl">Name</p>
@@ -60,18 +61,18 @@ include "./../Main/SideNavigation.php";
                                 </div>
                                 <div class="form-group">
                                     <p class="lbl">Phone</p>
-                                    <input type="text" required="" class="form-control txt" name="Phone" id="Phone">
+                                    <input type="number" required="" class="form-control txt" name="Phone" id="Phone">
                                 </div>
                                 <div class="form-group">
                                     <p class="lbl">Email</p>
-                                    <input type="text" required="" class="form-control txt" name="Email" id="Email">
+                                    <input type="email" required="" class="form-control txt" name="Email" id="Email">
 
                                 </div>
 
                                 <div class="form-group">
 
-                                    <p class="lbl">Joined Date</p>
-                                    <input class="form-control" name="datepicker" id="datepicker">
+                                    <p class="lbl">BOD</p>
+                                    <input class="form-control" require="" name="datepicker" id="datepicker">
 
 
                                 </div>
@@ -104,7 +105,7 @@ include "./../Main/SideNavigation.php";
                                 </div>
                                 <div class="form-group">
                                     <input type="hidden" id="id" name="id" value="0">
-                                    <input type="button" class="btn btn-success" name="userSubmit" id="userSubmit"  value="Save">
+                                    <input type="submit" class="btn btn-success" name="userSubmit" id="userSubmit"  value="Save">
                                 </div>
                             </form>
                             <div class="form-group col-md-12">
@@ -125,7 +126,35 @@ include "./../Main/SideNavigation.php";
 
 
 
-                                    $('#userSubmit').click(function () {
+                                    $('#insert_data').on('submit', function(event){
+                                        event.preventDefault();
+                                        
+                                        var Name = $("#Name").val();
+                                        var pattern = /^[a-zA-Z ]+$/;
+                                        if (!Name.match(pattern) || Name == null){
+                                            alert("name error");
+                                            return false;
+                                        }
+
+                                        var Address = $("#Address").val();
+                                        if(Address == null){
+                                            alert("Address cannot be empty");
+                                            return false;
+                                        }
+
+                                        var Phone = $("#Phone").val();
+                                            if(Phone.toString().length > 10  || Phone.toString().length < 10){
+                                            alert("maximum limit is between 0 and 10");
+                                            return false;
+                                        
+                                        }
+                                
+                                        var BOD = $("#datepicker").val();
+                                        if(BOD == ''){
+                                            alert("salect BOD");
+                                            return false;
+                                        }
+
                                         var id = $("#id").val();
                                         if (id == 0) {
                                             $.ajax({

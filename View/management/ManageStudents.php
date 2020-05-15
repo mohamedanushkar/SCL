@@ -1,5 +1,12 @@
 <?php
 include './../Main/head.php';
+include './../Main/links.php';
+
+?>
+
+
+
+<?php
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
 ?>
@@ -24,6 +31,7 @@ include "./../Main/SideNavigation.php";
         </div><!-- /.container-fluid -->
     </section>
 
+    
     <!-- Main content -->
     <section class="content">
 
@@ -47,7 +55,7 @@ include "./../Main/SideNavigation.php";
                                 <form id="insert_data" class="col-md-5" >
                                     <div class="form-group">
                                         <p class="lbl">ID</p>
-                                        <input type="text" required="" class="form-control txt" name="ID" id="ID">
+                                        <input type="number" required="" class="form-control txt" name="ID" id="ID">
                                     </div>
                                     <div class="form-group">
                                         <p class="lbl">Name</p>
@@ -63,7 +71,7 @@ include "./../Main/SideNavigation.php";
                                     </div>
                                     <div class="form-group">
                                         <p class="lbl">Email</p>
-                                        <input type="text" required="" class="form-control txt" name="Email" id="Email">
+                                        <input type="email" required="" class="form-control txt" name="Email" id="Email">
                                     </div>
                                     <div class="form-group">
                                         <p class="lbl">Grade</p>
@@ -83,7 +91,7 @@ include "./../Main/SideNavigation.php";
                                         </select>
                                     </div>
                                     <div class="form-group">
-                                        <p class="lbl">Joined Date</p>
+                                        <p class="lbl">BOD</p>
                                         <input class="form-control" name="datepicker" id="datepicker">
                                     </div>
                                     <div class="form-group">
@@ -97,7 +105,7 @@ include "./../Main/SideNavigation.php";
                                     </div>
                                     <div class="form-group">
                                         <input type="hidden" id="id" name="id" value="0">
-                                        <input type="button" class="btn btn-success btn-block" name="userSubmit" id="userSubmit"  value="Save">
+                                        <input type="submit" class="btn btn-success btn-block" name="userSubmit" id="userSubmit"  value="Save">
                                     </div>
                                 </form>
                                 <div class="form-group col-md-12">
@@ -152,6 +160,8 @@ include "./../Main/SideNavigation.php";
                                     dateFormat: "yy-mm-dd"
                                 });
 
+                                
+
                                 $(document).on("click", ".View", function () {
                                     var ID = $(this).closest('tr').find('td:eq(0)').text();
                                     var name = $(this).closest('tr').find('td:eq(1)').text();
@@ -173,8 +183,38 @@ include "./../Main/SideNavigation.php";
                                     height : 200,
                                 });
 
-                                $('#userSubmit').click(function () {
+                                $('#insert_data').on('submit', function(event){
+                                        event.preventDefault();
+                                    
                                     var id = $("#id").val();
+                                    var Name = $("#Name").val();
+                                    var pattern = /^[a-zA-Z ]+$/;
+                                    if (!Name.match(pattern) || Name == null){
+                                        alert("name error");
+                                        return false;
+                                    }
+
+                                    var Address = $("#Address").val();
+                                    if(Address == null){
+                                        alert("Address cannot be empty");
+                                        return false;
+                                    }
+
+
+                                    var Phone = $("#Phone").val();
+                                    if(Phone.toString().length > 10  || Phone.toString().length < 10){
+                                        alert("maximum limit is between 0 and 10");
+                                        return false;
+                                    }
+
+                                    
+
+                                    var BOD = $("#datepicker").val();
+                                    if(BOD == ''){
+                                        alert("salect BOD");
+                                        return false;
+                                    }
+
                                     if (id == 0) {
                                         $.ajax({
                                             url: "../../Controller/Students/insertStu.php",
@@ -246,10 +286,12 @@ include "./../Main/SideNavigation.php";
                                     $("#Phone").val(name);
                                     var name = $(this).closest('tr').find('td:eq(4)').text();
                                     $("#Email").val(name);
-                                    $("#Grade").val(grade);
-                                    var name = $(this).closest('tr').find('td:eq(7)').text();
-                                    $("#Date").val(name);
+                                    var name = $(this).closest('tr').find('td:eq(5)').text();
+                                    $("#Gender").val(name);
+                                    var name = $(this).closest('tr').find('td:eq(6)').text();
+                                    $("#datepicker").val(name);
                                     $('#ID').attr('readonly', true);
+                                    $('#Grade').attr('readonly', true);
                                 });
                             });
                         </script>

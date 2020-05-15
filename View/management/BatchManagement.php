@@ -1,7 +1,6 @@
-
-
 <?php
 include './../Main/head.php';
+include './../Main/links.php';
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
 
@@ -72,7 +71,7 @@ function FillTeacher($conn)
                         <div class="card-body">
 
 
-                            <button type="button" class="btn btn-success btn-sm" id="AddDriver" name="AddDriver" >Add Batch</button>
+                            <button type="button" class="btn btn-success btn-sm" id="AddDriver" name="AddDriver">Add Batch</button>
 
 
                             <!-- Modal -->
@@ -97,8 +96,8 @@ function FillTeacher($conn)
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                                                    <label>Batch No</label>
-                                                  <input type="text" name="SelectBatch" id="SelectBatch" class="form-control">
+                     `                               <label>Batch No</label>
+                                                    <input type="text" name="SelectBatch" id="SelectBatch" class="form-control">
                                                 </div>
                                                 <div class="form-group">
                                                     <label>Select Teacher</label>
@@ -121,7 +120,7 @@ function FillTeacher($conn)
                                     </div>
                                 </div>
                             </div>
-<hr>
+                            <hr>
                             <div class="modal fade bd-example-modal-lg" id="DataLoadBatchStu" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
                                 <div class="modal-dialog modal-lg">
                                     <div class="modal-content">
@@ -133,13 +132,13 @@ function FillTeacher($conn)
                                         </div>
                                         <div class="modal-body">
 
-                                                <div class="form-group">
-                                                    <form id="LoadBatchStudentsFRM">
-                                                        <div id="LoadBatchStudents">
+                                            <div class="form-group">
+                                                <form id="LoadBatchStudentsFRM">
+                                                    <div id="LoadBatchStudents">
 
-                                                        </div>
-                                                    </form>
-                                                </div>
+                                                    </div>
+                                                </form>
+                                            </div>
 
                                         </div>
                                         <div class="modal-footer">
@@ -155,17 +154,16 @@ function FillTeacher($conn)
 
 
                             <script>
-
-                                $(document).ready(function () {
+                                $(document).ready(function() {
 
                                     $("#DataLoad").load("../../Controller/BatchMnagement/Fetch.php");
 
-                                    $("#SelectClass").change(function () {
+                                    $("#SelectClass").change(function() {
                                         $.ajax({
                                             url: "../../Controller/BatchMnagement/LoadBatchNoList.php",
                                             method: "post",
                                             data: $('#Batch').serialize(),
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $("#SelectBatch").val(data);
                                                 document.getElementById("SelectBatch").readOnly = true;
                                             }
@@ -173,7 +171,7 @@ function FillTeacher($conn)
                                     });
 
 
-                                    $(document).on("click", "#AddDriver", function () {
+                                    $(document).on("click", "#AddDriver", function() {
                                         $('#myModal').modal('show');
 
                                     });
@@ -181,66 +179,48 @@ function FillTeacher($conn)
 
 
 
-                                    $(document).on("click", "#Save", function () {
-
-
-                                        var id = $("#HiddenID").val();
-                                        if (id == 0) {
-                                            $.ajax({
-                                                url: "../../Controller/DriverManagement/insert.php",
-                                                method: "post",
-                                                data: $('#DriverData').serialize(),
-                                                success: function (data) {
-                                                    $("<tr></tr>").html(data).appendTo("#Notice_Table");
-                                                    $('#DriverData')[0].reset();
-                                                    $("#HiddenID").val("0");
-                                                    $("#Notice_Table").load("../../Controller/DriverManagement/Fetch.php");
-                                                    $('#myModal').modal('hide');
-                                                }
-                                            });
-                                        }
-                                        else {
-                                            $.ajax({
-                                                url: "../../Controller/DriverManagement/Update.php",
-                                                method: "post",
-                                                data: $('#DriverData').serialize(),
-                                                success: function (data) {
-                                                    $("<tr></tr>").html(data).appendTo("#Notice_Table");
-                                                    $('#DriverData')[0].reset();
-                                                    $("#HiddenID").val("0");
-                                                    $("#Notice_Table").load("../../Controller/DriverManagement/Fetch.php");
-                                                    $('#myModal').modal('hide');
-
-                                                }
-                                            });
-
-                                        }
-
-
-                                    });
-
-                                    $(document).on("click", ".del", function () {
-                                        var del = $(this);
-                                        var id = $(this).attr("data-id");
+                                    $(document).on("click", "#SaveBatch", function() {
                                         $.ajax({
-                                            url: "../../Controller/DriverManagement/Delete.php",
+                                            url: "../../Controller/BatchMnagement/insert.php",
                                             method: "post",
-                                            data: {id: id},
-                                            success: function (data) {
-                                                del.closest("tr").hide();
-                                                $("<tr></tr>").html(data).appendTo("#Notice_Table");
+                                            data: $('#Batch').serialize(),
+                                            success: function(data) {
+                                                $("<tr></tr>").html(data).appendTo("#DataLoad");
+                                                $('#Batch')[0].reset();
+                                                $("#HiddenID").val("0");
+                                                $("#DataLoad").load("../../Controller/BatchMnagement/Fetch.php");
+                                                $('#myModal').modal('hide');
                                             }
                                         });
                                     });
 
-                                    $(document).on("click", ".view", function () {
+                                    $(document).on("click", ".del", function() {
+                                        var del = $(this);
+                                        var id = $(this).attr("data-id");
+                                        
+                                        $.ajax({
+                                            url: "../../Controller/BatchMnagement/Delete.php",
+                                            method: "post",
+                                            data: {
+                                                id: id
+                                            },
+                                            success: function(data) {
+                                                $("#DataLoad").load("../../Controller/BatchMnagement/Fetch.php");
+                                                $("<tr></tr>").html(data).appendTo("#DataLoad");
+                                            }
+                                        });
+                                    });
+
+                                    $(document).on("click", ".view", function() {
 
                                         var id = $(this).attr("data-id");
                                         $.ajax({
                                             url: "../../Controller/BatchMnagement/LoadBatchStudents.php",
                                             method: "post",
-                                            data: {id:id},
-                                            success: function (data) {
+                                            data: {
+                                                id: id
+                                            },
+                                            success: function(data) {
 
 
                                                 $("#LoadBatchStudents").html(data);
@@ -273,8 +253,7 @@ function FillTeacher($conn)
 
 
 <<?php
-include './../Main/insideFooter.php';
-include './../Main/footer.php';
+    include './../Main/insideFooter.php';
+    include './../Main/footer.php';
 
-?>
-
+    ?>

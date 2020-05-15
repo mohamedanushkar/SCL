@@ -28,11 +28,4 @@ session_start();
     <!-- Tell the browser to be responsive to screen width -->
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- Font Awesome -->
-<?php
-include 'links.php';
-?>
 
-</head>
-
-<body class="hold-transition sidebar-mini layout-fixed">
-<div class="wrapper">

@@ -16,9 +16,9 @@ $result = mysqli_query($conn, $query);
             <th>Address</th>
             <th>Phone</th>
             <th>Email</th>
-            <th>Grade</th>
-            <th>Joined Year</th>
-            <th>Class</th>
+            <th>BOD</th>
+            <th>Gender</th>
+            <th>JoinedYear</th>
             <th>Subject</th>
             <th>Status</th>
             <th>Edit</th>
@@ -33,7 +33,7 @@ $result = mysqli_query($conn, $query);
             echo "<td>{$row["Teacher_Address"]}</td>";
             echo "<td>{$row["Teacher_Phone"]}</td>";
             echo "<td>{$row["Teachert_Email"]}</td>";
-            echo "<td>{$row["Present_Year"]}</td>";
+            echo "<td>{$row["BOD"]}</td>";
             echo "<td>{$row["Gender"]}</td>";
             echo "<td>{$row["Joined_Year"]}</td>";
             echo "<td>{$row["Subject_ID"]}</td>";

@@ -27,6 +27,7 @@ function Subjects($conn)
 
 <?php
 include './../Main/head.php';
+include './../Main/links.php';
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
 ?>
@@ -63,11 +64,9 @@ include "./../Main/SideNavigation.php";
                             <h3 class="card-title">Exam Results</h3>
 
                             <div class="card-tools">
-                                <button type="button" class="btn btn-tool" data-card-widget="collapse"
-                                        data-toggle="tooltip" title="Collapse">
+                                <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
                                     <i class="fas fa-minus"></i></button>
-                                <button type="button" class="btn btn-tool" data-card-widget="remove"
-                                        data-toggle="tooltip" title="Remove">
+                                <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
                                     <i class="fas fa-times"></i></button>
                             </div>
                         </div>
@@ -88,14 +87,12 @@ include "./../Main/SideNavigation.php";
                                 </div>
 
 
-                                <div class="modal fade" id="AddResultsMOdal" tabindex="-1" role="dialog"
-                                     aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="AddResultsMOdal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                             <div class="modal-header">
                                                 <h5 class="modal-title" id="exampleModalLabel">Add Exam Results</h5>
-                                                <button type="button" class="close" data-dismiss="modal"
-                                                        aria-label="Close">
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                     <span aria-hidden="true">&times;</span>
                                                 </button>
                                             </div>
@@ -103,18 +100,25 @@ include "./../Main/SideNavigation.php";
 
                                                 <div class="form-row">
                                                     <div class="col">
-                                                        <input type="text" name="BatchNumber" id="BatchNumber"
-                                                               class="form-control"
-                                                               readonly placeholder="First name">
+                                                        <input type="text" name="BatchNumber" id="BatchNumber" class="form-control" readonly placeholder="First name">
                                                     </div>
                                                     <div class="col">
-                                                        <select name="StudentList" id="StudentList"
-                                                                class="form-control">
+                                                        <select name="StudentList" id="StudentList" class="form-control">
 
                                                         </select>
                                                     </div>
                                                 </div>
+                                                <br>
+                                                <div class="row">
+
+                                                    <div class="col-md-12">
+                                                        <span id="error"></span>
+                                                    </div>
+
+                                                </div>
+
                                                 <hr>
+
                                                 <div id="loadSubjects">
 
                                                 </div>
@@ -143,7 +147,6 @@ include "./../Main/SideNavigation.php";
 
 
                             <script>
-
                                 function PrintC(el) {
                                     var prtContent = document.getElementById(el);
                                     var WinPrint = window.open('', '', 'left=0,top=0,width=800,height=900,toolbar=0,scrollbars=0,status=0');
@@ -154,7 +157,7 @@ include "./../Main/SideNavigation.php";
                                     WinPrint.close();
                                 }
 
-                                $(document).ready(function () {
+                                $(document).ready(function() {
                                     $(".datepicker").datepicker({
                                         changeMonth: true,
                                         changeYear: true,
@@ -162,24 +165,20 @@ include "./../Main/SideNavigation.php";
                                     });
 
 
-                                    $("#Batch").change(function () {
+                                    $("#Batch").change(function() {
 
                                         $.ajax({
                                             url: "./../../Controller/Results/Results.php",
                                             method: "post",
                                             data: $('#insert_form').serialize(),
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $("#Load_Exam_Main").html(data);
                                             }
                                         });
                                     });
 
-                                    $("#StudentList").change(function () {
-                                        var id = $(this).val();
-                                        alert(id);
 
-                                    });
-                                    $(document).on("click", ".select", function () {
+                                    $(document).on("click", ".select", function() {
                                         var id = $(this).attr("data-id");
                                         var id22 = $(this).attr("data-id");
 
@@ -188,8 +187,10 @@ include "./../Main/SideNavigation.php";
                                         $.ajax({
                                             url: "./../../Controller/Results/LoadSubjects.php",
                                             method: "POST",
-                                            data: {id: id},
-                                            success: function (data) {
+                                            data: {
+                                                id: id
+                                            },
+                                            success: function(data) {
                                                 $('#loadSubjects').html(data);
 
                                             }
@@ -199,9 +200,11 @@ include "./../Main/SideNavigation.php";
                                         $.ajax({
                                             url: "./../../Controller/Results/LoadNameList.php",
                                             method: "POST",
-                                            data: {id22: id22},
+                                            data: {
+                                                id22: id22
+                                            },
 
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $('#StudentList').html(data);
 
                                             }
@@ -210,17 +213,49 @@ include "./../Main/SideNavigation.php";
                                         $('#AddResultsMOdal').modal('show');
                                     });
 
-                                    $('#SaveResults').click(function () {
+                                    $('#SaveResults').click(function() {
 
-                                        $.ajax({
-                                            url: "./../../Controller/Results/insertData.php",
-                                            method: "POST",
-                                            data: $('#insert_form').serialize(),
-                                            success: function (data) {
-                                                $("<span></span>").html(data).appendTo("#Load_Exam_Main");
 
+                                        var error = '';
+                                        count = 1;
+
+                                        var value = $('#StudentList').val();;
+                                        if (value == 0) {
+                                            error += "<p>Student Should Be Selected";
+
+                                        }
+                                        $('.Marks').each(function() {
+
+                                            if ($(this).val() == '') {
+                                                error += "<p>value cannot be empty at row " + count + "</p>";
+                                                return false;
                                             }
+                                            if ($(this).val() <= -1) {
+                                                error += "<p>valur should be greater than 0 at row " + count + "</p>";
+                                                return false;
+                                            }
+                                            if ($(this).val() > 100) {
+                                                error += "<p>value should be less than 100 at row" + count + "</p>";
+                                                return false;
+                                            }
+                                            count += 1;
                                         });
+
+                                        if (error == '') {
+
+                                            $.ajax({
+                                                url: "./../../Controller/Results/insertData.php",
+                                                method: "POST",
+                                                data: $('#insert_form').serialize(),
+                                                success: function(data) {
+                                                    $("<span></span>").html(data).appendTo("#Load_Exam_Main");
+
+                                                }
+                                            });
+                                        } else {
+                                            $('#error').html('<div class="alert alert-danger">' + error + '</div>');
+                                        }
+
 
 
                                     });
@@ -248,6 +283,3 @@ include './../Main/insideFooter.php';
 include './../Main/footer.php';
 
 ?>
-
-
-

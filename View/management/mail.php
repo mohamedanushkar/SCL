@@ -1,5 +1,6 @@
 <?php
 include './../Main/head.php';
+include './../Main/links.php';
 include './../Main/TopNavigation.php';
 include "./../Main/SideNavigation.php";
 ?>
@@ -54,7 +55,7 @@ include "./../Main/SideNavigation.php";
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
                                                 </div>
-                                                <input type="text" id="name" name="name" placeholder="Sender Name" class="form-control"  />
+                                                <input type="text" required id="name" name="name" placeholder="Sender Name" class="form-control"  />
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
@@ -63,7 +64,7 @@ include "./../Main/SideNavigation.php";
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
                                                 </div>
-                                                <input type="text" id="email" name="email" class="form-control" placeholder="Enter Email"/>
+                                                <input type="email" required id="email" name="email" class="form-control" placeholder="Enter Email"/>
                                             </div>
                                         </div>
                                         <div class="form-group col-md-4">
@@ -72,26 +73,27 @@ include "./../Main/SideNavigation.php";
                                                 <div class="input-group-prepend">
                                                     <span class="input-group-text" id="inputGroupPrepend2">@</span>
                                                 </div>
-                                                <input type="text" id="subject" name="subject" class="form-control" placeholder="Enter Subject"  />
+                                                <input type="text" required id="subject" name="subject" class="form-control" placeholder="Enter Subject"  />
                                             </div>
                                         </div>
                                     </div>
 
                                     <div class="form-group">
                                         <label>Enter Message</label>
-                                        <textarea name="message" id="message" class="form-control" rows="5" placeholder="Enter Message"></textarea>
+                                        <textarea name="message" required id="message" class="form-control" rows="5" placeholder="Enter Message"></textarea>
                                     </div>
                                     <div class="form-group">
-                                        <input type="button" id="send" name="send" value="Send" class="btn btn-warning btn-sm btn-block" />
+                                        <input type="submit" id="send" name="send" value="Send" class="btn btn-warning btn-sm btn-block" />
                                     </div>
-                                    <div id="message">
+                                    <div id="messageinfo">
 
                                     </div>
                                 </form>
 
                                 <script>
                                     $(document).ready(function () {
-                                        $('#send').click(function () {
+                                        $('#Mail').on('submit', function(event){
+                                        event.preventDefault();
                                             $.ajax({
                                                 url: "./../../Controller/SendMail/index.php",
                                                 method: "post",
@@ -104,7 +106,7 @@ include "./../Main/SideNavigation.php";
                                                     $('#Mail')[0].reset();
                                                     $('#send').val('Send');
                                                     $('#send').attr('disabled', false);
-                                                    $("<p></p>").html(data).appendTo("#message");
+                                                    $("#messageinfo").html(data)
 
                                                 }
                                             });
