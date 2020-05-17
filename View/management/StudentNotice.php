@@ -219,7 +219,9 @@ include "./../Main/SideNavigation.php";
                                     $(document).on("click", ".del", function () {
                                         var del = $(this);
                                         var id = $(this).attr("data-id");
-                                        $.ajax({
+
+                                        if (confirm("Are you sure you want to remove it?")) {
+                                            $.ajax({
                                             url: "../../Controller/StudentNotice/delete.php",
                                             method: "post",
                                             data: {id: id},
@@ -228,6 +230,8 @@ include "./../Main/SideNavigation.php";
                                                 $("<p></p>").html(data).appendTo("#Notice_Table");
                                             }
                                         });
+                                        }
+                                        
                                     });
 
                                     $(document).on("click", ".edit", function () {

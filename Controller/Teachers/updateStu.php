@@ -1,15 +1,19 @@
 <?php
-include '../../model/Connection.php';
 
+include '../../model/Connection.php';
 $ID = $_POST["ID"];
 $Name = $_POST["Name"];
 $Address = $_POST["Address"];
 $Phone = $_POST["Phone"];
 $Mail = $_POST["Email"];
+$Subject = $_POST["Subject"];
+$Date = $_POST["datepicker"];
+$Gender = $_POST["Gender"];
+$year = date("Y-m-d");
+$password = $_POST["Password"];
 
+$sql = "INSERT INTO `tbl_teachers`(`Teacher_ID`, `Teacher_Name`, `Teacher_Address`, `Teacher_Phone`, `Teachert_Email`, `BOD`, `Gender`, `Joined_Year`, `Subject_ID`, `Status`, `password`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$Date','$Gender','$year','$Subject','Active','$password')";
 
-$sql = "UPDATE `finalsystemdb`.`student` SET Student_Name= '$Name', Student_Address='$Address' , Student_Phone= '$Phone' ,Student_Email= '$Mail' WHERE id = '$ID'";
-$conn->query($sql);
-echo "<script language='javascript' type='text/javascript'>";
-echo "alert('Data Updated Successfully');";
-echo "</script>";
+runQuary($sql, "New record Added Successfully !!!");
+
+?>

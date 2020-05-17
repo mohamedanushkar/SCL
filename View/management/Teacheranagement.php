@@ -212,8 +212,8 @@ include "./../Main/SideNavigation.php";
                                     $(document).on("click", ".del", function() {
                                         var del = $(this);
                                         var id = $(this).attr("data-id");
-
-                                        $.ajax({
+                                        if (confirm("Are you sure you want to remove it?")) {
+                                            $.ajax({
                                             url: "../../Controller/Teachers/deletestu.php",
                                             method: "post",
                                             data: {
@@ -225,6 +225,8 @@ include "./../Main/SideNavigation.php";
                                                 $("<p></p>").html(data).appendTo("#insert_data");
                                             }
                                         });
+                                        }
+                                        
                                     });
 
                                     $(document).on("click", ".edit", function() {

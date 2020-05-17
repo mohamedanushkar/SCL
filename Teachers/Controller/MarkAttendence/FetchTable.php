@@ -1,4 +1,4 @@
-<table id="employee_data1" class="table table-striped table-bordered">
+<table id="ATT2" class="table table-striped table-bordered">
     <thead>
     <tr>
         <th>Student ID
@@ -7,7 +7,9 @@
     </tr>
     </thead>
     <?php
-    include '../../model/Connection.php';
+    include './../../../model/Connection.php';
+
+
     $date = date("Y-m-d");
     $query2 = "SELECT * FROM tbl_attendence where Date = '$date'";
     $result2 = mysqli_query($conn, $query2);
@@ -29,7 +31,7 @@
 </table>
 <script>
     $(document).ready(function () {
-        $('#employee_data1').DataTable({
+        $('#AT2').DataTable({
             "paging": true,
             "lengthChange": true,
             "searching": true,

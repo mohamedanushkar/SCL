@@ -10,6 +10,8 @@ $result = mysqli_query($conn, $query);
         <th>Teacher_Name</th>
         <th>Teacher_Phone</th>
         <th>Class_Name</th>
+        <th>Batch Status</th>
+        <th>Cloose batch</th>
         <th>View Students List</th>
         <th>Options</th>
     </tr>
@@ -22,6 +24,15 @@ $result = mysqli_query($conn, $query);
         echo "<td>{$row["Teacher_Name"]}</td>";
         echo "<td>{$row["Teacher_Phone"]}</td>";
         echo "<td>{$row["Class_Name"]}</td>";
+        $status ='';
+        if($row["status"]== 'Open'){
+            $status = '<label class="badge badge-success">Open</label>';
+        }
+        else{
+            $status = '<label class="badge badge-danger">Closed</label>';
+        }
+        echo "<td>$status</td>";
+        echo " <td> <a  class='closebth' data-id='{$row["Batch_ID"]}'> <i  class='fa fa-archive'></i></a></td>";
         echo " <td> <a  class='view' data-id='{$row["Batch_ID"]}'> <i  class='fa fa-eye'></i></a></td>";
         echo " <td> <a  class='del' data-id='{$row["Batch_ID"]}'> <i  class='fa fa-trash'></i></a></td>";
         echo "           </tr>";

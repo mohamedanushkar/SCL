@@ -80,7 +80,7 @@ include "./../Main/SideNavigation.php";
                         <div class="card-body">
                             <form method="post" id="insert_form">
                                 <div class="row">
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <label>Select Batch</label>
                                         <select id="Batch" name="Batch" class="form-control">
                                             <?php
@@ -88,13 +88,17 @@ include "./../Main/SideNavigation.php";
                                             ?>
                                         </select>
                                     </div>
-                                    <div class="col-md-6">
+                                    <div class="col-md-4">
                                         <label>Select Teacher</label>
                                         <select id="Teacher" name="Teacher" class="form-control">
                                             <?php
                                             echo Teacher($conn);
                                             ?>
                                         </select>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label>Exam Name</label>
+                                        <input type="text" id="Name" name="Name" class="form-control">
                                     </div>
                                 </div>
                                 <hr>

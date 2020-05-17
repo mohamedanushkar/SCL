@@ -8,9 +8,11 @@ $Date = $_POST["Date"];
 $StartTime = $_POST["StartTime"];
 $EndTime = $_POST["EndTime"];
 
+$Name = $_POST["Name"];
 
 
-$query2 = "INSERT INTO `tbl_exam_schedule`( `Batch_ID`, `Teacher_ID`) VALUES('$Batch','$Teacher')";
+
+$query2 = "INSERT INTO `tbl_exam_schedule`( `Batch_ID`, `Teacher_ID`, `Exam_Name`, `Status`) VALUES('$Batch','$Teacher','$Name','Open')";
 $conn->query($query2);
 
 $last_id = $conn-> insert_id;

@@ -96,7 +96,7 @@ function FillTeacher($conn)
                                                     </select>
                                                 </div>
                                                 <div class="form-group">
-                     `                               <label>Batch No</label>
+                                                    ` <label>Batch No</label>
                                                     <input type="text" name="SelectBatch" id="SelectBatch" class="form-control">
                                                 </div>
                                                 <div class="form-group">
@@ -197,7 +197,7 @@ function FillTeacher($conn)
                                     $(document).on("click", ".del", function() {
                                         var del = $(this);
                                         var id = $(this).attr("data-id");
-                                        
+
                                         $.ajax({
                                             url: "../../Controller/BatchMnagement/Delete.php",
                                             method: "post",
@@ -228,6 +228,29 @@ function FillTeacher($conn)
                                                 $('#DataLoadBatchStu').modal('show');
                                             }
                                         });
+
+                                    });
+
+                                    $(document).on("click", ".closebth", function() {
+                                        var id = $(this).attr("data-id");
+
+                                        if (confirm("Are you sure you want to close it?")) {
+                                            $.ajax({
+                                            url: "../../Controller/BatchMnagement/close.php",
+                                            method: "post",
+                                            data: {
+                                                id: id
+                                            },
+                                            success: function(data) {
+
+
+                                                $("<tr></tr>").html(data).appendTo("#DataLoad");
+
+                                                
+                                            }
+                                        });
+                                        }
+                                        
 
                                     });
 

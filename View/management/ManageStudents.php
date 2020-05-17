@@ -178,7 +178,7 @@ include "./../Main/SideNavigation.php";
                                     var name = $(this).closest('tr').find('td:eq(1)').text();
                                     var Address = $(this).closest('tr').find('td:eq(2)').text();
                                     var Phone = $(this).closest('tr').find('td:eq(3)').text();
-                                    var JoinedYear = $(this).closest('tr').find('td:eq(7)').text();
+                                    var JoinedYear = $(this).closest('tr').find('td:eq(6)').text();
                                     var all = 'ID \t: ' + ID + '\n' + 'Name \t: ' + name + '\n' + 'Address\t: ' + Address + '\n' + 'Phone\t: ' + Phone;
                                     qrcode.makeCode(all);
                                     $("#PID").html(ID);
@@ -248,6 +248,17 @@ include "./../Main/SideNavigation.php";
                                             }
                                         });
 
+                                        
+                                        $.ajax({
+                                            url: "../../Controller/Students/insertbth.php",
+                                            method: "post",
+                                            data: $('#insert_data').serialize(),
+                                            success: function(data) {
+                                                $("<p></p>").html(data).appendTo("#insert_data");
+                                               
+                                               
+                                            }
+                                        });
                                         $.ajax({
                                             url: "./../../Controller/mail/index2.php",
                                             method: "post",
@@ -286,8 +297,8 @@ include "./../Main/SideNavigation.php";
                                 $(document).on("click", ".del", function() {
                                     var del = $(this);
                                     var id = $(this).attr("data-id");
-
-                                    $.ajax({
+                                    if (confirm("Are you sure you want to remove it?")) {
+                                        $.ajax({
                                         url: "../../Controller/Students/deletestu.php",
                                         method: "post",
                                         data: {
@@ -295,10 +306,12 @@ include "./../Main/SideNavigation.php";
                                         },
                                         success: function(data) {
 
-                                            del.closest("tr").hide();
+                                            $("#inserted_data").load("../../Controller/Students/Fetch.php");
                                             $("<p></p>").html(data).appendTo("#insert_data");
                                         }
                                     });
+                                    }
+                                    
                                 });
 
                                 $(document).on("click", ".edit", function() {

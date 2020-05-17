@@ -14,7 +14,7 @@ $result = mysqli_query($conn, $query);
 </head>
 <body>
 <br>
-<table id="employee_data1" class="table table-striped table-bordered">
+<table id="VRSS2" class="table table-striped table-bordered">
     <thead>
     <tr>
         <th>Subject ID</th>
@@ -56,7 +56,14 @@ $result = mysqli_query($conn, $query);
 </body>
 </html>
 <script>
-    $(document).ready(function () {
-        $('#employee_data1').DataTable();
+   $(document).ready(function () {
+        $('#VRSS2').DataTable({
+            "paging": true,
+            "lengthChange": true,
+            "searching": true,
+            "ordering": true,
+            "info": true,
+            "autoWidth": true,
+        });
     });
 </script>  
