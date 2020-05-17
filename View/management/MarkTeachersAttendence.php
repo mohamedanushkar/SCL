@@ -6,7 +6,8 @@ include '../../model/Connection.php';
 
 
 
-function FillGrade($conn) {
+function FillGrade($conn)
+{
     $output = '';
     $sql = "SELECT * FROM tbl_Class";
     $result = mysqli_query($conn, $sql);
@@ -66,11 +67,38 @@ include "./../Main/SideNavigation.php";
 
 
                             <div class="form-group">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">Mark
-                                </button>
+                                <?php
+
+                                $year = date("Y-m-d");
+
+                                // the table geek
+                                $query = "SELECT * FROM `tbl_attendence_teachers` WHERE tbl_attendence_teachers.Date = '$year'";
+
+                                // Execute the query and store the result set
+                                $results = mysqli_query($conn, $query);
+
+                                if ($results) {
+                                    // it return number of rows in the table.
+                                    $rowevents = mysqli_num_rows($results);
+                                    if ($rowevents >= 1) {
+                                        echo '<button  type="button" id="OPenModel" disabled class="btn btn-success" data-toggle="modal" data-target="#Modal">Already Marked Today
+                                        </button>';
+                                    } else {
+
+
+
+                                        echo '<button type="button" id="OPenModel" class="btn btn-success" data-toggle="modal" data-target="#Modal">Mark Attendance
+                                        </button>';
+                                    }
+
+                                    // close the result.
+                                    mysqli_free_result($results);
+                                }
+                                ?>
+                                
                             </div>
 
-                            <div  class="form-group">
+                            <div class="form-group">
                                 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -107,7 +135,7 @@ include "./../Main/SideNavigation.php";
 
                             </div>
                             <script>
-                                $(document).ready(function () {
+                                $(document).ready(function() {
 
 
 
@@ -115,21 +143,22 @@ include "./../Main/SideNavigation.php";
                                     $("#load").load("../../Controller/MarkTeachersAttendence/FetchTable.php");
 
 
-                                    $('#Save').click(function () {
+                                    $('#Save').click(function() {
 
                                         $.ajax({
                                             url: "../../Controller/MarkTeachersAttendence/insert.php",
                                             method: "POST",
                                             data: $('#SearchData').serialize(),
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $('#employee_data').html(data);
                                                 $("#load").load("../../Controller/MarkTeachersAttendence/FetchTable.php");
                                                 $('#Modal').modal('hide');
+                                                $('#OPenModel').attr('disabled', 'disabled');
+                                                $('#OPenModel').val('Alreaady Marked today');
                                             }
                                         });
                                     });
                                 });
-
                             </script>
 
 
@@ -154,4 +183,3 @@ include './../Main/insideFooter.php';
 include './../Main/footer.php';
 
 ?>
-

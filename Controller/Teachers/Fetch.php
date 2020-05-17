@@ -2,28 +2,30 @@
 include '../../model/Connection.php';
 $query = "SELECT * FROM tbl_Teachers";
 $result = mysqli_query($conn, $query);
-?>  
-<!DOCTYPE html>  
-<html>  
-    <head>
-    </head>
-    <body>
+?>
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
     <table id="employee_data" class="table table-striped table-bordered">
         <thead>
-        <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Address</th>
-            <th>Phone</th>
-            <th>Email</th>
-            <th>BOD</th>
-            <th>Gender</th>
-            <th>JoinedYear</th>
-            <th>Subject</th>
-            <th>Status</th>
-            <th>Edit</th>
-            <th>Delete</th>
-        </tr>
+            <tr>
+                <th>ID</th>
+                <th>Name</th>
+                <th>Address</th>
+                <th>Phone</th>
+                <th>Email</th>
+                <th>BOD</th>
+                <th>Gender</th>
+                <th>JoinedYear</th>
+                <th>Subject</th>
+                <th>Status</th>
+                <th>Edit</th>
+                <th>Delete</th>
+            </tr>
         </thead>
         <?php
         while ($row = mysqli_fetch_array($result)) {
@@ -44,10 +46,11 @@ $result = mysqli_query($conn, $query);
         }
         ?>
     </table>
-    </body>  
-</html>  
+</body>
+
+</html>
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $('#employee_data').DataTable();
     });
-</script>  
+</script>

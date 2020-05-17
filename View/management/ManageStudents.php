@@ -104,9 +104,18 @@ include "./../Main/SideNavigation.php";
 
                                     </div>
                                     <div class="form-group">
+                                        <p class="lbl">Password</p>
+                                        <input type="text" class="form-control" name="Password" id="Password">
+                                    </div>
+                                    <div class="form-group">
+                                        <p class="lbl">Confirm Password</p>
+                                        <input type="text" class="form-control" name="confPassword" id="confPassword">
+                                    </div>
+                                    <div class="form-group">
                                         <input type="hidden" id="id" name="id" value="0">
                                         <input type="submit" class="btn btn-success btn-block" name="userSubmit" id="userSubmit"  value="Save">
                                     </div>
+
                                 </form>
                                 <div class="form-group col-md-12">
                                     <div id="inserted_data" >
@@ -215,6 +224,15 @@ include "./../Main/SideNavigation.php";
                                         return false;
                                     }
 
+                                    
+
+                                    var confPassword = $("#confPassword").val();
+                                    var Password =  $("#confPassword").val();
+                                    if(Password != confPassword || Password.length <= 7 || confPassword == '' || Password == ''){
+                                        alert("Both fields nust be equal and min character limit is 8");
+                                        return false;
+                                    }
+
                                     if (id == 0) {
                                         $.ajax({
                                             url: "../../Controller/Students/insertStu.php",
@@ -290,6 +308,9 @@ include "./../Main/SideNavigation.php";
                                     $("#Gender").val(name);
                                     var name = $(this).closest('tr').find('td:eq(6)').text();
                                     $("#datepicker").val(name);
+                                    var grade = $(this).attr("data-pass");
+                                    $("#Password").val(grade);
+                                    $("#confPassword").val(grade);
                                     $('#ID').attr('readonly', true);
                                     $('#Grade').attr('readonly', true);
                                 });

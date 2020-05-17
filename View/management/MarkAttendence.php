@@ -6,14 +6,15 @@ include '../../model/Connection.php';
 
 
 
-function FillGrade($conn) {
+function FillGrade($conn)
+{
 
     $sql = "SELECT * FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
     $output = '';
     $result = mysqli_query($conn, $sql);
 
     while ($row = mysqli_fetch_array($result)) {
-        $output .= '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] .'</option>';
+        $output .= '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] . '</option>';
     }
     return $output;
 }
@@ -66,10 +67,39 @@ include "./../Main/SideNavigation.php";
 
 
                             <div class="form-group">
-                                <button type="button" class="btn btn-success" data-toggle="modal" data-target="#Modal">Mark
-                                </button>
+
+
+                                <?php
+
+                                $year = date("Y-m-d");
+
+                                // the table geek
+                                $query = "SELECT * FROM `tbl_attendence` WHERE tbl_attendence.Date = '$year'";
+
+                                // Execute the query and store the result set
+                                $results = mysqli_query($conn, $query);
+
+                                if ($results) {
+                                    // it return number of rows in the table.
+                                    $rowevents = mysqli_num_rows($results);
+                                    if ($rowevents >= 1) {
+                                        echo '<button type="button" id="OPenModel" disabled class="btn btn-success" data-toggle="modal" data-target="#Modal">Already Marker Today
+                                    </button>';
+                                    } else {
+
+
+
+                                        echo '<button type="button" id="OPenModel"  class="btn btn-success" data-toggle="modal" data-target="#Modal">Mark
+                                     </button>';
+                                    }
+
+                                    // close the result.
+                                    mysqli_free_result($results);
+                                }
+                                ?>
+
                             </div>
-                            <div  class="form-group">
+                            <div class="form-group">
                                 <div class="modal fade" id="Modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
@@ -113,18 +143,18 @@ include "./../Main/SideNavigation.php";
 
                             </div>
                             <script>
-                                $(document).ready(function () {
+                                $(document).ready(function() {
 
 
 
                                     $("#load").load("../../Controller/MarkAttendence/FetchTable.php");
 
-                                    $('#Search').click(function () {
+                                    $('#Search').click(function() {
                                         $.ajax({
                                             url: "../../Controller/MarkAttendence/fetch.php",
                                             method: "POST",
                                             data: $('#SearchData').serialize(),
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $('#table').html(data);
                                                 $("#load").load("../../Controller/MarkAttendence/FetchTable.php");
 
@@ -132,21 +162,23 @@ include "./../Main/SideNavigation.php";
                                         });
                                     });
 
-                                    $('#Save').click(function () {
+                                    $('#Save').click(function() {
 
                                         $.ajax({
                                             url: "../../Controller/MarkAttendence/insert.php",
                                             method: "POST",
                                             data: $('#SearchData').serialize(),
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $('#employee_data').html(data);
                                                 $("#load").load("../../Controller/MarkAttendence/FetchTable.php");
                                                 $('#Modal').modal('hide');
+                                                $('#OPenModel').attr('disabled', 'disabled');
+                                                $('#OPenModel').val('Alreaady Marked today');
+                                                
                                             }
                                         });
                                     });
                                 });
-
                             </script>
 
 

@@ -13,4 +13,3 @@ if ($ID == '') {
     echo "alert('Date Deleted Successfully');";
     echo "</script>";
 }
-?>

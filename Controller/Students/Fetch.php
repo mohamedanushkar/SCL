@@ -27,7 +27,7 @@ $result = mysqli_query($conn, $query);
         echo "<td>{$row["Student_Email"]}</td>";
         echo "<td>{$row["Gender"]}</td>";
         echo "<td>{$row["BOD"]}</td>";
-        echo " <td> <a  class='edit' data-id='{$row["Student_ID"]}'> <i  class='fa fa-edit'></i></a> <a  class='del' data-id='{$row["Student_ID"]}'> <i  class='fa fa-trash'></i></a> <a  class='View' data-id='{$row["Student_ID"]}'><i class='fa fa-eye' aria-hidden='true'></i></a></td>";
+        echo " <td> <a  class='edit' data-pass='{$row["password"]}' data-id='{$row["Student_ID"]}'> <i  class='fa fa-edit'></i></a> <a  class='del' data-id='{$row["Student_ID"]}'> <i  class='fa fa-trash'></i></a> <a  class='View' data-id='{$row["Student_ID"]}'><i class='fa fa-eye' aria-hidden='true'></i></a></td>";
 
         echo "           </tr>";
     }

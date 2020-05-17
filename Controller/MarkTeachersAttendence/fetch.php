@@ -27,11 +27,11 @@ $result = mysqli_query($conn, $query);
 
         echo "<tr>";
 
-        echo "<td><input type='hidden'  name='Teacher_ID[]' id='Teacher_ID' value='{$row["Teacher_ID"]}' class = 'form-control'>{$row["Teacher_ID"]}</td>";
+        echo "<td><input type='hidden'  name='Teacher_ID[]'  value='{$row["Teacher_ID"]}' class = 'form-control'>{$row["Teacher_ID"]}</td>";
 
         echo "<td>{$row["Teacher_Name"]}</td>";
 
-        echo "<td><select class='form-control' name='Status[]' id='Status'><option value='1'>Present</option><option value='0'>Absent</option></select></td>";
+        echo "<td><select class='form-control' name='Status[]'><option value='1'>Present</option><option value='0'>Absent</option></select></td>";
 
         echo "</td>";
     }

@@ -8,10 +8,10 @@ $Phone = $_POST["Phone"];
 $Mail = $_POST["Email"];
 $Gender = $_POST["Gender"];
 $BOD = $_POST["datepicker"];
+$password = $_POST["Password"];
 
 
-
-$sql ="UPDATE `tbl_student` SET `Student_Name`='$Name',`Student_Address`='$Address',`Student_Phone`='$Phone',`Student_Email`='$Mail',`Gender`='$Gender',`BOD`='$BOD' WHERE Student_ID ='$ID'";
+$sql ="UPDATE `tbl_student` SET `Student_Name`='$Name',`Student_Address`='$Address',`Student_Phone`='$Phone',`Student_Email`='$Mail',`Gender`='$Gender',`BOD`='$BOD' , 'Password' = '$password'  WHERE Student_ID ='$ID'";
 
 
     
