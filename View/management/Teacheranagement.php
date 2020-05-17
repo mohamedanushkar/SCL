@@ -45,7 +45,7 @@ include "./../Main/SideNavigation.php";
                         </div>
                         <div class="card-body">
 
-                            <form  id="insert_data" class="col-md-5" >
+                            <form id="insert_data" class="col-md-5">
 
                                 <div class="form-group">
                                     <p class="lbl">ID</p>
@@ -104,16 +104,24 @@ include "./../Main/SideNavigation.php";
                                     </select>
                                 </div>
                                 <div class="form-group">
+                                    <p class="lbl">Password</p>
+                                    <input type="text" class="form-control" name="Password" id="Password">
+                                </div>
+                                <div class="form-group">
+                                    <p class="lbl">Confirm Password</p>
+                                    <input type="text" class="form-control" name="confPassword" id="confPassword">
+                                </div>
+                                <div class="form-group">
                                     <input type="hidden" id="id" name="id" value="0">
-                                    <input type="submit" class="btn btn-success" name="userSubmit" id="userSubmit"  value="Save">
+                                    <input type="submit" class="btn btn-success" name="userSubmit" id="userSubmit" value="Save">
                                 </div>
                             </form>
                             <div class="form-group col-md-12">
-                                <div id="inserted_data" >
+                                <div id="inserted_data">
                                 </div>
                             </div>
                             <script>
-                                $(document).ready(function () {
+                                $(document).ready(function() {
 
                                     $("#inserted_data").load("../../Controller/Teachers/Fetch.php");
 
@@ -126,32 +134,39 @@ include "./../Main/SideNavigation.php";
 
 
 
-                                    $('#insert_data').on('submit', function(event){
+                                    $('#insert_data').on('submit', function(event) {
                                         event.preventDefault();
-                                        
+
                                         var Name = $("#Name").val();
                                         var pattern = /^[a-zA-Z ]+$/;
-                                        if (!Name.match(pattern) || Name == null){
+                                        if (!Name.match(pattern) || Name == null) {
                                             alert("name error");
                                             return false;
                                         }
 
                                         var Address = $("#Address").val();
-                                        if(Address == null){
+                                        if (Address == null) {
                                             alert("Address cannot be empty");
                                             return false;
                                         }
 
                                         var Phone = $("#Phone").val();
-                                            if(Phone.toString().length > 10  || Phone.toString().length < 10){
+                                        if (Phone.toString().length > 10 || Phone.toString().length < 10) {
                                             alert("maximum limit is between 0 and 10");
                                             return false;
-                                        
+
                                         }
-                                
+
                                         var BOD = $("#datepicker").val();
-                                        if(BOD == ''){
+                                        if (BOD == '') {
                                             alert("salect BOD");
+                                            return false;
+                                        }
+
+                                        var confPassword = $("#confPassword").val();
+                                        var Password = $("#confPassword").val();
+                                        if (Password != confPassword || Password.length <= 7 || confPassword == '' || Password == '') {
+                                            alert("Both fields nust be equal and min character limit is 8");
                                             return false;
                                         }
 
@@ -161,20 +176,26 @@ include "./../Main/SideNavigation.php";
                                                 url: "../../Controller/Teachers/insertStu.php",
                                                 method: "post",
                                                 data: $('#insert_data').serialize(),
-                                                success: function (data) {
+                                                success: function(data) {
                                                     $("<p></p>").html(data).appendTo("#inserted_data");
                                                     $('#insert_data')[0].reset();
                                                     $("#id").val("0");
                                                     $("#inserted_data").load("../../Controller/Teachers/Fetch.php");
                                                 }
                                             });
-                                        }
-                                        else {
+
+                                            $.ajax({
+                                                url: "./../../Controller/mail/index3.php",
+                                                method: "post",
+                                                data: $('#Mail').serialize(),
+
+                                            });
+                                        } else {
                                             $.ajax({
                                                 url: "../../Controller/Teachers/updateStu.php",
                                                 method: "post",
                                                 data: $('#insert_data').serialize(),
-                                                success: function (data) {
+                                                success: function(data) {
                                                     $("<p></p>").html(data).appendTo("#insert_data");
                                                     $('#ID').removeAttr('readonly');
                                                     $("#inserted_data").load("../../Controller/Teachers/Fetch.php");
@@ -188,15 +209,17 @@ include "./../Main/SideNavigation.php";
                                     });
 
 
-                                    $(document).on("click", ".del", function () {
+                                    $(document).on("click", ".del", function() {
                                         var del = $(this);
                                         var id = $(this).attr("data-id");
 
                                         $.ajax({
                                             url: "../../Controller/Teachers/deletestu.php",
                                             method: "post",
-                                            data: {id: id},
-                                            success: function (data) {
+                                            data: {
+                                                id: id
+                                            },
+                                            success: function(data) {
 
                                                 del.closest("tr").hide();
                                                 $("<p></p>").html(data).appendTo("#insert_data");
@@ -204,7 +227,7 @@ include "./../Main/SideNavigation.php";
                                         });
                                     });
 
-                                    $(document).on("click", ".edit", function () {
+                                    $(document).on("click", ".edit", function() {
 
                                         var id = $(this).attr("data-id");
 
@@ -225,11 +248,14 @@ include "./../Main/SideNavigation.php";
                                         var name = $(this).closest('tr').find('td:eq(4)').text();
                                         $("#Email").val(name);
 
-
+                                        var name = $(this).closest('tr').find('td:eq(5)').text();
+                                        $("#datepicker").val(name);
 
                                         $("#Grade").val(grade);
 
-
+                                        var grade = $(this).attr("data-pass");
+                                        $("#Password").val(grade);
+                                        $("#confPassword").val(grade);
                                         var name = $(this).closest('tr').find('td:eq(7)').text();
                                         $("#Date").val(name);
                                         $('#ID').attr('readonly', true);

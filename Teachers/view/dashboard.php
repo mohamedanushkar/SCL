@@ -1,7 +1,31 @@
 <?php
 
 
+include './../../model/Connection.php';
 session_start();
+
+function FillBatch($conn)
+{
+  $output = '';
+  $sql = "SELECT * FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
+  $result = mysqli_query($conn, $sql);
+  while ($row = mysqli_fetch_array($result)) {
+    $output .= '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] . '</option>';
+  }
+  return $output;
+}
+
+
+function Subjects($conn)
+{
+  $output = '';
+  $sql = "SELECT * FROM `tbl_subject`";
+  $result = mysqli_query($conn, $sql);
+  while ($row = mysqli_fetch_array($result)) {
+    $output .= '<option value="' . $row["Subject_ID"] . '">' . $row["Name"] . '</option>';
+  }
+  return $output;
+}
 
 ?>
 <!DOCTYPE html>
@@ -168,16 +192,73 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
               <div class="card card-primary card-outline">
                 <div class="card-body">
-                  <h5 class="card-title">check results</h5>
+                  <h5 class="card-title">Add results</h5>
 
                   <p class="card-text">
                     <div class='dropdown-divider'></div>
-                    <?php
-                    include '../../model/Connection.php';
+
+                    <form method="post" id="insertMarks">
 
 
 
-                    ?>
+                      <div class="modal fade" id="AddResultsMOdal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                        <div class="modal-dialog modal-lg" role="document">
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">Add Exam Results</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                              </button>
+                            </div>
+                            <div class="modal-body">
+
+                              <div class="form-row">
+                                <div class="col">
+                                  <input type="text" name="Batchno" id="Batchno" class="form-control" readonly placeholder="First name">
+                                </div>
+                                <div class="col">
+                                  <select name="Student" id="Student" class="form-control">
+
+                                  </select>
+                                </div>
+                              </div>
+                              <br>
+                              <div class="row">
+
+                                <div class="col-md-12">
+                                  <span id="error"></span>
+                                </div>
+
+                              </div>
+
+                              <hr>
+
+                              <div id="loadres">
+
+                              </div>
+
+
+                            </div>
+                            <div class="modal-footer">
+                              <button type="button" class="btn btn-secondary" data-dismiss="modal">
+                                Close
+                              </button>
+                              <button id="SaveRes" type="button" class="btn btn-primary">Add
+                                Results
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <hr>
+
+                      <div id="Load_Exam_Maindata">
+
+                      </div>
+
+                    </form>
+
+
                   </p>
 
                 </div>
@@ -195,13 +276,13 @@ scratch. This page gets rid of all links and provides the needed markup only.
                   <form method="post" id="insert_form">
                     <div class="row">
                       <div id="loadTeacherBatchesss" class="col-md-12">
-                        
+
                       </div>
 
                     </div>
 
 
-                    <div class="modal fade" id="AddResultsMOdal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="AddResultsMOdal2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -214,8 +295,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
                             <div class="form-row">
                               <div class="col-md-12">
-                                 <input type="hidden" name="BatchNumber" id="BatchNumber" class="form-control" readonly placeholder="First name">
-                            
+                                <input type="hidden" name="BatchNumber" id="BatchNumber" class="form-control" readonly placeholder="First name">
+
                                 <select name="StudentListForshow" id="StudentListForshow" class="form-control">
 
 
@@ -233,7 +314,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">
                               Close
                             </button>
-                          
+
                           </div>
                         </div>
                       </div>
@@ -253,10 +334,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
                 <div class="card-header">
                   <h5 class="card-title m-0">results will be viewed here</h5>
                 </div>
-                <div id="loadres" class="card-body">
-
-
-                </div>
+                
               </div>
             </div>
             <!-- /.col-md-6 -->
@@ -297,47 +375,141 @@ scratch. This page gets rid of all links and provides the needed markup only.
   <script>
     $(document).ready(function() {
 
-     
-      $("#loadTeacherBatchesss").load("./../Controller/ViewExamResult/Results.php");
+
+          $("#loadTeacherBatchesss").load("./../Controller/ViewExamResult/Results.php");
 
 
-      $("#StudentListForshow").change(function() {
+          $("#StudentListForshow").change(function() {
 
-        $.ajax({
-          url: "./../Controller/ViewExamResult/ViewResults.php",
-          method: "post",
-          data: $('#insert_form').serialize(),
-          success: function(data) {
-            $("#loadSubjects").html(data);
-          }
-        });
-      });
-      $(document).on("click", ".select", function() {
+            $.ajax({
+              url: "./../Controller/ViewExamResult/ViewResults.php",
+              method: "post",
+              data: $('#insert_form').serialize(),
+              success: function(data) {
+                $("#loadSubjects").html(data);
+              }
+            });
+          });
+          $(document).on("click", ".select", function() {
 
-        var id = $(this).attr("data-id");
+            var id = $(this).attr("data-id");
 
-        var load = $(this).attr("data-load");
-        $('#BatchNumber').val(load);
+            var load = $(this).attr("data-load");
+            $('#BatchNumber').val(load);
 
 
-        $.ajax({
-          url: "./../Controller/Results/LoadNameList.php",
-          method: "POST",
-          data: {
-            id22: id
-          },
+            $.ajax({
+              url: "./../Controller/Results/LoadNameList.php",
+              method: "POST",
+              data: {
+                id22: id
+              },
 
-          success: function(data) {
-            $('#StudentListForshow').html(data);
+              success: function(data) {
+                $('#StudentListForshow').html(data);
 
-          }
-        });
+              }
+            });
 
-        $('#AddResultsMOdal').modal('show');
-      });
-      
+            $('#AddResultsMOdal2').modal('show');
+          });
 
-    });
+
+
+
+
+          $.ajax({
+            url: "./../Controller/Results/Results.php",
+            method: "post",
+            
+            
+            success: function(data) {
+              $("#Load_Exam_Maindata").html(data);
+            }
+          });
+
+
+          $(document).on("click", ".sel", function() {
+            var id = $(this).attr("data-id");
+            var id22 = $(this).attr("data-id");
+
+            var load = $(this).attr("data-load");
+            $('#BatchNumber').val(load);
+            $.ajax({
+              url: "./../../Controller/Results/LoadSubjects.php",
+              method: "POST",
+              data: {
+                id: id
+              },
+              success: function(data) {
+                $('#loadres').html(data);
+
+              }
+            });
+
+
+            $.ajax({
+              url: "./../../Controller/Results/LoadNameList.php",
+              method: "POST",
+              data: {
+                id22: id22
+              },
+              success: function(data) {
+                $('#Student').html(data);
+
+              }
+            });
+
+              $('#AddResultsMOdal').modal('show');
+            });
+
+            $('#SaveRes').click(function() {
+
+
+              var error = '';
+              count = 1;
+
+              var value = $('#StudentList').val();;
+              if (value == 0) {
+                error += "<p>Student Should Be Selected";
+
+              }
+              $('.Marks').each(function() {
+
+                if ($(this).val() == '') {
+                  error += "<p>value cannot be empty at row " + count + "</p>";
+                  return false;
+                }
+                if ($(this).val() <= -1) {
+                  error += "<p>valur should be greater than 0 at row " + count + "</p>";
+                  return false;
+                }
+                if ($(this).val() > 100) {
+                  error += "<p>value should be less than 100 at row" + count + "</p>";
+                  return false;
+                }
+                count += 1;
+              });
+
+              if (error == '') {
+
+                $.ajax({
+                  url: "./../../Controller/Results/insertData.php",
+                  method: "POST",
+                  data: $('#insertMarks').serialize(),
+                  success: function(data) {
+                    $("<span></span>").html(data).appendTo("#Load_Exam_Main");
+
+                  }
+                });
+              } else {
+                $('#error').html('<div class="alert alert-danger">' + error + '</div>');
+              }
+
+
+
+            });
+          });
   </script>
 
 </body>

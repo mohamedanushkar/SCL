@@ -90,12 +90,14 @@ include "./../Main/SideNavigation.php";
                                 </div>
                             </form>
 
+
+                          
                             <script>
                                 $(document).ready(function() {
                                     $('#Mail').on('submit', function(event) {
                                         event.preventDefault();
                                         $.ajax({
-                                            url: "./../../Controller/SendMail/index.php",
+                                            url: "./../../Controller/mail/index.php",
                                             method: "post",
                                             data: $('#Mail').serialize(),
                                             beforeSend: function() {
@@ -103,7 +105,7 @@ include "./../Main/SideNavigation.php";
                                                 $('#send').attr('disabled', 'disabled');
                                             },
                                             success: function(data) {
-                                                $('#Mail')[0].reset();
+                                              //  $('#Mail')[0].reset();
                                                 $('#send').val('Send');
                                                 $('#send').attr('disabled', false);
                                                 $("#messageinfo").html(data)

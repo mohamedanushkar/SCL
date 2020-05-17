@@ -31,7 +31,7 @@ include "./../Main/SideNavigation.php";
         </div><!-- /.container-fluid -->
     </section>
 
-    
+
     <!-- Main content -->
     <section class="content">
 
@@ -51,8 +51,8 @@ include "./../Main/SideNavigation.php";
                             </div>
                         </div>
                         <div class="card-body">
-                            <div >
-                                <form id="insert_data" class="col-md-5" >
+                            <div>
+                                <form id="insert_data" class="col-md-5">
                                     <div class="form-group">
                                         <p class="lbl">ID</p>
                                         <input type="number" required="" class="form-control txt" name="ID" id="ID">
@@ -84,7 +84,7 @@ include "./../Main/SideNavigation.php";
                                                 $i = 0;
                                                 while ($row = $res->fetch_assoc()) {
                                                     $i++;
-                                                    echo '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] .'</option>';
+                                                    echo '<option value="' . $row["Batch_ID"] . '">' . $row["Class_Name"] . ' ' . $row["Batch_Number"] . '</option>';
                                                 }
                                             }
                                             ?>
@@ -113,12 +113,12 @@ include "./../Main/SideNavigation.php";
                                     </div>
                                     <div class="form-group">
                                         <input type="hidden" id="id" name="id" value="0">
-                                        <input type="submit" class="btn btn-success btn-block" name="userSubmit" id="userSubmit"  value="Save">
+                                        <input type="submit" class="btn btn-success btn-block" name="userSubmit" id="userSubmit" value="Save">
                                     </div>
 
                                 </form>
                                 <div class="form-group col-md-12">
-                                    <div id="inserted_data" >
+                                    <div id="inserted_data">
                                     </div>
                                 </div>
                             </div>
@@ -129,11 +129,13 @@ include "./../Main/SideNavigation.php";
                                         <div class="modal-header">
                                             <p><span id="SpanID"></span>'s ID</p>
                                         </div>
-                                        <div  id="Details" class="modal-body">
+                                        <div id="Details" class="modal-body">
                                             <div class="print_div">
                                                 <div class="row" style="background-color: rgba(255,255,0,0.08); padding: 20px">
                                                     <div class="col-md-6">
-                                                        <b> <p>MNS Student ID</p></b>
+                                                        <b>
+                                                            <p>MNS Student ID</p>
+                                                        </b>
                                                         <hr>
                                                         <p>ID: <span id="PID"></span></p>
                                                         <hr>
@@ -160,7 +162,7 @@ include "./../Main/SideNavigation.php";
                             </div>
                         </div>
                         <script>
-                            $(document).ready(function () {
+                            $(document).ready(function() {
 
                                 $("#inserted_data").load("../../Controller/Students/Fetch.php");
                                 $("#datepicker").datepicker({
@@ -169,15 +171,15 @@ include "./../Main/SideNavigation.php";
                                     dateFormat: "yy-mm-dd"
                                 });
 
-                                
 
-                                $(document).on("click", ".View", function () {
+
+                                $(document).on("click", ".View", function() {
                                     var ID = $(this).closest('tr').find('td:eq(0)').text();
                                     var name = $(this).closest('tr').find('td:eq(1)').text();
                                     var Address = $(this).closest('tr').find('td:eq(2)').text();
                                     var Phone = $(this).closest('tr').find('td:eq(3)').text();
                                     var JoinedYear = $(this).closest('tr').find('td:eq(7)').text();
-                                    var all = 'ID \t: ' +ID +'\n' + 'Name \t: ' + name + '\n' + 'Address\t: '+ Address + '\n' +'Phone\t: '+ Phone;
+                                    var all = 'ID \t: ' + ID + '\n' + 'Name \t: ' + name + '\n' + 'Address\t: ' + Address + '\n' + 'Phone\t: ' + Phone;
                                     qrcode.makeCode(all);
                                     $("#PID").html(ID);
                                     $("#SpanID").html(name);
@@ -188,47 +190,47 @@ include "./../Main/SideNavigation.php";
                                 });
 
                                 var qrcode = new QRCode(document.getElementById("qrcode"), {
-                                    width : 200,
-                                    height : 200,
+                                    width: 200,
+                                    height: 200,
                                 });
 
-                                $('#insert_data').on('submit', function(event){
-                                        event.preventDefault();
-                                    
+                                $('#insert_data').on('submit', function(event) {
+                                    event.preventDefault();
+
                                     var id = $("#id").val();
                                     var Name = $("#Name").val();
                                     var pattern = /^[a-zA-Z ]+$/;
-                                    if (!Name.match(pattern) || Name == null){
+                                    if (!Name.match(pattern) || Name == null) {
                                         alert("name error");
                                         return false;
                                     }
 
                                     var Address = $("#Address").val();
-                                    if(Address == null){
+                                    if (Address == null) {
                                         alert("Address cannot be empty");
                                         return false;
                                     }
 
 
                                     var Phone = $("#Phone").val();
-                                    if(Phone.toString().length > 10  || Phone.toString().length < 10){
+                                    if (Phone.toString().length > 10 || Phone.toString().length < 10) {
                                         alert("maximum limit is between 0 and 10");
                                         return false;
                                     }
 
-                                    
+
 
                                     var BOD = $("#datepicker").val();
-                                    if(BOD == ''){
+                                    if (BOD == '') {
                                         alert("salect BOD");
                                         return false;
                                     }
 
-                                    
+
 
                                     var confPassword = $("#confPassword").val();
-                                    var Password =  $("#confPassword").val();
-                                    if(Password != confPassword || Password.length <= 7 || confPassword == '' || Password == ''){
+                                    var Password = $("#confPassword").val();
+                                    if (Password != confPassword || Password.length <= 7 || confPassword == '' || Password == '') {
                                         alert("Both fields nust be equal and min character limit is 8");
                                         return false;
                                     }
@@ -238,20 +240,26 @@ include "./../Main/SideNavigation.php";
                                             url: "../../Controller/Students/insertStu.php",
                                             method: "post",
                                             data: $('#insert_data').serialize(),
-                                            success: function (data) {
-                                                $("<p></p>").html(data).appendTo("#inserted_data");
+                                            success: function(data) {
+                                                $("<p></p>").html(data).appendTo("#insert_data");
                                                 $('#insert_data')[0].reset();
                                                 $("#id").val("0");
                                                 $("#inserted_data").load("../../Controller/Students/Fetch.php");
                                             }
                                         });
-                                    }
-                                    else {
+
+                                        $.ajax({
+                                            url: "./../../Controller/mail/index2.php",
+                                            method: "post",
+                                            data: $('#Mail').serialize(),
+                                           
+                                        });
+                                    } else {
                                         $.ajax({
                                             url: "../../Controller/Students/updateStu.php",
                                             method: "post",
                                             data: $('#insert_data').serialize(),
-                                            success: function (data) {
+                                            success: function(data) {
                                                 $("<p></p>").html(data).appendTo("#insert_data");
                                                 $('#ID').removeAttr('readonly');
                                                 $("#inserted_data").load("../../Controller/Students/Fetch.php");
@@ -269,21 +277,23 @@ include "./../Main/SideNavigation.php";
                                     var lebar = "600";
                                     var tinggi = "450";
                                     var type = "png";
-                                    var filename =  "imgxfd";
-                                    html2canvas(elm).then(function (canvas) {
-                                        Canvas2Image.saveAsImage(canvas, lebar, tinggi, type,filename);
+                                    var filename = "imgxfd";
+                                    html2canvas(elm).then(function(canvas) {
+                                        Canvas2Image.saveAsImage(canvas, lebar, tinggi, type, filename);
                                     });
                                 });
 
-                                $(document).on("click", ".del", function () {
+                                $(document).on("click", ".del", function() {
                                     var del = $(this);
                                     var id = $(this).attr("data-id");
 
                                     $.ajax({
                                         url: "../../Controller/Students/deletestu.php",
                                         method: "post",
-                                        data: {id: id},
-                                        success: function (data) {
+                                        data: {
+                                            id: id
+                                        },
+                                        success: function(data) {
 
                                             del.closest("tr").hide();
                                             $("<p></p>").html(data).appendTo("#insert_data");
@@ -291,7 +301,7 @@ include "./../Main/SideNavigation.php";
                                     });
                                 });
 
-                                $(document).on("click", ".edit", function () {
+                                $(document).on("click", ".edit", function() {
                                     var id = $(this).attr("data-id");
                                     var grade = $(this).attr("data-grade");
                                     $("#id").val(id);

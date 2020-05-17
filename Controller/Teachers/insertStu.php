@@ -12,8 +12,8 @@ $Subject = $_POST["Subject"];
 $Date = $_POST["datepicker"];
 $Gender = $_POST["Gender"];
 $year = date("Y-m-d");
+$password = $_POST["Password"];
 
-
-$sql = "INSERT INTO `tbl_teachers`(`Teacher_ID`, `Teacher_Name`, `Teacher_Address`, `Teacher_Phone`, `Teachert_Email`, `BOD`, `Gender`, `Joined_Year`, `Subject_ID`, `Status`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$Date','$Gender','$year','$Subject','Active')";
+$sql = "INSERT INTO `tbl_teachers`(`Teacher_ID`, `Teacher_Name`, `Teacher_Address`, `Teacher_Phone`, `Teachert_Email`, `BOD`, `Gender`, `Joined_Year`, `Subject_ID`, `Status`, `password`) VALUES ('$ID','$Name','$Address','$Phone','$Mail','$Date','$Gender','$year','$Subject','Active','$password')";
 
 runQuary($sql, "New record Added Successfully !!!");

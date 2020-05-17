@@ -40,8 +40,8 @@ $result = mysqli_query($conn, $query);
             echo "<td>{$row["Joined_Year"]}</td>";
             echo "<td>{$row["Subject_ID"]}</td>";
             echo "<td>{$row["Status"]}</td>";
-            echo "<td><a class='edit'  data-Subject= '{$row["Subject_ID"]}'  data-id='{$row["Teacher_ID"]}'> <i  class='fa fa-edit'></i></a></td>";
-            echo "<td><a  class='del' data-id='{$row["Teacher_ID"]}'> <i  class='fa fa-trash'></i></a></td>";
+            echo "<td><a class='edit'  data-pass='{$row["password"]}'  data-Subject= '{$row["Subject_ID"]}'  data-id='{$row["Teacher_ID"]}'> <i  class='fa fa-edit'></i></a></td>";
+            echo "<td><a  class='del'  data-id='{$row["Teacher_ID"]}'> <i  class='fa fa-trash'></i></a></td>";
             echo "</tr>";
         }
         ?>

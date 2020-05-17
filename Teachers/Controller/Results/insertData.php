@@ -1,8 +1,8 @@
 <?php
 include './../../../model/Connection.php';
 
-$Batch = $_POST["BatchNumber"];
-$StudentList = $_POST["StudentList"];
+$Batch = $_POST["Batchno"];
+$StudentList = $_POST["Student"];
 $Subject = $_POST["Subject_ID"];
 $Marks = $_POST["Marks"];
 
@@ -17,6 +17,8 @@ for($count = 0; $count<count($Marks); $count++)
 
     $query .= "INSERT INTO `tbl_exam_results`(`Exam_ID`, `Subject_ID`, `Student_ID`, `Marks`) VALUES ('$Batch','$Subject_Clean','$StudentList','$Marks_Clean');";
 
+
+    runQuary("UPDATE `tbl_exam_schedule` SET `Status`='marked' WHERE tbl_exam_schedule.Exam_ID = 'Batch'","updated");
 }
 if($query != '')
 {
