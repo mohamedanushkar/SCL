@@ -6,7 +6,7 @@ session_start();
 
 function FillBatch($conn)
 {
-  $output = '';
+  $output = ''; 
   $sql = "SELECT * FROM `tbl_batch` INNER JOIN tbl_class ON tbl_class.Class_ID = tbl_batch.Class_ID";
   $result = mysqli_query($conn, $sql);
   while ($row = mysqli_fetch_array($result)) {
@@ -311,8 +311,8 @@ scratch. This page gets rid of all links and provides the needed markup only.
                     <div class="form-group">
 
 
-                    <button type="button" id="OPenModel"  class="btn btn-success" data-toggle="modal" data-target="#Modal">Mark
-     </button>
+                      <button type="button" id="OPenModel" class="btn btn-success" data-toggle="modal" data-target="#Modal">Mark
+                      </button>
 
                     </div>
                     <div class="form-group">
@@ -540,7 +540,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
       ///attendance
 
       <?php
-      
+
       ?>
       $("#load").load("./../Controller/MarkAttendence/FetchTable.php");
 
@@ -568,7 +568,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#load').html(data);
             $("#load").load("../../Controller/MarkAttendence/FetchTable.php");
             $('#Modal').modal('hide');
-           
+
 
           }
         });

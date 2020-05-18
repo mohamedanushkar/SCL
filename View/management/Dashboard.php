@@ -354,7 +354,9 @@ $result = mysqli_query($conn, $Query);
 
 <script>
     $(function() {
-
+        setTimeout(function() {
+            window.location.reload(1);
+        }, 900000);
         // The Calender
         $('#calendar').datetimepicker({
             format: 'L',
