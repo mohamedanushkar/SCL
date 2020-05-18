@@ -1,7 +1,8 @@
 <table id="ATT2" class="table table-striped table-bordered">
     <thead>
     <tr>
-        <th>Student ID
+        <th>Student ID </th>
+        <th>Student Name </th>
         <th>Date</th>
         <th>Status</th>
     </tr>
@@ -16,6 +17,7 @@
     while ($row2 = mysqli_fetch_array($result2)) {
         echo "<tr>";
         echo "<td>{$row2["Student_ID"]} </td>";
+        echo "<td>{$row2["Student_Name"]}</td>";
         echo "<td>{$row2["Date"]}</td>";
         $status ='';
         if($row2["Status"]== 0){
