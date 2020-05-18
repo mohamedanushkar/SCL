@@ -152,7 +152,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             <div class="col-sm-6">
               <ol class="breadcrumb float-sm-right">
                 <li class="breadcrumb-item"><a href="#">Home</a></li>
-                <li class="breadcrumb-item active">Student</li>
+                <li class="breadcrumb-item active">Teacher</li>
               </ol>
             </div><!-- /.col -->
           </div><!-- /.row -->
@@ -564,8 +564,7 @@ scratch. This page gets rid of all links and provides the needed markup only.
             $('#load').html(data);
             $("#load").load("../../Controller/MarkAttendence/FetchTable.php");
             $('#Modal').modal('hide');
-            $('#OPenModel').attr('disabled', 'disabled');
-            $('#OPenModel').val('Alreaady Marked today');
+           
 
           }
         });

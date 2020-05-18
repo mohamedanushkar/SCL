@@ -6,7 +6,6 @@ session_start();
 
 
 
-
 $UserName =$_POST["UserName"];
 $password =  $_POST["Password"];
 
@@ -32,7 +31,7 @@ if (mysqli_num_rows($result)>0) {
     }
 } else {
 
-    header('Location:./../../../index.php');
+    header('Location:./../../index.php');
 
 }
 
