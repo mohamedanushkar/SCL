@@ -9,12 +9,13 @@
     <?php
     include '../../model/Connection.php';
     $date = date("Y-m-d");
-    $query2 = "SELECT * FROM tbl_attendence where Date = '$date'";
+    $query2 = "SELECT * FROM tbl_attendence inner join tbl_student on tbl_student.Student_ID = tbl_attendence.Student_ID where Date = '$date'";
     $result2 = mysqli_query($conn, $query2);
     while ($row2 = mysqli_fetch_array($result2)) {
         echo "<tr>";
         echo "<td>{$row2["Student_ID"]} </td>";
         echo "<td>{$row2["Date"]}</td>";
+        echo "<td>{$row2["Student_Name"]}</td>";
         $status ='';
         if($row2["Status"]== 0){
             $status = '<label class="badge badge-danger">Absent</label>';

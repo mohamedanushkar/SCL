@@ -538,7 +538,11 @@ scratch. This page gets rid of all links and provides the needed markup only.
 
 
       ///attendance
-      $("#load").load("../../Controller/MarkAttendence/FetchTable.php");
+
+      <?php
+      
+      ?>
+      $("#load").load("./../Controller/MarkAttendence/FetchTable.php");
 
 
       $('#Search').click(function() {
